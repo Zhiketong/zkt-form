@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="form-group" :class="className">
     <slot></slot>
     <div class="clearfix"></div>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
@@ -16,6 +16,15 @@
       helpText: {
         type: String,
         default: ''
+      }
+    },
+    computed: {
+      className () {
+        return {
+          'has-success': true,
+          'has-error': true,
+          'has-feedback': true
+        }
       }
     }
   }

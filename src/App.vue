@@ -30,6 +30,7 @@ export default {
             tagName: 'Input',
             type: 'number',
             value: 10,
+            icon: 'plus',
             id: 'number',
             'class': {
               foo: true,

@@ -21,7 +21,8 @@
           :is="fields[field]['tagName']"
           :ref="field"
         />
-      <p class="help-block">{{fields[field].helpText}}</p>
+        <i class="glyphicon form-control-feedback" v-if="fields[field].icon" :class="['glyphicon-'+fields[field].icon]"></i>
+        <p class="help-block">{{fields[field].helpText}}</p>
       </div>
     </form-group>
     <div class="form-group">
