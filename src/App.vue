@@ -21,7 +21,8 @@ export default {
         textarea: 'hello textarea',
         checkbox: ['1'],
         radio: '1',
-        select: '2'
+        select: '2',
+        'static': '静态文本'
       },
       fields: {
         number: {
@@ -112,7 +113,25 @@ export default {
             label: 'option2',
             value: '2'
           }]
-        }
+        },
+        'static': {
+            name: 'static',
+            tagName: 'Static',
+            type: 'number',
+            value: 10,
+            id: 'number',
+            'class': {
+              foo: true,
+              bar: false
+            },
+            col: {
+              md: 4
+            },
+            style: {
+              color: 'red',
+              fontSize: '14px',
+            },
+        },
       },
       layout: [{
         name: 'group1',
@@ -171,6 +190,17 @@ export default {
           }
         },
         fields: ['select']
+      },
+      {
+        name: 'group6',
+        label: {
+          text: '静态',
+          'for': 'static',
+          col: {
+            md: 4
+          }
+        },
+        fields: ['static']
       }]
     }
   },

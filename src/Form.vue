@@ -39,6 +39,7 @@
   import Checkbox from './Checkbox.vue'
   import Radio from './Radio.vue'
   import Select from './Select.vue'
+  import Static from './Static.vue'
 
   export default {
     name: 'Form',
@@ -49,7 +50,8 @@
       Textarea,
       Checkbox,
       Radio,
-      Select
+      Select,
+      Static
     },
     filters: {
       col (obj = {md: 12, sm: 12, lg: 12}) {
