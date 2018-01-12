@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app">{{model}}
     <Form :fields="fields" :layout="layout" ref="form" v-model="model" @submit.native.prevent="onSubmit">
       <button type="submit" slot="footer">button</button>
     </Form>
@@ -37,12 +37,13 @@ export default {
             style: {
               color: 'red',
               fontSize: '14px',
-            }
+            },
+            helpText: '这里才是帮助文本'
         },
         number2: {
             name: 'number2',
             tagName: 'Input',
-            type: 'number',
+            type: 'range',
             value: 10,
             id: 'hello',
             label: 'Hello',
@@ -62,7 +63,7 @@ export default {
       layout: [{
         name: 'group1',
         nested: false,
-        helpText: '这里是帮助文本',
+        // helpText: '这里是帮助文本',
         label: {
           text: 'label',
           col: {

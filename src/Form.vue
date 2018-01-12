@@ -9,18 +9,19 @@
     :key="group.name"
     :ref="group.name"
     >
-      <div :class="group.label.col|col">
+      <div :class="group.label.col|col" v-if="group.label">
         <Label v-bind="group.label" />
       </div>
       <div v-for="field in group.fields" :class="fields[field].col|col">
-      <component
-        v-if="fields[field]"
-        v-bind="fields[field]"
-        v-model="group.nested?value[group.name]:value[field]"
-        :key="field"
-        :is="fields[field]['tagName']"
-        :ref="field"
-      />
+        <component
+          v-if="fields[field]"
+          v-bind="fields[field]"
+          v-model="group.nested?value[group.name]:value[field]"
+          :key="field"
+          :is="fields[field]['tagName']"
+          :ref="field"
+        />
+      <p class="help-block">{{fields[field].helpText}}</p>
       </div>
     </form-group>
     <div class="form-group">
@@ -43,7 +44,7 @@
       Input
     },
     filters: {
-      col (obj = {}) {
+      col (obj = {md: 12, sm: 12, lg: 12}) {
         var col = []
         for (let k in obj) {
           col.push(`col-${k}-${obj[k]}`)
