@@ -17,7 +17,8 @@ export default {
     return {
       model: {
         number: 101,
-        number2: 11
+        number2: 11,
+        textarea: 'hello textarea'
       },
       fields: {
         number: {
