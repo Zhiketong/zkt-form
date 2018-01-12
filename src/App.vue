@@ -1,6 +1,6 @@
 <template>
   <div id="app">{{model}}
-    <Form :fields="fields" :layout="layout" ref="form" v-model="model" @submit.native.prevent="onSubmit">
+    <Form class="form-horizontal" :fields="fields" :layout="layout" ref="form" v-model="model" @submit.native.prevent="onSubmit">
       <button type="submit" slot="footer">button</button>
     </Form>
   </div>

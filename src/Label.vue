@@ -1,5 +1,5 @@
 <template>
-  <label v-if="text">{{text}}</label>
+  <label v-if="text" class="control-label">{{text}}</label>
 </template>
 <script>
   export default {
