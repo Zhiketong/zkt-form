@@ -18,7 +18,8 @@ export default {
       model: {
         number: 101,
         number2: 11,
-        textarea: 'hello textarea'
+        textarea: 'hello textarea',
+        checkbox: ['1']
       },
       fields: {
         number: {
@@ -65,6 +66,21 @@ export default {
           col: {
             md: 8
           }
+        },
+        checkbox: {
+          name: 'checkbox',
+          tagName: 'Checkbox',
+          value: ['1'],
+          col: {
+            md: 8
+          },
+          options: [{
+            label: 'option1',
+            value: '1'
+          }, {
+            label: 'option2',
+            value: '2'
+          }]
         }
       },
       layout: [{
@@ -83,7 +99,6 @@ export default {
       {
         name: 'group2',
         nested: false,
-        // helpText: '这里是帮助文本',
         label: {
           text: '文本',
           'for': 'textarea',
@@ -92,6 +107,17 @@ export default {
           }
         },
         fields: ['textarea']
+      },
+      {
+        name: 'group3',
+        label: {
+          text: '多选',
+          'for': 'checkbox',
+          col: {
+            md: 4
+          }
+        },
+        fields: ['checkbox']
       }]
     }
   },

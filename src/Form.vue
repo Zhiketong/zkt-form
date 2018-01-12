@@ -36,6 +36,7 @@
   import Label from './Label.vue'
   import Input from './Input.vue'
   import Textarea from './Textarea.vue'
+  import Checkbox from './Checkbox.vue'
 
   export default {
     name: 'Form',
@@ -43,7 +44,8 @@
       FormGroup,
       Label,
       Input,
-      Textarea
+      Textarea,
+      Checkbox
     },
     filters: {
       col (obj = {md: 12, sm: 12, lg: 12}) {
