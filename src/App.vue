@@ -19,7 +19,8 @@ export default {
         number: 101,
         number2: 11,
         textarea: 'hello textarea',
-        checkbox: ['1']
+        checkbox: ['1'],
+        radio: '1'
       },
       fields: {
         number: {
@@ -81,6 +82,21 @@ export default {
             label: 'option2',
             value: '2'
           }]
+        },
+        radio: {
+          name: 'radio',
+          tagName: 'Radio',
+          value: '1',
+          col: {
+            md: 8
+          },
+          options: [{
+            label: 'option1',
+            value: '1'
+          }, {
+            label: 'option2',
+            value: '2'
+          }]
         }
       },
       layout: [{
@@ -118,6 +134,17 @@ export default {
           }
         },
         fields: ['checkbox']
+      },
+      {
+        name: 'group4',
+        label: {
+          text: '单选',
+          'for': 'radio',
+          col: {
+            md: 4
+          }
+        },
+        fields: ['radio']
       }]
     }
   },

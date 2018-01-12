@@ -37,6 +37,7 @@
   import Input from './Input.vue'
   import Textarea from './Textarea.vue'
   import Checkbox from './Checkbox.vue'
+  import Radio from './Radio.vue'
 
   export default {
     name: 'Form',
@@ -45,7 +46,8 @@
       Label,
       Input,
       Textarea,
-      Checkbox
+      Checkbox,
+      Radio
     },
     filters: {
       col (obj = {md: 12, sm: 12, lg: 12}) {

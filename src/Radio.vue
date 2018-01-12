@@ -1,0 +1,36 @@
+<template>
+  <div class="radio">
+    <label class="radio-inline" v-for="option in options" :key="option.value">
+        <input type="radio" v-model="val" :value="option.value" :name="name">
+        <span>{{option.label}}</span>
+      </label>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'Radio',
+    props: {
+      name: {
+        type: String,
+        default: ''
+      },
+      options: {
+        type: Array
+      },
+      value: {}
+    },
+    computed: {
+      val: {
+        get () {
+          return this.value
+        },
+        set (val) {
+          this.$emit('input', val)
+        }
+      }
+    },
+    data () {
+      return {}
+    }
+  }
+</script>
