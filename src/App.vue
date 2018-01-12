@@ -20,7 +20,8 @@ export default {
         number2: 11,
         textarea: 'hello textarea',
         checkbox: ['1'],
-        radio: '1'
+        radio: '1',
+        select: '2'
       },
       fields: {
         number: {
@@ -97,6 +98,20 @@ export default {
             label: 'option2',
             value: '2'
           }]
+        },
+        select: {
+          name: 'select',
+          tagName: 'Select',
+          col: {
+            md: 8
+          },
+          options: [{
+            label: 'option1',
+            value: '1'
+          }, {
+            label: 'option2',
+            value: '2'
+          }]
         }
       },
       layout: [{
@@ -145,6 +160,17 @@ export default {
           }
         },
         fields: ['radio']
+      },
+      {
+        name: 'group5',
+        label: {
+          text: '下拉',
+          'for': 'select',
+          col: {
+            md: 4
+          }
+        },
+        fields: ['select']
       }]
     }
   },
