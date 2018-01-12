@@ -25,8 +25,7 @@ export default {
             tagName: 'Input',
             type: 'number',
             value: 10,
-            id: 'hello',
-            label: 'Hello',
+            id: 'number',
             'class': {
               foo: true,
               bar: false
@@ -46,7 +45,6 @@ export default {
             type: 'range',
             value: 10,
             id: 'hello',
-            label: 'Hello',
             'class': {
               foo: true,
               bar: false
@@ -58,6 +56,14 @@ export default {
               color: 'red',
               fontSize: '14px',
             }
+        },
+        textarea: {
+          name: 'textarea',
+          tagName: 'Textarea',
+          value: 'hello world textarea',
+          col: {
+            md: 8
+          }
         }
       },
       layout: [{
@@ -65,12 +71,26 @@ export default {
         nested: false,
         // helpText: '这里是帮助文本',
         label: {
-          text: 'label',
+          text: '输入框',
+          'for': 'number',
           col: {
-            md: 3
+            md: 4
           }
         },
         fields: ['number', 'number2']
+      },
+      {
+        name: 'group2',
+        nested: false,
+        // helpText: '这里是帮助文本',
+        label: {
+          text: '文本',
+          'for': 'textarea',
+          col: {
+            md: 4
+          }
+        },
+        fields: ['textarea']
       }]
     }
   },

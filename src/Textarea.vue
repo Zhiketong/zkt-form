@@ -1,5 +1,5 @@
 <template>
-  <input :value="value" @input="$emit('input', $event.target.value)" class="form-control">
+  <textarea @input="$emit('input', $event.target.value)" class="form-control">{{value}}</textarea>
 </template>
 <script>
   export default {

@@ -35,13 +35,15 @@
   import FormGroup from './Group.vue'
   import Label from './Label.vue'
   import Input from './Input.vue'
+  import Textarea from './Textarea.vue'
 
   export default {
     name: 'Form',
     components: {
-      Label,
       FormGroup,
-      Input
+      Label,
+      Input,
+      Textarea
     },
     filters: {
       col (obj = {md: 12, sm: 12, lg: 12}) {
