@@ -12,11 +12,11 @@
       <div :class="group.label.col|col" v-if="group.label">
         <Label v-bind="group.label" />
       </div>
-      <div v-for="field in group.fields" :class="fields[field].col|col">
+      <div v-for="field in group.fields" :class="fields[field].col|col" v-if="fields[field]">
         <component
           v-if="fields[field]"
           v-bind="fields[field]"
-          v-model="group.nested?value[group.name]:value[field]"
+          v-model="group.nested?value[group.name][field]:value[field]"
           :key="field"
           :is="fields[field]['tagName']"
           :ref="field"

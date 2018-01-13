@@ -41,7 +41,11 @@ export default {
         radio: '1',
         select: '2',
         'static': '静态文本',
-        'static2': '<h3>请注意</h3>这里可以输入<b>HTML</b>哦<br  />哦啦啦换行'
+        'static2': '<h3>请注意</h3>这里可以输入<b>HTML</b>哦<br  />哦啦啦换行',
+        nested: {
+          number11: 22,
+          number22: 33
+        }
       },
       fields: {
         number: {
@@ -161,6 +165,46 @@ export default {
               md: 4
             }
         },
+        number11: {
+            name: 'number11',
+            tagName: 'Input',
+            type: 'number',
+            value: 11,
+            icon: 'plus',
+            id: 'number',
+            'class': {
+              foo: true,
+              bar: false
+            },
+            col: {
+              md: 4
+            },
+            style: {
+              color: 'red',
+              fontSize: '14px',
+            },
+            helpText: '这里才是帮助文本'
+        },
+        number22: {
+            name: 'number22',
+            tagName: 'Input',
+            type: 'number',
+            value: 22,
+            icon: 'plus',
+            id: 'number',
+            'class': {
+              foo: true,
+              bar: false
+            },
+            col: {
+              md: 4
+            },
+            style: {
+              color: 'red',
+              fontSize: '14px',
+            },
+            helpText: '这里才是帮助文本'
+        },
       },
       layout: [{
         name: 'group1',
@@ -234,6 +278,19 @@ export default {
       {
         name: 'group7',
         fields: ['static2']
+      },
+      {
+        name: 'nested',
+        nested: true,
+        // helpText: '这里是帮助文本',
+        label: {
+          text: '嵌套',
+          'for': 'number',
+          col: {
+            md: 2
+          }
+        },
+        fields: ['number11', 'number22']
       }]
     }
   },
