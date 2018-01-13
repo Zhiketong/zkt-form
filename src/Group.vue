@@ -16,14 +16,22 @@
       helpText: {
         type: String,
         default: ''
+      },
+      hasError: {
+        type: Boolean,
+        default: false
+      },
+      hasFeedback: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
       className () {
         return {
-          'has-success': true,
-          'has-error': true,
-          'has-feedback': true
+          // 'has-success': true,
+          'has-error': this.hasError,
+          'has-feedback': this.hasFeedback
         }
       }
     }

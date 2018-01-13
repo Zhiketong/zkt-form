@@ -1,8 +1,16 @@
 <template>
-  <div id="app">{{model}}
-    <Form class="form-horizontal" :fields="fields" :layout="layout" ref="form" v-model="model" @submit.native.prevent="onSubmit">
-      <button type="submit" slot="footer">button</button>
-    </Form>
+  <div id="app">
+    <div class="col-md-4">
+      <div class="">
+        <textarea class="form-control" rows="10" v-model="modelText">{{model}}</textarea>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <Form class="form-horizontal" :fields="fields" :layout="layout" ref="form" v-model="model" @submit.native.prevent="onSubmit">
+        <button type="submit" slot="footer">button</button>
+      </Form>
+    </div>
+
   </div>
 </template>
 
@@ -13,6 +21,16 @@ export default {
   components: {
     Form
   },
+  computed: {
+    modelText: {
+      get () {
+        return JSON.stringify(this.model)
+      },
+      set (text) {
+        this.model = JSON.parse(text)
+      }
+    }
+  },
   data () {
     return {
       model: {
@@ -22,7 +40,8 @@ export default {
         checkbox: ['1'],
         radio: '1',
         select: '2',
-        'static': '静态文本'
+        'static': '静态文本',
+        'static2': '<h3>请注意</h3>这里可以输入<b>HTML</b>哦<br  />哦啦啦换行'
       },
       fields: {
         number: {
@@ -120,7 +139,7 @@ export default {
             tagName: 'Static',
             type: 'number',
             value: 10,
-            id: 'number',
+            id: 'static',
             'class': {
               foo: true,
               bar: false
@@ -133,6 +152,15 @@ export default {
               fontSize: '14px',
             },
         },
+        'static2': {
+            name: 'static',
+            tagName: 'Static',
+            type: 'number',
+            value: 10,
+            col: {
+              md: 4
+            }
+        },
       },
       layout: [{
         name: 'group1',
@@ -142,7 +170,7 @@ export default {
           text: '输入框',
           'for': 'number',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['number', 'number2']
@@ -154,7 +182,7 @@ export default {
           text: '文本',
           'for': 'textarea',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['textarea']
@@ -165,7 +193,7 @@ export default {
           text: '多选',
           'for': 'checkbox',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['checkbox']
@@ -176,7 +204,7 @@ export default {
           text: '单选',
           'for': 'radio',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['radio']
@@ -187,7 +215,7 @@ export default {
           text: '下拉',
           'for': 'select',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['select']
@@ -198,10 +226,14 @@ export default {
           text: '静态',
           'for': 'static',
           col: {
-            md: 4
+            md: 2
           }
         },
         fields: ['static']
+      },
+      {
+        name: 'group7',
+        fields: ['static2']
       }]
     }
   },

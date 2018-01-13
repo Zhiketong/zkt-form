@@ -1,11 +1,14 @@
 <template>
-  <p class="form-control-static">{{value}}</p>
+  <div class="form-control-static" v-html="value"></div>
 </template>
 <script>
   export default {
     name: 'Static',
     props: {
-      value: {}
+      value: {
+        type: String,
+        default: ''
+      }
     }
   }
 </script>
