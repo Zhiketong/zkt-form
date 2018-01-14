@@ -4,10 +4,8 @@
       <slot name="header"></slot>
     </form-group>
     <form-group
-    v-for="row in fields"
-    v-bind="row"
-    :key="row.name"
-    :ref="row.name"
+    v-for="(row, index) in fields"
+    :key="index"
     >
       <div v-for="field in row" :class="field.col|col" :key="field.name">
         <component
@@ -20,11 +18,11 @@
         <p class="help-block">{{field.helpText}}</p>
       </div>
     </form-group>
-    <div class="form-group">
+    <form-group>
       <slot name="footer">
         <input type="submit" class="btn btn-primary">
       </slot>
-    </div>
+    </form-group>
   </form>
 </template>
 <script>
