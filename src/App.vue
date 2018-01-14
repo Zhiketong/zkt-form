@@ -2,7 +2,7 @@
   <div id="app">
     <div class="col-md-4">
       <div class="">
-        <textarea class="form-control" rows="10" @input="model=JSON.parse($event.target.value)">{{model}}</textarea>
+        <textarea class="form-control" rows="10" v-model="modelText"></textarea>
       </div>
     </div>
     <div class="col-md-8">
