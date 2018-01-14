@@ -6,7 +6,12 @@
       </div>
     </div>
     <div class="col-md-8">
-      <Form class="form-horizontal" :fields="fields" ref="form" v-model="model" @submit.native.prevent="onSubmit">
+      <Form
+        class="form-horizontal"
+        :fields="fields"
+        ref="form"
+        v-model="model"
+        @submit.native.prevent="onSubmit">
         <button type="submit" slot="footer">button</button>
       </Form>
     </div>
@@ -34,8 +39,8 @@ export default {
   data () {
     return {
       model: {
-        number: 101,
-        number2: 11,
+        input: 'input type text',
+        number: 11,
         textarea: 'hello textarea',
         checkbox: ['1'],
         radio: '1',
@@ -48,24 +53,41 @@ export default {
       },
       fields: [
         [{
-            name: 'number',
-            tagName: 'Input',
-            type: 'number',
-            value: 10,
-            icon: 'plus',
-            id: 'number',
-            'class': {
-              foo: true,
-              bar: false
-            },
-            col: {
-              md: 4
-            },
-            style: {
-              color: 'red',
-              fontSize: '14px',
-            },
-            helpText: '这里才是帮助文本'
+          tagName: 'Label',
+          text: '输入框',
+          col: {
+            md: 2
+          }
+        },
+        {
+          name: 'input',
+          tagName: 'Input',
+          value: 10,
+          icon: 'plus',
+          id: 'number',
+          col: {
+            md: 4
+          },
+          style: {
+            color: 'red',
+            fontSize: '14px',
+          },
+          helpText: '这里才是帮助文本'
+        },
+        {
+          name: 'number',
+          tagName: 'Number',
+          value: 10,
+          icon: 'plus',
+          id: 'number',
+          col: {
+            md: 4
+          },
+          style: {
+            color: 'red',
+            fontSize: '14px',
+          },
+          helpText: '这里才是帮助文本'
         }],
         [{
           name: 'textarea',

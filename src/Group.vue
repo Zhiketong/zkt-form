@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group" :class="className">
+  <div class="form-group">
     <slot></slot>
     <div class="clearfix"></div>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
@@ -9,10 +9,6 @@
   export default {
     name: 'FormGroup',
     props: {
-      id: {
-        type: String,
-        default: ''
-      },
       helpText: {
         type: String,
         default: ''
@@ -20,19 +16,6 @@
       hasError: {
         type: Boolean,
         default: false
-      },
-      hasFeedback: {
-        type: Boolean,
-        default: false
-      }
-    },
-    computed: {
-      className () {
-        return {
-          // 'has-success': true,
-          'has-error': this.hasError,
-          'has-feedback': this.hasFeedback
-        }
       }
     }
   }
