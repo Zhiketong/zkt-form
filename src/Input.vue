@@ -1,15 +1,11 @@
 <template>
-  <input :value="value" @input="$emit('input', $event.target.value)" class="form-control">
+  <input v-model="value[name]" class="form-control">
 </template>
 <script>
+  import Base from './Base.vue'
+
   export default {
     name: 'Input',
-    props: {
-      name: {
-        type: String
-      },
-      value: {
-      }
-    }
+    extends: Base
   }
 </script>

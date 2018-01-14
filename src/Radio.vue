@@ -1,7 +1,7 @@
 <template>
   <div class="radio">
     <label class="radio-inline" v-for="option in options" :key="option.value">
-        <input type="radio" v-model="val" :value="option.value" :name="name">
+        <input type="radio" v-model="value[name]" :value="option.value" :name="name">
         <span>{{option.label}}</span>
       </label>
   </div>

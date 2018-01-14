@@ -4,25 +4,20 @@
       <slot name="header"></slot>
     </form-group>
     <form-group
-    v-for="group in layout"
-    v-bind="group"
-    :key="group.name"
-    :ref="group.name"
+    v-for="row in fields"
+    v-bind="row"
+    :key="row.name"
+    :ref="row.name"
     >
-      <div :class="group.label.col|col" v-if="group.label">
-        <Label v-bind="group.label" />
-      </div>
-      <div v-for="field in group.fields" :class="fields[field].col|col" v-if="fields[field]">
+      <div v-for="field in row" :class="field.col|col" :key="field.name">
         <component
-          v-if="fields[field]"
-          v-bind="fields[field]"
-          v-model="group.nested?value[group.name][field]:value[field]"
-          :key="field"
-          :is="fields[field]['tagName']"
-          :ref="field"
+          v-bind="field"
+          v-model="!field.group?value:value[field.group]"
+          :is="field['tagName']"
+          :ref="field.name"
         />
-        <i class="glyphicon form-control-feedback" v-if="fields[field].icon" :class="['glyphicon-'+fields[field].icon]"></i>
-        <p class="help-block">{{fields[field].helpText}}</p>
+        <i class="glyphicon form-control-feedback" v-if="field.icon" :class="['glyphicon-'+field.icon]"></i>
+        <p class="help-block">{{field.helpText}}</p>
       </div>
     </form-group>
     <div class="form-group">
@@ -65,12 +60,6 @@
     },
     props: {
       fields: {
-        type: Object,
-        default () {
-          return {}
-        }
-      },
-      layout: {
         type: Array,
         default () {
           return []

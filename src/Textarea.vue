@@ -1,15 +1,11 @@
 <template>
-  <textarea @input="$emit('input', $event.target.value)" class="form-control">{{value}}</textarea>
+  <textarea v-model="value[name]" class="form-control">{{value}}</textarea>
 </template>
 <script>
+  import Base from './Base.vue'
+
   export default {
     name: 'Input',
-    props: {
-      name: {
-        type: String
-      },
-      value: {
-      }
-    }
+    extends: Base
   }
 </script>

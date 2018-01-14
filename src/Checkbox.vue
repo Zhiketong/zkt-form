@@ -3,7 +3,7 @@
     <label class="checkbox-inline" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
-          v-model="val"
+          v-model="value[name]"
           :value="option.value"
           :name="name">
         <span>{{option.label}}</span>

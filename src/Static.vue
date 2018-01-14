@@ -1,14 +1,11 @@
 <template>
-  <div class="form-control-static" v-html="value"></div>
+  <div class="form-control-static" v-html="value[name]"></div>
 </template>
 <script>
+  import Base from './Base.vue'
+
   export default {
     name: 'Static',
-    props: {
-      value: {
-        type: String,
-        default: ''
-      }
-    }
+    extends: Base
   }
 </script>
