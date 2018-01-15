@@ -10,6 +10,8 @@ export default [
     name: 'input',
     tagName: 'Input',
     value: 10,
+    required: true,
+    icon: 'calendar',
     col: {
       md: 5
     },
@@ -171,6 +173,10 @@ export default [
   }],
   [{
     name: 'exbutton',
-    tagName: 'Button'
+    tagName: 'Button',
+    col: {
+      md: 4,
+      'md-offset': 4
+    }
   }]
 ]

@@ -3,7 +3,7 @@
 </template>
 <script>
   export default {
-    name: 'Label',
+    name: 'FormLabel',
     props: {
       text: {
         type: String,

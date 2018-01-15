@@ -6,7 +6,7 @@
 </template>
 <script>
   export default {
-    name: 'Select',
+    name: 'FormSelect',
     props: {
       name: {
         type: String,

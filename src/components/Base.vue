@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'Base',
+    name: 'FormBase',
     props: {
       name: {
         type: String,

@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" @submit="onSubmit">
     <form-group>
       <slot name="header"></slot>
     </form-group>
@@ -7,16 +7,23 @@
     v-for="(row, index) in fields"
     :key="index"
     >
-      <div v-for="field in row" :class="field.col|col" :key="field.name">
+      <form-col
+        v-for="field in row"
+        v-bind="{
+          col: field.col,
+          helpText: field.helpText,
+          icon:field.icon,
+          $v: $v.value[field.name]
+          }"
+        :key="field.name">
         <component
           v-bind="field"
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
           :ref="field.name"
         />
-        <i class="glyphicon form-control-feedback" v-if="field.icon" :class="['glyphicon-'+field.icon]"></i>
-        <p class="help-block">{{field.helpText}}</p>
-      </div>
+
+      </form-col>
     </form-group>
     <form-group>
       <slot name="footer"></slot>
@@ -24,7 +31,10 @@
   </form>
 </template>
 <script>
+  import {validationMixin} from 'vuelidate'
+  import * as validators from 'vuelidate/lib/validators'
   import FormGroup from './Group.vue'
+  import FormCol from './Col.vue'
   import FormLabel from './Label.vue'
   import FormInput from './Input.vue'
   import FormNumber from './Number.vue'
@@ -36,8 +46,11 @@
 
   export default {
     name: 'Form',
+    validators,
+    mixins: [validationMixin],
     components: {
       FormGroup,
+      FormCol,
       FormLabel,
       FormInput,
       FormNumber,
@@ -46,15 +59,6 @@
       FormRadio,
       FormSelect,
       FormStatic
-    },
-    filters: {
-      col (obj = {md: 12, sm: 12, lg: 12}) {
-        var col = []
-        for (let k in obj) {
-          col.push(`col-${k}-${obj[k]}`)
-        }
-        return col
-      }
     },
     props: {
       fields: {
@@ -68,6 +72,25 @@
         default () {
           return {}
         }
+      },
+      validation: {
+        type: Object,
+        default () {
+          return {
+            value: {
+            }
+          }
+        }
+      }
+    },
+    validations () {
+      return {
+        value: this.validation
+      }
+    },
+    methods: {
+      onSubmit () {
+        this.$v.$touch()
       }
     }
   }

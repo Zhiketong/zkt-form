@@ -1,0 +1,51 @@
+<template>
+  <div class="col" :class="className">
+    <slot></slot>
+    <i class="glyphicon form-control-feedback" v-if="icon" :class="['glyphicon-'+icon]"></i>
+    <p class="help-block" v-if="helpText">{{helpText}}</p>
+    <p class="help-block" v-if="$v.required===false">该字段必须</p>
+    <p class="help-block" v-if="$v.minLength===false">该字段长度必须不少于{{$v.$params['minLength']['min']}}</p>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'FormCol',
+    props: {
+      helpText: {
+        type: String,
+        default: ''
+      },
+      icon: {
+        type: String,
+        default: ''
+      },
+      col: {
+        type: Object,
+        default () {
+          return {
+            md: 12,
+            sm: 12,
+            lg: 12
+          }
+        }
+      },
+      $v: {
+        type: Object,
+        default () {
+          return {}
+        }
+      }
+    },
+    computed: {
+      className () {
+        var className = []
+        this.$v.$invalid&&className.push('has-error')
+        this.icon&&className.push('has-feedback')
+        for (let k in this.col) {
+          className.push(`col-${k}-${this.col[k]}`)
+        }
+        return className
+      }
+    }
+  }
+</script>

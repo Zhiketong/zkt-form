@@ -8,7 +8,7 @@
 </template>
 <script>
   export default {
-    name: 'Radio',
+    name: 'FormRadio',
     props: {
       name: {
         type: String,

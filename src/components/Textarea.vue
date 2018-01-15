@@ -5,7 +5,7 @@
   import Base from './Base.vue'
 
   export default {
-    name: 'Input',
+    name: 'FormTextarea',
     extends: Base
   }
 </script>

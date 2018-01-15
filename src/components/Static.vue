@@ -5,7 +5,7 @@
   import Base from './Base.vue'
 
   export default {
-    name: 'Static',
+    name: 'FormStatic',
     extends: Base
   }
 </script>

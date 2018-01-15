@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <div class="col-md-4">
-        <textarea class="form-control" rows="10" v-model="modelText"></textarea>
+    <div class="col-md-6">
+        <textarea class="form-control" rows="30" >{{model}}</textarea>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
       <Form
         class="form-horizontal"
         :fields="fields"
+        :validation="validation"
         ref="form"
         v-model="model"
         @submit.native.prevent="onSubmit">
@@ -21,20 +22,11 @@
 <script>
 import Form from './ExForm.vue'
 import fields from './fields'
+import validation from './validation'
 export default {
   name: 'app',
   components: {
     Form
-  },
-  computed: {
-    modelText: {
-      get () {
-        return JSON.stringify(this.model)
-      },
-      set (text) {
-        this.model = JSON.parse(text)
-      }
-    }
   },
   data () {
     return {
@@ -52,7 +44,8 @@ export default {
           number22: 33
         }
       },
-      fields: fields
+      fields: fields,
+      validation: validation
     }
   },
   methods: {
