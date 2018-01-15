@@ -1,5 +1,5 @@
 <template>
-  <textarea v-model="value[name]" class="form-control">{{value}}</textarea>
+  <textarea v-model="value[name]" class="form-control"></textarea>
 </template>
 <script>
   import Base from './Base.vue'

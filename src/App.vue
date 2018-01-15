@@ -19,6 +19,7 @@
 
 <script>
 import Form from './Form.vue'
+import fields from './fields'
 export default {
   name: 'app',
   components: {
@@ -39,7 +40,7 @@ export default {
       model: {
         input: 'input type text',
         number: 11,
-        textarea: 'hello textarea',
+        textarea: 'hello \n textarea',
         checkbox: ['1'],
         radio: '1',
         select: '2',
@@ -49,127 +50,7 @@ export default {
           number22: 33
         }
       },
-      fields: [
-        [{
-          tagName: 'Label',
-          text: '输入框',
-          col: {
-            md: 2
-          }
-        },
-        {
-          name: 'input',
-          tagName: 'Input',
-          value: 10,
-          icon: 'plus',
-          id: 'number',
-          col: {
-            md: 4
-          },
-          style: {
-            color: 'red',
-            fontSize: '14px',
-          },
-          helpText: '这里才是帮助文本'
-        },
-        {
-          name: 'number',
-          tagName: 'Number',
-          value: 10,
-          icon: 'plus',
-          id: 'number',
-          col: {
-            md: 4
-          },
-          style: {
-            color: 'red',
-            fontSize: '14px',
-          },
-          helpText: '这里才是帮助文本'
-        }],
-        [{
-          name: 'textarea',
-          tagName: 'Textarea',
-          value: 'hello world textarea',
-          col: {
-            md: 8
-          }
-        }],
-        [{
-          name: 'checkbox',
-          tagName: 'Checkbox',
-          value: ['1'],
-          col: {
-            md: 8
-          },
-          options: [{
-            label: 'option1',
-            value: '1'
-          }, {
-            label: 'option2',
-            value: '2'
-          }]
-        }],
-        [{
-          name: 'radio',
-          tagName: 'Radio',
-          value: '1',
-          col: {
-            md: 8
-          },
-          options: [{
-            label: 'option1',
-            value: '1'
-          }, {
-            label: 'option2',
-            value: '2'
-          }]
-        }],
-        [{
-          name: 'select',
-          tagName: 'Select',
-          col: {
-            md: 8
-          },
-          options: [{
-            label: 'option1',
-            value: '1'
-          }, {
-            label: 'option2',
-            value: '2'
-          }]
-        }],
-        [{
-            name: 'static',
-            tagName: 'Static',
-            type: 'number',
-            value: 10,
-            id: 'static',
-            col: {
-              md: 4
-            },
-        }],
-        [{
-            name: 'number11',
-            tagName: 'Input',
-            type: 'number',
-            group: 'nested',
-            value: 10,
-            col: {
-              md: 4
-            }
-        },
-        {
-            name: 'number22',
-            tagName: 'Input',
-            type: 'number',
-            group: 'nested',
-            value: 10,
-            col: {
-              md: 4
-            }
-        }]
-      ]
+      fields: fields
     }
   },
   methods: {

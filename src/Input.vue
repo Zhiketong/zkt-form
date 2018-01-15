@@ -1,5 +1,5 @@
 <template>
-  <input v-model="value[name]" class="form-control">
+  <input v-model.trim="value[name]" class="form-control">
 </template>
 <script>
   import Base from './Base.vue'

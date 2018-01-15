@@ -19,9 +19,7 @@
       </div>
     </form-group>
     <form-group>
-      <slot name="footer">
-        <input type="submit" class="btn btn-primary btn-block">
-      </slot>
+      <slot name="footer"></slot>
     </form-group>
   </form>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="form-group" :class="{'has-error': hasError}">
     <slot></slot>
     <div class="clearfix"></div>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
@@ -17,9 +17,6 @@
         type: Boolean,
         default: false
       }
-    },
-    mounted () {
-      console.log(this)
     }
   }
 </script>
