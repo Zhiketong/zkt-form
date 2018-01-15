@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="col-md-6">
-        <textarea class="form-control" rows="30" >{{model}}</textarea>
+        <pre>{{model}}</pre>
+        <pre>{{fields}}</pre>
     </div>
     <div class="col-md-6">
       <Form

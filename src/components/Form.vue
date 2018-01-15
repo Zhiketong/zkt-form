@@ -13,7 +13,7 @@
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
-          $v: $v.value[field.name]
+          $v: field.group?$v.value[field.group][field.name]:$v.value[field.name]
           }"
         :key="field.name">
         <component
