@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Form from './Form.vue'
+import Form from './components/Form.vue'
 import fields from './fields'
 export default {
   name: 'app',
