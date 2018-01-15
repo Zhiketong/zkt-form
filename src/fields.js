@@ -157,5 +157,9 @@ export default [
       'btn-primary': true,
       'btn-block': true
     }
+  }],
+  [{
+    name: 'exbutton',
+    tagName: 'Button'
   }]
 ]
