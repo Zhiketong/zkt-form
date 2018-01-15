@@ -10,7 +10,7 @@
         ref="form"
         v-model="model"
         @submit.native.prevent="onSubmit">
-        <button type="submit" slot="footer">button</button>
+        <!-- <button type="submit" slot="footer">button</button> -->
       </Form>
     </div>
 

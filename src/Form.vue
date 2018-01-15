@@ -20,7 +20,7 @@
     </form-group>
     <form-group>
       <slot name="footer">
-        <input type="submit" class="btn btn-primary">
+        <input type="submit" class="btn btn-primary btn-block">
       </slot>
     </form-group>
   </form>
