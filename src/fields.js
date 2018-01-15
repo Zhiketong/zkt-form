@@ -51,7 +51,7 @@ export default [
     tagName: 'Checkbox',
     value: ['1'],
     col: {
-      md: 10
+      md: 5
     },
     options: [{
       label: 'option1',
@@ -59,6 +59,17 @@ export default [
     }, {
       label: 'option2',
       value: '2'
+    }]
+  },
+  {
+    name: 'truefalse',
+    tagName: 'Checkbox',
+    col: {
+      md: 5
+    },
+    options: [{
+      label: '是否同意？',
+      value: '1'
     }]
   }],
   [{
