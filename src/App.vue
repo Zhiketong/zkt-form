@@ -10,7 +10,8 @@
         ref="form"
         v-model="model"
         @submit.native.prevent="onSubmit">
-        <!-- <button type="submit" slot="footer">button</button> -->
+        <div class="alert alert-success" slot="header">Form Header</div>
+        <div class="alert alert-warning" slot="footer">Form Footer</div>
       </Form>
     </div>
 
@@ -18,7 +19,7 @@
 </template>
 
 <script>
-import Form from './components/Form.vue'
+import Form from './ExForm.vue'
 import fields from './fields'
 export default {
   name: 'app',
