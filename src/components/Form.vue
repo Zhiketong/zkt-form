@@ -57,13 +57,13 @@
         typeof obj
   }
 
+  // 转换校验配置规则，把配置的值转换成函数调用
   function transformValidation (validation) {
     for(let name in validation) {
       let validator = validation[name]
       for(let k in validator) {
         if (typeOf(validator[k]) === 'object') {
           validation[name] = transformValidation(validation[name])
-          console.log(validation[name])
           break
         }
         if (!validators[k]) continue
