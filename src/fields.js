@@ -205,6 +205,36 @@ export default [
     icon: 'ice-lolly'
   }],
   [{
+    tagName: 'Label',
+    text: '级联',
+    col: {
+      md: 2
+    }
+  },
+  {
+    name: 'level1',
+    tagName: 'Select',
+    col: {
+      md: 2
+    },
+    options: [{
+      label: '一级1',
+      value: '1'
+    },
+    {
+      label: '一级2',
+      value: '2'
+    }]
+  },
+  {
+    name: 'level2',
+    tagName: 'Select',
+    col: {
+      md: 2
+    },
+    options: []
+  }],
+  [{
     name: 'submit',
     tagName: 'Input',
     type: 'submit',

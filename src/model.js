@@ -14,5 +14,7 @@ export default {
   user: '',
   password: '',
   repeatPasword: '',
+  level1: '',
+  level2: '',
   submit: '提交'
 }

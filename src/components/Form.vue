@@ -21,7 +21,7 @@
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
           :ref="field.name"
-          @input.native="field.group?$v.value[field.group][field.name].$touch():$v.value[field.name].$touch()"
+          @input.native="field.group?$v.value[field.group][field.name]&&$v.value[field.group][field.name].$touch():$v.value[field.name]&&$v.value[field.name].$touch()"
         />
 
       </form-col>
