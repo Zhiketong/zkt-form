@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit="onSubmit">
+  <form class="form" @submit="$v.$touch()">
     <form-group>
       <slot name="header"></slot>
     </form-group>
@@ -114,7 +114,6 @@
     },
     validations () {
       var validation = transformValidation(this.validation)
-      console.log(validation)
       return {
         value: this.validation
       }

@@ -47,7 +47,8 @@ export default {
         nested: {
           number11: 22,
           number22: 33
-        }
+        },
+        submit: '提交'
       },
       fields: fields,
       validation: validation
