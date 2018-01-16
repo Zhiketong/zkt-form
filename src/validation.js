@@ -19,7 +19,8 @@ export default {
     }
   },
   user: {
-    requiredIf: true
+    requiredIf: true,
+    email: true
   },
   password: {
     required: true
