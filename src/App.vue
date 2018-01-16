@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <div class="col-md-6">
+        <h3>表单值</h3>
         <pre>{{model}}</pre>
+        <h3>校验规则</h3>
+        <pre>{{validation}}</pre>
+        <h3>控件设置</h3>
         <pre>{{fields}}</pre>
     </div>
     <div class="col-md-6">
