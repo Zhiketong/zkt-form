@@ -42,7 +42,7 @@
     computed: {
       className () {
         var className = []
-        this.$v.$invalid&&className.push('has-error')
+        this.$v.$error&&className.push('has-error')
         this.icon&&className.push('has-feedback')
         for (let k in this.col) {
           className.push(`col-${k}-${this.col[k]}`)
