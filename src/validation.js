@@ -3,7 +3,8 @@ export default {
     required: true // 必须设置为true
   },
   textarea: {
-    minLength: 4
+    minLength: 4,
+    maxLength: 16
   },
   nested: {
     number11: {
@@ -14,7 +15,7 @@ export default {
     }
   },
   user: {
-    required: true
+    requiredIf: true
   },
   password: {
     required: true
