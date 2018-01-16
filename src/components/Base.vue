@@ -15,6 +15,12 @@
       group: {
         type: String,
         default: ''
+      },
+      validation: {
+        type: Object,
+        default () {
+          return {}
+        }
       }
     }
   }

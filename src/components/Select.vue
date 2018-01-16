@@ -1,7 +1,16 @@
 <template>
-  <select v-model="value[name]" class="form-control" @change="$emit('change', $event.target.value)">
+  <select
+    v-model="value[name]"
+    class="form-control"
+    @change="$emit('change', $event.target.value)">
     <option value="">请选择</option>
-    <option :value="option.value" v-for="option in options" :key="option.value">{{option.label}}</option>
+    <option
+    v-for="option in options" 
+    :value="option.value"
+    :key="option.value"
+    >
+      {{option.label}}
+    </option>
   </select>
 </template>
 <script>

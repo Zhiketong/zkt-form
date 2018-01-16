@@ -14,8 +14,8 @@ export default [
     icon: 'calendar',
     col: {
       md: 5
-    },
-    helpText: '这里是文本'
+    }
+    // helpText: '这里是文本'
   },
   {
     name: 'number',
@@ -24,8 +24,8 @@ export default [
     id: 'number',
     col: {
       md: 5
-    },
-    helpText: '这里是数字'
+    }
+    // helpText: '这里是数字'
   }],
   [{
     tagName: 'Label',

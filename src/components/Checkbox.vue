@@ -5,7 +5,8 @@
           type="checkbox"
           v-model="value[name]"
           :value="option.value"
-          :name="name">
+          :name="name"
+          @change="$emit('change', $event.target.value)">
         <span>{{option.label}}</span>
       </label>
   </div>
