@@ -122,6 +122,9 @@
     methods: {
       validate () {
         return this.$v.$touch()
+      },
+      getField (name) {
+        return this.$refs[name][0]
       }
     }
   }

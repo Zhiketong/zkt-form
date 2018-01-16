@@ -23,7 +23,7 @@
 ```javascript
 var form = this.$refs.form
 var name = 'fieldName' // model fields validation中的name一一对应
-var field = form.$refs[name][0]
+var field = form.getField(name)
 ```
 ### 绑定事件
 ```javascript

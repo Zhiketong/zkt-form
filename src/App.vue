@@ -48,6 +48,8 @@ export default {
   },
   mounted () {
     console.log(this.$refs.form)
+    var input = this.$refs.form.getField('input')
+    console.log(input)
   }
 }
 </script>
