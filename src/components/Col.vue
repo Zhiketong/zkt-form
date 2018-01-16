@@ -9,6 +9,9 @@
     <p class="help-block" v-if="$v.url===false">请填写正确的网址</p>
     <p class="help-block" v-if="$v.ipAddress===false">请填写正确的IP地址</p>
     <p class="help-block" v-if="$v.macAddress===false">请填写正确的MAC地址</p>
+    <p class="help-block" v-if="$v.alpha===false">该字段只能填写字母</p>
+    <p class="help-block" v-if="$v.numberic===false">该字段只能填写数字</p>
+    <p class="help-block" v-if="$v.alphaNum===false">该字段只能填写字母和数字</p>
     <p class="help-block" v-if="$v.minLength===false">该字段不能少于{{$v.$params['minLength']['min']}}个字符</p>
     <p class="help-block" v-if="$v.maxLength===false">该字段不能多于{{$v.$params['maxLength']['max']}}个字符</p>
     <p class="help-block" v-if="$v.minValue===false">该字段不能小于{{$v.$params['minValue']['min']}}</p>
