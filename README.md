@@ -13,6 +13,42 @@
 1. 支持校验和自定义校验规则
 1. 支持多列布局
 
+## 使用方法
+
+### 调用form
+```html
+<Form v-model="model" :fields="fields" :validation="validation" ref="form" @submit="onSubmit" />
+```
+### 获取单个字段
+```javascript
+var form = this.$refs.form
+var name = 'fieldName' // model fields validation中的name一一对应
+var field = form.$refs[name][0]
+```
+### 绑定事件
+```javascript
+field1.$on('change', () => {
+  field2.value = 'other value'
+})
+```
+
+## 扩展表单
+```
+import Form from './Form.vue'
+import FormOtherField from './OtherField.vue'
+export default {
+  extends: Form,
+  components: {
+    FormOtherField
+  }
+}
+// 在fields中
+{
+  name: 'otherfield',
+  tagName: 'OtherField'
+}
+```
+
 ## Build Setup
 
 ``` bash
