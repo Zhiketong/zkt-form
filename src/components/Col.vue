@@ -6,6 +6,7 @@
     <template v-if="$v.$error">
     <p class="help-block" v-if="$v.required===false">该字段必须填写</p>
     <p class="help-block" v-if="$v.email===false">请填写正确的邮箱</p>
+    <p class="help-block" v-if="$v.url===false">请填写正确的网址</p>
     <p class="help-block" v-if="$v.minLength===false">该字段不能少于{{$v.$params['minLength']['min']}}个字符</p>
     <p class="help-block" v-if="$v.maxLength===false">该字段不能多于{{$v.$params['maxLength']['max']}}个字符</p>
     <p class="help-block" v-if="$v.minValue===false">该字段不能小于{{$v.$params['minValue']['min']}}</p>

@@ -19,8 +19,11 @@ export default {
     }
   },
   user: {
-    requiredIf: true,
+    required: true,
     email: true
+  },
+  site: {
+    url: true
   },
   password: {
     required: true

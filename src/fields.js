@@ -127,7 +127,9 @@ export default [
   {
     name: 'static',
     tagName: 'Static',
-    type: 'number',
+    style: {
+      color: 'red'
+    },
     value: 10,
     id: 'static',
     col: {
@@ -176,6 +178,21 @@ export default [
       md: 10
     },
     icon: 'user'
+  }],
+  [{
+    tagName: 'Label',
+    text: '个人主页',
+    col: {
+      md: 2
+    }
+  },
+  {
+    name: 'site',
+    tagName: 'Input',
+    placeholder: '请输入个人主页地址',
+    col: {
+      md: 10
+    }
   }],
   [{
     tagName: 'Label',

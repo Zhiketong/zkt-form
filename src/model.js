@@ -12,6 +12,7 @@ export default {
     number22: 33
   },
   user: '',
+  site: '',
   password: '',
   repeatPasword: '',
   level1: '',
