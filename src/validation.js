@@ -1,17 +1,16 @@
-import Form from './components/Form.vue'
 export default {
   input: {
-    required: Form.validators.required
+    required: null
   },
   textarea: {
-    minLength: Form.validators.minLength(4)
+    minLength: 4
   },
   nested: {
     number11: {
-      required: Form.validators.required
+      required: null
     },
     number22: {
-      required: Form.validators.required
+      required: null
     }
   }
 }
