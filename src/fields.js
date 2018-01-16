@@ -170,13 +170,5 @@ export default [
       'btn-primary': true,
       'btn-block': true
     }
-  }],
-  [{
-    name: 'exbutton',
-    tagName: 'Button',
-    col: {
-      md: 4,
-      'md-offset': 4
-    }
   }]
 ]

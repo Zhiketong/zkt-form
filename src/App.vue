@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Form from './ExForm.vue'
+import Form from './components'
 import fields from './fields'
 import validation from './validation'
 export default {

@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
@@ -15,8 +17,9 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader'
-        ],
-      },      {
+        ]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -58,6 +61,7 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
+  module.exports.entry = './src/components/index.js'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -66,7 +70,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       }

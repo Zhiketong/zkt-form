@@ -8,7 +8,7 @@ export default {
   },
   nested: {
     number11: {
-      required: Form.validators.required,
+      required: Form.validators.required
     },
     number22: {
       required: Form.validators.required
