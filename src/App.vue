@@ -50,8 +50,21 @@ export default {
   },
   mounted () {
     console.log(this.$refs.form)
-    var input = this.$refs.form.getField('input')
-    console.log(input)
+    var level1 = this.$refs.form.getField('level1')
+    var level2 = this.$refs.form.getField('level2')
+    console.log(level1)
+    level1.$on('change', () => {
+      console.log('level1 change')
+      level2.$emit('update:options', [{
+        label: '二级1',
+        value: '1'
+      },
+      {
+        label: '二级2',
+        value: '2'
+      }]
+    )
+    })
   }
 }
 </script>

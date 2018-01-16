@@ -17,7 +17,7 @@
           }"
         :key="field.name">
         <component
-          v-bind="field"
+          v-bind.sync="field"
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
           :ref="field.name"
@@ -47,7 +47,9 @@
 
   function typeOf (obj) {
     var class2type = {} ;
-    "Boolean Number String Function Array Date RegExp Object Error".split(" ").forEach(function(e,i){
+    "Boolean Number String Function Array Date RegExp Object Error"
+    .split(" ")
+    .forEach(function(e,i){
         class2type[ "[object " + e + "]" ] = e.toLowerCase()
     })
     if ( obj == null ){
@@ -125,7 +127,7 @@
         return !this.$v.$error
       },
       getField (name) {
-        return this.$refs[name][0]
+        return this.$refs[name]&&this.$refs[name][0]
       }
     }
   }
