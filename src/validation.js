@@ -1,6 +1,6 @@
 export default {
   input: {
-    required: null
+    required: null // 必须设置为null
   },
   textarea: {
     minLength: 4
