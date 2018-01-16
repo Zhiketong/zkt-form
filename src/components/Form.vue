@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit="$v.$touch()">
+  <form class="form">
     <form-group>
       <slot name="header"></slot>
     </form-group>
@@ -21,6 +21,7 @@
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
           :ref="field.name"
+          @input.native="field.group?$v.value[field.group][field.name].$touch():$v.value[field.name].$touch()"
         />
 
       </form-col>
@@ -67,7 +68,7 @@
           break
         }
         if (!validators[k]) continue
-        validator[k] = validator[k]===null ? validators[k] : validators[k](validator[k])
+        validator[k] = validator[k]===true ? validators[k] : validators[k](validator[k])
       }
     }
     return validation
@@ -119,8 +120,8 @@
       }
     },
     methods: {
-      onSubmit () {
-        this.$v.$touch()
+      validate () {
+        return this.$v.$touch()
       }
     }
   }

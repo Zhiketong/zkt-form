@@ -1,16 +1,26 @@
 export default {
   input: {
-    required: null // 必须设置为null
+    required: true // 必须设置为true
   },
   textarea: {
     minLength: 4
   },
   nested: {
     number11: {
-      required: null
+      required: true
     },
     number22: {
-      required: null
+      required: true
     }
+  },
+  user: {
+    required: true
+  },
+  password: {
+    required: true
+  },
+  repeatPasword: {
+    required: true,
+    sameAs: 'password'
   }
 }

@@ -3,8 +3,11 @@
     <slot></slot>
     <i class="glyphicon form-control-feedback" v-if="icon" :class="['glyphicon-'+icon]"></i>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
-    <p class="help-block" v-if="$v.required===false">该字段必须</p>
-    <p class="help-block" v-if="$v.minLength===false">该字段长度必须不少于{{$v.$params['minLength']['min']}}</p>
+    <template v-if="$v.$error">
+    <p class="help-block" v-if="$v.required===false">该字段必须填写</p>
+    <p class="help-block" v-if="$v.minLength===false">该字段不能少于{{$v.$params['minLength']['min']}}个字符</p>
+    <p class="help-block" v-if="$v.sameAs===false">该字段必须和{{$v.$params['sameAs']['eq']}}相等</p>
+    </template>
   </div>
 </template>
 <script>

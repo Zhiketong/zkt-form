@@ -162,6 +162,49 @@ export default [
     }
   }],
   [{
+    tagName: 'Label',
+    text: '用户名',
+    col: {
+      md: 2
+    }
+  },
+  {
+    name: 'user',
+    tagName: 'Input',
+    placeholder: '用户名',
+    col: {
+      md: 10
+    },
+    icon: 'user'
+  }],
+  [{
+    tagName: 'Label',
+    text: '密码',
+    col: {
+      md: 2
+    }
+  },
+  {
+    name: 'password',
+    tagName: 'Input',
+    type: 'password',
+    placeholder: '密码',
+    col: {
+      md: 5
+    },
+    icon: 'ice-lolly'
+  },
+  {
+    name: 'repeatPasword',
+    tagName: 'Input',
+    type: 'password',
+    placeholder: '确认密码',
+    col: {
+      md: 5
+    },
+    icon: 'ice-lolly'
+  }],
+  [{
     name: 'submit',
     tagName: 'Input',
     type: 'submit',
