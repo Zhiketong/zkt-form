@@ -2,6 +2,10 @@ export default {
   input: {
     required: true // 必须设置为true
   },
+  number: {
+    minValue: 10,
+    maxValue: 20
+  },
   textarea: {
     minLength: 4,
     maxLength: 16

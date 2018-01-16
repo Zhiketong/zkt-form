@@ -7,6 +7,8 @@
     <p class="help-block" v-if="$v.required===false">该字段必须填写</p>
     <p class="help-block" v-if="$v.minLength===false">该字段不能少于{{$v.$params['minLength']['min']}}个字符</p>
     <p class="help-block" v-if="$v.maxLength===false">该字段不能多于{{$v.$params['maxLength']['max']}}个字符</p>
+    <p class="help-block" v-if="$v.minValue===false">该字段不能小于{{$v.$params['minValue']['min']}}</p>
+    <p class="help-block" v-if="$v.maxValue===false">该字段不能大于{{$v.$params['maxValue']['max']}}</p>
     <p class="help-block" v-if="$v.sameAs===false">该字段必须和{{$v.$params['sameAs']['eq']}}相等</p>
     </template>
   </div>
