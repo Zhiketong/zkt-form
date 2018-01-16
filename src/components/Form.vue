@@ -121,7 +121,8 @@
     },
     methods: {
       validate () {
-        return this.$v.$touch()
+        this.$v.$touch()
+        return !this.$v.$error
       },
       getField (name) {
         return this.$refs[name][0]

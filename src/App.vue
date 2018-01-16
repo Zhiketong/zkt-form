@@ -44,6 +44,8 @@ export default {
   methods: {
     onSubmit () {
       console.log('onSubmit')
+      var valid = this.$refs.form.validate()
+      console.log(valid)
     }
   },
   mounted () {
