@@ -26,9 +26,9 @@
 
 <script>
 import Form from './components'
-import fields from './fields'
-import validation from './validation'
-import model from './model'
+import fields from './assets/fields'
+import validation from './assets/validation'
+import model from './assets/model'
 export default {
   name: 'app',
   components: {
