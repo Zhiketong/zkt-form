@@ -5,6 +5,8 @@
     <p class="help-block" v-if="helpText">{{helpText}}</p>
     <template v-if="$v.$error">
     <p class="help-block" v-if="$v.required===false">该字段必须填写</p>
+    <p class="help-block" v-if="$v.requiredIf===false">该字段必须填写</p>
+    <p class="help-block" v-if="$v.requiredUnless===false">该字段必须填写</p>
     <p class="help-block" v-if="$v.email===false">请填写正确的邮箱</p>
     <p class="help-block" v-if="$v.url===false">请填写正确的网址</p>
     <p class="help-block" v-if="$v.ipAddress===false">请填写正确的IP地址</p>

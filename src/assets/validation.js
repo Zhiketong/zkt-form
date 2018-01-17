@@ -7,6 +7,7 @@ export default {
     maxValue: 20
   },
   textarea: {
+    requiredIf: 'user',
     minLength: 4,
     maxLength: 16
   },
@@ -19,7 +20,7 @@ export default {
     }
   },
   user: {
-    required: true,
+    // required: true,
     email: true
   },
   site: {
