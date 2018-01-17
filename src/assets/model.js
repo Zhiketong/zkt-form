@@ -6,7 +6,7 @@ export default {
   truefalse: true,
   radio: '1',
   select: '2',
-  'static': '<h3>请注意</h3>这里可以输入<b>HTML</b>哦<br  />哦啦啦换行',
+  'static': '<div class="well well-sm">(*@ο@*) 哇～，这里可以输入一些自定义的<b>HTML</b></div>',
   nested: {
     number11: 22,
     number22: 33

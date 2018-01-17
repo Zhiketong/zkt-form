@@ -118,23 +118,8 @@ export default [
     }]
   }],
   [{
-    tagName: 'Label',
-    text: 'html',
-    col: {
-      md: 2
-    }
-  },
-  {
     name: 'static',
-    tagName: 'Static',
-    style: {
-      color: 'red'
-    },
-    value: 10,
-    id: 'static',
-    col: {
-      md: 4
-    }
+    tagName: 'Static'
   }],
   [{
     tagName: 'Label',
