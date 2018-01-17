@@ -1,11 +1,12 @@
 <template>
   <form class="form">
-    <form-group>
+    <form-group ref="groupHeader">
       <slot name="header"></slot>
     </form-group>
     <form-group
     v-for="(row, index) in fields"
     :key="index"
+    :ref="'group'+index"
     >
       <form-col
         v-for="field in row"
@@ -27,7 +28,7 @@
 
       </form-col>
     </form-group>
-    <form-group>
+    <form-group ref="groupFooter">
       <slot name="footer"></slot>
     </form-group>
   </form>
