@@ -32,5 +32,8 @@ export default {
   repeatPasword: {
     required: true,
     sameAs: 'password'
+  },
+  checkbox: {
+    required: true
   }
 }

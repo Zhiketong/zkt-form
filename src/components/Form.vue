@@ -21,7 +21,8 @@
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
           :ref="field.name"
-          @input.native="field.group?$v.value[field.group][field.name]&&$v.value[field.group][field.name].$touch():$v.value[field.name]&&$v.value[field.name].$touch()"
+          @input.native="_onChange(field)"
+          @change.native="_onChange(field)"
         />
 
       </form-col>
@@ -84,9 +85,8 @@
       }
     },
     validations () {
-      var validation = utils.transformValidation(this.validation)
       return {
-        value: this.validation
+        value: utils.transformValidation(this.validation)
       }
     },
     methods: {
@@ -96,6 +96,13 @@
       },
       getField (name) {
         return this.$refs[name]&&this.$refs[name][0]
+      },
+      _onChange (field) {
+        if (field.group) {
+          this.$v.value[field.group][field.name]&&this.$v.value[field.group][field.name].$touch()
+        } else {
+          this.$v.value[field.name]&&this.$v.value[field.name].$touch()
+        }
       }
     }
   }
