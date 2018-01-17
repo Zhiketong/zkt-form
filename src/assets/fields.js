@@ -149,6 +149,9 @@ export default [
     }
   }],
   [{
+    tagName: 'Divider'
+  }],
+  [{
     tagName: 'Label',
     text: '用户名',
     col: {

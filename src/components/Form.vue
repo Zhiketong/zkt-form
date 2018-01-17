@@ -40,6 +40,7 @@
   import FormRadio from './Radio.vue'
   import FormSelect from './Select.vue'
   import FormStatic from './Static.vue'
+  import FormDivider from './Divider.vue'
 
   export default {
     name: 'Form',
@@ -54,7 +55,8 @@
       FormCheckbox,
       FormRadio,
       FormSelect,
-      FormStatic
+      FormStatic,
+      FormDivider
     },
     props: {
       fields: {
