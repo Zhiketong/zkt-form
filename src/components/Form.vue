@@ -1,8 +1,5 @@
 <template>
   <form class="form">
-    <form-group ref="groupHeader">
-      <slot name="header"></slot>
-    </form-group>
     <form-group
     v-for="(row, index) in fields"
     :key="index"
@@ -21,15 +18,12 @@
           v-bind.sync="field"
           v-model="!field.group?value:value[field.group]"
           :is="'Form'+field['tagName']"
-          :ref="field.name"
+          :ref="'field'+field.name"
           @input.native="_onChange(field)"
           @change.native="_onChange(field)"
         />
 
       </form-col>
-    </form-group>
-    <form-group ref="groupFooter">
-      <slot name="footer"></slot>
     </form-group>
   </form>
 </template>
@@ -96,7 +90,10 @@
         return !this.$v.$error
       },
       getField (name) {
-        return this.$refs[name]&&this.$refs[name][0]
+        return this.$refs['field'+name]&&this.$refs['field'+name][0]
+      },
+      getGroup (name) {
+        return this.$refs['group'+name]&&this.$refs['group'+name][0]
       },
       _onChange (field) {
         if (field.group) {
