@@ -39,3 +39,8 @@
     }
   }
 </script>
+<style>
+.form-horizontal .radio-wrapper .radio-inline {
+  padding-top: 5px;
+}
+</style>

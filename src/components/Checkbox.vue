@@ -26,3 +26,8 @@
     }
   }
 </script>
+<style scoped>
+.form-horizontal .checkbox-wrapper .checkbox-inline {
+  padding-top: 5px;
+}
+</style>
