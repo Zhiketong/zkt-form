@@ -11,7 +11,7 @@
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
-          $v: field.group?$v.value[field.group][field.name]:$v.value[field.name]
+          validation: field.group?$v.value[field.group][field.name]:$v.value[field.name]
           }"
         :key="field.name">
         <component

@@ -3,22 +3,22 @@
     <slot></slot>
     <i class="glyphicon form-control-feedback" v-if="icon" :class="['glyphicon-'+icon]"></i>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
-    <template v-if="$v.$error">
-    <p class="help-block" v-if="$v.required===false">该字段必须填写</p>
-    <p class="help-block" v-if="$v.requiredIf===false">该字段必须填写</p>
-    <p class="help-block" v-if="$v.requiredUnless===false">该字段必须填写</p>
-    <p class="help-block" v-if="$v.email===false">请填写正确的邮箱</p>
-    <p class="help-block" v-if="$v.url===false">请填写正确的网址</p>
-    <p class="help-block" v-if="$v.ipAddress===false">请填写正确的IP地址</p>
-    <p class="help-block" v-if="$v.macAddress===false">请填写正确的MAC地址</p>
-    <p class="help-block" v-if="$v.alpha===false">该字段只能填写字母</p>
-    <p class="help-block" v-if="$v.numberic===false">该字段只能填写数字</p>
-    <p class="help-block" v-if="$v.alphaNum===false">该字段只能填写字母和数字</p>
-    <p class="help-block" v-if="$v.minLength===false">该字段不能少于{{$v.$params['minLength']['min']}}个字符</p>
-    <p class="help-block" v-if="$v.maxLength===false">该字段不能多于{{$v.$params['maxLength']['max']}}个字符</p>
-    <p class="help-block" v-if="$v.minValue===false">该字段不能小于{{$v.$params['minValue']['min']}}</p>
-    <p class="help-block" v-if="$v.maxValue===false">该字段不能大于{{$v.$params['maxValue']['max']}}</p>
-    <p class="help-block" v-if="$v.sameAs===false">该字段必须和{{$v.$params['sameAs']['eq']}}相等</p>
+    <template v-if="validation.$error">
+    <p class="help-block" v-if="validation.required===false">该字段必须填写</p>
+    <p class="help-block" v-if="validation.requiredIf===false">该字段必须填写</p>
+    <p class="help-block" v-if="validation.requiredUnless===false">该字段必须填写</p>
+    <p class="help-block" v-if="validation.email===false">请填写正确的邮箱</p>
+    <p class="help-block" v-if="validation.url===false">请填写正确的网址</p>
+    <p class="help-block" v-if="validation.ipAddress===false">请填写正确的IP地址</p>
+    <p class="help-block" v-if="validation.macAddress===false">请填写正确的MAC地址</p>
+    <p class="help-block" v-if="validation.alpha===false">该字段只能填写字母</p>
+    <p class="help-block" v-if="validation.numberic===false">该字段只能填写数字</p>
+    <p class="help-block" v-if="validation.alphaNum===false">该字段只能填写字母和数字</p>
+    <p class="help-block" v-if="validation.minLength===false">该字段不能少于{{validation.$params['minLength']['min']}}个字符</p>
+    <p class="help-block" v-if="validation.maxLength===false">该字段不能多于{{validation.$params['maxLength']['max']}}个字符</p>
+    <p class="help-block" v-if="validation.minValue===false">该字段不能小于{{validation.$params['minValue']['min']}}</p>
+    <p class="help-block" v-if="validation.maxValue===false">该字段不能大于{{validation.$params['maxValue']['max']}}</p>
+    <p class="help-block" v-if="validation.sameAs===false">该字段必须和{{validation.$params['sameAs']['eq']}}相等</p>
     </template>
   </div>
 </template>
@@ -44,7 +44,7 @@
           }
         }
       },
-      $v: {
+      validation: {
         type: Object,
         default () {
           return {}
@@ -54,7 +54,7 @@
     computed: {
       className () {
         var className = []
-        this.$v.$error&&className.push('has-error')
+        this.validation.$error&&className.push('has-error')
         this.icon&&className.push('has-feedback')
         for (let k in this.col) {
           className.push(`col-${k}-${this.col[k]}`)
