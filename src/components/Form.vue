@@ -17,8 +17,8 @@
         <component
           v-bind.sync="field"
           v-model="!field.group?value:value[field.group]"
-          :is="'Form'+field['tagName']"
-          :ref="'field'+field.name"
+          :is="field['tagName']&&'Form'+field['tagName']"
+          :ref="field.name&&'field'+field.name"
           @input.native="_onChange(field)"
           @change.native="_onChange(field)"
         />
