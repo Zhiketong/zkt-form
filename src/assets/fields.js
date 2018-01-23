@@ -248,5 +248,9 @@ export default [
       'btn-primary': true,
       'btn-block': true
     }
+  }],
+  [{
+    name: 'hidden',
+    tagName: 'Hidden'
   }]
 ]

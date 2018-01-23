@@ -17,5 +17,6 @@ export default {
   repeatPasword: '',
   level1: '',
   level2: '',
+  hidden: 'hidden',
   submit: '提交'
 }

@@ -41,6 +41,7 @@
   import FormSelect from './Select.vue'
   import FormStatic from './Static.vue'
   import FormDivider from './Divider.vue'
+  import FormHidden from './Hidden.vue'
 
   export default {
     name: 'Form',
@@ -56,7 +57,8 @@
       FormRadio,
       FormSelect,
       FormStatic,
-      FormDivider
+      FormDivider,
+      FormHidden
     },
     props: {
       fields: {
