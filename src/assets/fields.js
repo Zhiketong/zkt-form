@@ -251,6 +251,7 @@ export default [
   }],
   [{
     name: 'hidden',
-    tagName: 'Hidden'
+    tagName: 'Input',
+    type: 'hidden'
   }]
 ]
