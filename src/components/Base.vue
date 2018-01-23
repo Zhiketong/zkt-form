@@ -2,6 +2,9 @@
   import {Parser} from 'expr-eval'
   export default {
     name: 'FormBase',
+    domProps: {
+      diabled: true
+    },
     props: {
       name: {
         type: String,
@@ -9,7 +12,7 @@
       },
       expression: {
         type: String,
-        default: 'number*2'
+        default: ''
       },
       value: {
         type: Object,
@@ -30,7 +33,7 @@
     },
     computed: {
       computedValue () {
-        if (this.group) return
+        if (!this.expression) return
         var result = Parser.evaluate(this.expression, this.value)
         return result
       }

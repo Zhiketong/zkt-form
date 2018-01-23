@@ -240,6 +240,21 @@ export default [
     options: []
   }],
   [{
+    tagName: 'Label',
+    text: '表达式',
+    col: {
+      md: 2
+    }
+  },
+  {
+    tagName: 'Static',
+    name: 'expression',
+    expression: '2*number',
+    col: {
+      md: 10
+    }
+  }],
+  [{
     name: 'submit',
     tagName: 'Input',
     type: 'submit',

@@ -18,5 +18,6 @@ export default {
   level1: '',
   level2: '',
   hidden: 'hidden',
+  expression: '',
   submit: '提交'
 }
