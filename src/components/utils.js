@@ -16,16 +16,18 @@ export function typeOf (obj) {
 
 // 转换校验配置规则，把配置的值转换成函数调用
 export function transformValidation (validation) {
+  var obj = {}
   for (let name in validation) {
     let validator = validation[name]
+    obj[name] = {}
     for (let k in validator) {
       if (typeOf(validator[k]) === 'object') {
         validation[name] = transformValidation(validation[name])
         break
       }
       if (!validators[k]) continue
-      validator[k] = validator[k] === true ? validators[k] : validators[k](validator[k])
+      obj[name][k] = validator[k] === true ? validators[k] : validators[k](validator[k])
     }
   }
-  return validation
+  return obj
 }
