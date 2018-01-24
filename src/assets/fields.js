@@ -250,7 +250,7 @@ export default [
     tagName: 'Static',
     name: 'expression',
     expression: '2*number',
-    before: '2*number=',
+    before: '2<span style="color:#0f0">*</span>number<b>=</b>',
     col: {
       md: 10
     }

@@ -1,8 +1,8 @@
 <template>
   <div class="form-control-static">
-    <span class="before">{{before}}</span>
+    <span class="before" v-html="before"></span>
     <span v-html="value[name]"></span>
-    <span class="after">{{after}}</span>
+    <span class="after" v-html="after"></span>
   </div>
 </template>
 <script>
