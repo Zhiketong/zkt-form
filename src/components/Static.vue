@@ -9,7 +9,7 @@
     extends: Base,
     methods: {
       t () {
-        return this.computedValue || this.value[this.name]
+        return this.value[this.name]&&this.value[this.name].replace('{{computedValue}}', this.computedValue)
       }
     }
   }

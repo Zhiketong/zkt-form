@@ -18,6 +18,6 @@ export default {
   level1: '',
   level2: '',
   hidden: 'hidden',
-  expression: '',
+  expression: '2*number={{computedValue}}',
   submit: '提交'
 }
