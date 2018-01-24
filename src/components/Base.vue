@@ -31,11 +31,16 @@
         }
       }
     },
-    computed: {
-      computedValue () {
-        if (!this.expression) return
-        var result = Parser.evaluate(this.expression, this.value)
-        return result
+    mounted () {
+      if (this.expression) {
+        this.$watch('value',
+        (nv) => {
+           this.value[this.name] = Parser.evaluate(this.expression, this.value)
+        },
+        {
+          deep: true,
+          immediate: true
+        })
       }
     }
   }

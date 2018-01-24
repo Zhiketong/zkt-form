@@ -1,5 +1,9 @@
 <template>
-  <div class="form-control-static" v-html="t(value[name])"></div>
+  <div class="form-control-static">
+    <span class="before">{{before}}</span>
+    <span v-html="value[name]"></span>
+    <span class="after">{{after}}</span>
+  </div>
 </template>
 <script>
   import Base from './Base.vue'
@@ -7,9 +11,14 @@
   export default {
     name: 'FormStatic',
     extends: Base,
-    methods: {
-      t () {
-        return this.value[this.name]&&this.value[this.name].replace('{{computedValue}}', this.computedValue)
+    props: {
+      before: {
+        type: String,
+        default: ''
+      },
+      after: {
+        type: String,
+        default: ''
       }
     }
   }

@@ -250,6 +250,7 @@ export default [
     tagName: 'Static',
     name: 'expression',
     expression: '2*number',
+    before: '2*number=',
     col: {
       md: 10
     }
