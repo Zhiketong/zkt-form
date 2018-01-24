@@ -79,6 +79,12 @@
             }
           }
         }
+      },
+      triggers: {
+        type: Array,
+        default () {
+          return []
+        }
       }
     },
     validations () {
@@ -104,6 +110,18 @@
           this.$v.value[field.name]&&this.$v.value[field.name].$touch()
         }
       }
+    },
+    mounted () {
+
+      this.triggers.forEach((trigger) => {
+        var sourceField = this.getField(trigger.source)
+        var targetField = this.getField(trigger.target)
+        sourceField.$on(trigger.event, () => {
+          var action = targetField[trigger.action]
+          console.log(targetField,action)
+          action&&action.apply(sourceField, trigger.arguments)
+        })
+      })
     }
   }
 </script>

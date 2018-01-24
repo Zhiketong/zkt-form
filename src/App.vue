@@ -7,12 +7,15 @@
         <pre>{{validation}}</pre>
         <h3>控件设置</h3>
         <pre>{{fields}}</pre>
+        <h3>触发器</h3>
+        <pre>{{triggers}}</pre>
     </div>
     <div class="col-md-6">
       <Form
         class="form-horizontal"
         :fields="fields"
         :validation="validation"
+        :triggers="triggers"
         ref="form"
         v-model="model"
         @submit.native.prevent="onSubmit">
@@ -29,6 +32,7 @@ import Form from './components'
 import fields from './assets/fields'
 import validation from './assets/validation'
 import model from './assets/model'
+import triggers from'./assets/triggers'
 export default {
   name: 'app',
   components: {
@@ -36,9 +40,10 @@ export default {
   },
   data () {
     return {
-      model: model,
-      fields: fields,
-      validation: validation
+      model,
+      fields,
+      validation,
+      triggers
     }
   },
   methods: {
@@ -49,24 +54,24 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$refs.form)
-    var checkbox = this.$refs.form.getField('checkbox')
-    var level1 = this.$refs.form.getField('level1')
-    var level2 = this.$refs.form.getField('level2')
-    checkbox.$on('change', () => {
-      console.log('checkbox change')
-    })
-    level1.$on('change', () => {
-      level2.$emit('update:options', [{
-        label: '二级1',
-        value: '1'
-      },
-      {
-        label: '二级2',
-        value: '2'
-      }]
-    )
-    })
+    // console.log(this.$refs.form)
+    // var checkbox = this.$refs.form.getField('checkbox')
+    // var level1 = this.$refs.form.getField('level1')
+    // var level2 = this.$refs.form.getField('level2')
+    // checkbox.$on('change', () => {
+    //   console.log('checkbox change')
+    // })
+    // level1.$on('change', () => {
+    //   level2.$emit('update:options', [{
+    //     label: '二级1',
+    //     value: '1'
+    //   },
+    //   {
+    //     label: '二级2',
+    //     value: '2'
+    //   }]
+    // )
+    // })
   }
 }
 </script>

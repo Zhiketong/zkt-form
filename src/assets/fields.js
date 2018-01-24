@@ -237,7 +237,14 @@ export default [
     col: {
       md: 2
     },
-    options: []
+    options: [{
+      label: '二级1',
+      value: '1'
+    },
+    {
+      label: '二级2',
+      value: '2'
+    }]
   }],
   [{
     tagName: 'Label',

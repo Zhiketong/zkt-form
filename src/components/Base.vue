@@ -31,6 +31,12 @@
         }
       }
     },
+    methods: {
+      setValue (value) {
+        console.log(value)
+        this.value[this.name] = value
+      }
+    },
     mounted () {
       if (this.expression) {
         this.$watch('value',
