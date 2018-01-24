@@ -136,6 +136,9 @@ export default [
     value: 10,
     col: {
       md: 5
+    },
+    colStyle: {
+      paddingRight: '5px'
     }
   },
   {
@@ -146,6 +149,9 @@ export default [
     value: 10,
     col: {
       md: 5
+    },
+    colStyle: {
+      paddingLeft: '5px'
     }
   }],
   [{

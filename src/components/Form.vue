@@ -8,6 +8,7 @@
       <form-col
         v-for="field in row"
         v-bind="{
+          style: field.colStyle,
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
