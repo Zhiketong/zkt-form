@@ -54,24 +54,6 @@ export default {
     }
   },
   mounted () {
-    // console.log(this.$refs.form)
-    // var checkbox = this.$refs.form.getField('checkbox')
-    // var level1 = this.$refs.form.getField('level1')
-    // var level2 = this.$refs.form.getField('level2')
-    // checkbox.$on('change', () => {
-    //   console.log('checkbox change')
-    // })
-    // level1.$on('change', () => {
-    //   level2.$emit('update:options', [{
-    //     label: '二级1',
-    //     value: '1'
-    //   },
-    //   {
-    //     label: '二级2',
-    //     value: '2'
-    //   }]
-    // )
-    // })
   }
 }
 </script>

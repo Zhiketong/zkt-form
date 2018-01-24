@@ -33,8 +33,11 @@
     },
     methods: {
       setValue (value) {
-        console.log(value)
         this.value[this.name] = value
+      },
+      setProp (name, prop) {
+        if (!name) throw new Error('必须提供prop属性')
+        this.$emit(`update:${name}`, prop)
       }
     },
     mounted () {

@@ -118,7 +118,6 @@
         var targetField = this.getField(trigger.target)
         sourceField.$on(trigger.event, () => {
           var action = targetField[trigger.action]
-          console.log(targetField,action)
           action&&action.apply(sourceField, trigger.arguments)
         })
       })
