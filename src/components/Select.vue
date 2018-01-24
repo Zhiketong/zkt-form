@@ -5,7 +5,7 @@
     @change="$emit('change', $event.target.value)">
     <option value="">请选择</option>
     <option
-    v-for="option in options" 
+    v-for="option in options"
     :value="option.value"
     :key="option.value"
     >
@@ -14,8 +14,10 @@
   </select>
 </template>
 <script>
+  import Base from './Base.vue'
   export default {
     name: 'FormSelect',
+    extends: Base,
     props: {
       name: {
         type: String,

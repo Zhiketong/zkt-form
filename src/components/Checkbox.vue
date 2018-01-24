@@ -12,8 +12,10 @@
   </div>
 </template>
 <script>
+  import Base from './Base.vue'
   export default {
     name: 'FormCheckbox',
+    extends: Base,
     props: {
       name: {
         type: String,

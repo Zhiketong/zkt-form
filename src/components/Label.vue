@@ -2,8 +2,10 @@
   <label v-if="text" class="control-label">{{text}}</label>
 </template>
 <script>
+  import Base from './Base.vue'
   export default {
     name: 'FormLabel',
+    extends: Base,
     props: {
       text: {
         type: String,
