@@ -35,9 +35,13 @@
       setValue (value) {
         this.value[this.name] = value
       },
-      setProp (name, prop) {
+      getValue () {
+        return this.value[this.name]
+      },
+      setProp (name, prop, internal=false) {
         if (!name) throw new Error('必须提供prop属性')
-        this.$emit(`update:${name}`, prop)
+        let value = internal ? this.value[this.prop] : prop
+        this.$emit(`update:${name}`, value)
       }
     },
     mounted () {

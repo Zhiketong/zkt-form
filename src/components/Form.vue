@@ -17,7 +17,7 @@
         :key="field.name">
         <component
           v-bind.sync="field"
-          v-model="!field.group?value:value[field.group]"
+          v-model.sync="!field.group?value:value[field.group]"
           :is="field['tagName']&&'Form'+field['tagName']"
           :ref="field.name&&'field'+field.name"
           @input.native="_onChange(field)"
@@ -117,9 +117,9 @@
       this.triggers.forEach((trigger) => {
         var sourceField = this.getField(trigger.source)
         var targetField = this.getField(trigger.target)
-        sourceField.$on(trigger.event, () => {
-          var action = targetField[trigger.action]
-          action&&action.apply(sourceField, trigger.arguments)
+        sourceField.$on(trigger.event, (value) => {
+          var action = targetField[trigger.action] || targetField.setValue
+          action&&action.apply(targetField, trigger.arguments || [value])
         })
       })
     }

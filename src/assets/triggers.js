@@ -4,4 +4,9 @@ export default [{
   event: 'change',
   action: 'setProp',
   arguments: ['options', [{label: '新增二级', value: '1'}]]
+},
+{
+  source: 'input',
+  target: 'static',
+  event: 'change'
 }]

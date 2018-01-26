@@ -15,7 +15,6 @@ export default [
     col: {
       md: 5
     }
-    // helpText: '这里是文本'
   },
   {
     name: 'number',
@@ -25,7 +24,6 @@ export default [
     col: {
       md: 5
     }
-    // helpText: '这里是数字'
   }],
   [{
     tagName: 'Label',
