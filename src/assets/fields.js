@@ -122,7 +122,6 @@ export default [
   [{
     name: 'nested',
     tagName: 'nested',
-    nested: true,
     fields: [[{
       tagName: 'label',
       text: '嵌套',
