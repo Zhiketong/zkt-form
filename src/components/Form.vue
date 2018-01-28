@@ -112,7 +112,6 @@
       }
     },
     mounted () {
-      console.log(this.name, this)
       this.triggers.forEach((trigger) => {
         var sourceField = this.getField(trigger.source)
         var targetField = this.getField(trigger.target)
