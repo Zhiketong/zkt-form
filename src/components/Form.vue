@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit.prevent="_onSubmit">
+  <form class="form form-horizontal" @submit.prevent="_onSubmit">
     <form-group
     v-for="(row, index) in fields"
     :key="index"
