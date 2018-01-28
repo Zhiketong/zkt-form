@@ -12,18 +12,17 @@
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
-          validation: field.group?$v.value[field.group][field.name]:$v.value[field.name]
+          validation: $v.value[field.name]
           }"
         :key="field.name">
         <component
           v-bind.sync="field"
-          v-model.sync="!field.group?value:value[field.group]"
+          v-model.sync="!field.nested?value:value[field.name]"
           :is="field['tagName']&&'Form'+field['tagName']"
           :ref="field.name&&'field'+field.name"
           @input.native="_onChange(field)"
           @change.native="_onChange(field)"
         />
-
       </form-col>
     </form-group>
   </form>
@@ -43,8 +42,8 @@
   import FormStatic from './Static.vue'
   import FormDivider from './Divider.vue'
 
-  export default {
-    name: 'Form',
+  var Form = {
+    name: 'FormNested',
     mixins: [validationMixin],
     components: {
       FormGroup,
@@ -86,6 +85,10 @@
         default () {
           return []
         }
+      },
+      name: {
+        type: String,
+        default: ''
       }
     },
     validations () {
@@ -105,15 +108,11 @@
         return this.$refs['group'+name]&&this.$refs['group'+name][0]
       },
       _onChange (field) {
-        if (field.group) {
-          this.$v.value[field.group][field.name]&&this.$v.value[field.group][field.name].$touch()
-        } else {
-          this.$v.value[field.name]&&this.$v.value[field.name].$touch()
-        }
+        this.$v.value[field.name]&&this.$v.value[field.name].$touch()
       }
     },
     mounted () {
-
+      console.log(this.name, this)
       this.triggers.forEach((trigger) => {
         var sourceField = this.getField(trigger.source)
         var targetField = this.getField(trigger.target)
@@ -124,4 +123,5 @@
       })
     }
   }
+  export default Form
 </script>

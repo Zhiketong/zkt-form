@@ -11,14 +11,6 @@ export default {
     minLength: 4,
     maxLength: 16
   },
-  nested: {
-    number11: {
-      required: true
-    },
-    number22: {
-      required: true
-    }
-  },
   user: {
     // required: true,
     email: true

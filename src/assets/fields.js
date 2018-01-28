@@ -120,36 +120,49 @@ export default [
     tagName: 'Static'
   }],
   [{
-    tagName: 'Label',
-    text: '嵌套',
-    col: {
-      md: 2
-    }
-  },
-  {
-    name: 'number11',
-    tagName: 'Input',
-    type: 'number',
-    group: 'nested',
-    value: 10,
-    col: {
-      md: 5
+    name: 'nested',
+    tagName: 'Nested',
+    nested: true,
+    fields: [[{
+      tagName: 'Label',
+      text: '嵌套',
+      col: {
+        md: 2
+      }
     },
-    colStyle: {
-      paddingRight: '5px'
-    }
-  },
-  {
-    name: 'number22',
-    tagName: 'Input',
-    type: 'number',
-    group: 'nested',
-    value: 10,
-    col: {
-      md: 5
+    {
+      name: 'number11',
+      tagName: 'Input',
+      type: 'number',
+      group: 'nested',
+      value: 10,
+      col: {
+        md: 5
+      },
+      colStyle: {
+        paddingRight: '5px'
+      }
     },
-    colStyle: {
-      paddingLeft: '5px'
+    {
+      name: 'number22',
+      tagName: 'Input',
+      type: 'number',
+      group: 'nested',
+      value: 10,
+      col: {
+        md: 5
+      },
+      colStyle: {
+        paddingLeft: '5px'
+      }
+    }]],
+    validation: {
+      number11: {
+        required: true
+      },
+      number22: {
+        required: true
+      }
     }
   }],
   [{
