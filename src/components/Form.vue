@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" @submit.prevent="_onSubmit">
     <form-group
     v-for="(row, index) in fields"
     :key="index"
@@ -109,6 +109,9 @@
       },
       _onChange (field) {
         this.$v.value[field.name]&&this.$v.value[field.name].$touch()
+      },
+      _onSubmit () {
+        this.validate()&&this.$emit('submit')
       }
     },
     mounted () {

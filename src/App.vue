@@ -18,7 +18,7 @@
         :triggers="triggers"
         ref="form"
         v-model="model"
-        @submit.native.prevent="onSubmit">
+        @submit="onSubmit">
         <div class="alert alert-success" slot="header">Form Header</div>
         <div class="alert alert-warning" slot="footer">Form Footer</div>
       </Form>
@@ -49,8 +49,6 @@ export default {
   methods: {
     onSubmit () {
       console.log('onSubmit')
-      var valid = this.$refs.form.validate()
-      console.log(valid)
     }
   },
   mounted () {
