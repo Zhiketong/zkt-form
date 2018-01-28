@@ -1,6 +1,6 @@
 export default [
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '输入框',
     col: {
       md: 2
@@ -8,7 +8,7 @@ export default [
   },
   {
     name: 'input',
-    tagName: 'Input',
+    tagName: 'input',
     value: 10,
     required: true,
     icon: 'calendar',
@@ -18,7 +18,7 @@ export default [
   },
   {
     name: 'number',
-    tagName: 'Number',
+    tagName: 'number',
     value: 10,
     id: 'number',
     col: {
@@ -26,7 +26,7 @@ export default [
     }
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '文本框',
     col: {
       md: 2
@@ -34,13 +34,13 @@ export default [
   },
   {
     name: 'textarea',
-    tagName: 'Textarea',
+    tagName: 'textarea',
     col: {
       md: 10
     }
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '多选',
     col: {
       md: 2
@@ -48,7 +48,7 @@ export default [
   },
   {
     name: 'checkbox',
-    tagName: 'Checkbox',
+    tagName: 'checkbox',
     value: ['1'],
     col: {
       md: 5
@@ -63,7 +63,7 @@ export default [
   },
   {
     name: 'truefalse',
-    tagName: 'Checkbox',
+    tagName: 'checkbox',
     col: {
       md: 5
     },
@@ -73,7 +73,7 @@ export default [
     }]
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '单选',
     col: {
       md: 2
@@ -81,7 +81,7 @@ export default [
   },
   {
     name: 'radio',
-    tagName: 'Radio',
+    tagName: 'radio',
     value: '1',
     col: {
       md: 10
@@ -95,7 +95,7 @@ export default [
     }]
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '下拉',
     col: {
       md: 2
@@ -103,7 +103,7 @@ export default [
   },
   {
     name: 'select',
-    tagName: 'Select',
+    tagName: 'select',
     col: {
       md: 10
     },
@@ -117,14 +117,14 @@ export default [
   }],
   [{
     name: 'static',
-    tagName: 'Static'
+    tagName: 'static'
   }],
   [{
     name: 'nested',
-    tagName: 'Nested',
+    tagName: 'nested',
     nested: true,
     fields: [[{
-      tagName: 'Label',
+      tagName: 'label',
       text: '嵌套',
       col: {
         md: 2
@@ -132,7 +132,7 @@ export default [
     },
     {
       name: 'number11',
-      tagName: 'Input',
+      tagName: 'input',
       type: 'number',
       group: 'nested',
       value: 10,
@@ -145,7 +145,7 @@ export default [
     },
     {
       name: 'number22',
-      tagName: 'Input',
+      tagName: 'input',
       type: 'number',
       group: 'nested',
       value: 10,
@@ -166,10 +166,10 @@ export default [
     }
   }],
   [{
-    tagName: 'Divider'
+    tagName: 'divider'
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '用户名',
     col: {
       md: 2
@@ -177,7 +177,7 @@ export default [
   },
   {
     name: 'user',
-    tagName: 'Input',
+    tagName: 'input',
     placeholder: '用户名',
     col: {
       md: 10
@@ -185,7 +185,7 @@ export default [
     icon: 'user'
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '个人主页',
     col: {
       md: 2
@@ -193,14 +193,14 @@ export default [
   },
   {
     name: 'site',
-    tagName: 'Input',
+    tagName: 'input',
     placeholder: '请输入个人主页地址',
     col: {
       md: 10
     }
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '密码',
     col: {
       md: 2
@@ -208,7 +208,7 @@ export default [
   },
   {
     name: 'password',
-    tagName: 'Input',
+    tagName: 'input',
     type: 'password',
     placeholder: '密码',
     col: {
@@ -218,7 +218,7 @@ export default [
   },
   {
     name: 'repeatPasword',
-    tagName: 'Input',
+    tagName: 'input',
     type: 'password',
     placeholder: '确认密码',
     col: {
@@ -227,7 +227,7 @@ export default [
     icon: 'ice-lolly'
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '级联',
     col: {
       md: 2
@@ -235,7 +235,7 @@ export default [
   },
   {
     name: 'level1',
-    tagName: 'Select',
+    tagName: 'select',
     col: {
       md: 2
     },
@@ -250,7 +250,7 @@ export default [
   },
   {
     name: 'level2',
-    tagName: 'Select',
+    tagName: 'select',
     col: {
       md: 2
     },
@@ -264,14 +264,14 @@ export default [
     }]
   }],
   [{
-    tagName: 'Label',
+    tagName: 'label',
     text: '表达式',
     col: {
       md: 2
     }
   },
   {
-    tagName: 'Static',
+    tagName: 'static',
     name: 'expression',
     expression: '2*number',
     before: '2<span style="color:#0f0">*</span>number<b>=</b>',
@@ -281,7 +281,7 @@ export default [
   }],
   [{
     name: 'submit',
-    tagName: 'Input',
+    tagName: 'input',
     type: 'submit',
     'class': {
       'btn': true,
@@ -291,7 +291,7 @@ export default [
   }],
   [{
     name: 'hidden',
-    tagName: 'Input',
+    tagName: 'input',
     type: 'hidden'
   }]
 ]

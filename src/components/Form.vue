@@ -18,7 +18,7 @@
         <component
           v-bind.sync="field"
           v-model.sync="!field.nested?value:value[field.name]"
-          :is="field['tagName']&&'Form'+field['tagName']"
+          :is="field['tagName']&&'form-'+field['tagName']"
           :ref="field.name&&'field'+field.name"
           @input.native="_onChange(field)"
           @change.native="_onChange(field)"
