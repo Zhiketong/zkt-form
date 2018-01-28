@@ -116,8 +116,7 @@
         var sourceField = this.getField(trigger.source)
         var targetField = this.getField(trigger.target)
         sourceField.$on(trigger.event, (value) => {
-          var action = targetField[trigger.action] || targetField.setValue
-          action&&action.apply(targetField, trigger.arguments || [value])
+          targetField.setProp(tirgger.targetProp, sourceField[trigger.sourceProp])
         })
       })
     }
