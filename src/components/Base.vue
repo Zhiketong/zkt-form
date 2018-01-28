@@ -39,7 +39,7 @@
         return this.value[this.name]
       },
       setProp (name, prop, internal=false) {
-        if (!name) throw new Error('必须提供prop属性')
+        if (arguments.length>=2&&!name) throw new Error('必须提供prop属性')
         let value = internal ? this.value[prop] : prop
         this.$emit(`update:${name}`, value)
       }
