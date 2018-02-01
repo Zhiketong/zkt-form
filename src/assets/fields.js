@@ -93,16 +93,20 @@ export default [
   }],
   [{
     name: 'static',
-    tagName: 'static'
+    tagName: 'static',
+    col: {
+      sm: 12
+    }
   }],
   [{
+    tagName: 'label',
+    text: '嵌套'
+  },
+  {
     name: 'nested',
     tagName: 'nested',
+    'class': 'well',
     fields: [[{
-      tagName: 'label',
-      text: '嵌套'
-    },
-    {
       name: 'number11',
       tagName: 'input',
       type: 'number',
@@ -112,7 +116,7 @@ export default [
         md: 5
       },
       colStyle: {
-        paddingRight: '5px'
+        // paddingRight: '5px'
       }
     },
     {
@@ -125,7 +129,7 @@ export default [
         md: 5
       },
       colStyle: {
-        paddingLeft: '5px'
+        // paddingLeft: '5px'
       }
     }]],
     validation: {
