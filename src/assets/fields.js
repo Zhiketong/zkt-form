@@ -1,10 +1,7 @@
 export default [
   [{
     tagName: 'label',
-    text: '输入框',
-    col: {
-      md: 2
-    }
+    text: '输入框'
   },
   {
     name: 'input',
@@ -27,24 +24,15 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '文本框',
-    col: {
-      md: 2
-    }
+    text: '文本框'
   },
   {
     name: 'textarea',
-    tagName: 'textarea',
-    col: {
-      md: 10
-    }
+    tagName: 'textarea'
   }],
   [{
     tagName: 'label',
-    text: '多选',
-    col: {
-      md: 2
-    }
+    text: '多选'
   },
   {
     name: 'checkbox',
@@ -74,18 +62,12 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '单选',
-    col: {
-      md: 2
-    }
+    text: '单选'
   },
   {
     name: 'radio',
     tagName: 'radio',
     value: '1',
-    col: {
-      md: 10
-    },
     options: [{
       label: 'option1',
       value: '1'
@@ -96,17 +78,11 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '下拉',
-    col: {
-      md: 2
-    }
+    text: '下拉'
   },
   {
     name: 'select',
     tagName: 'select',
-    col: {
-      md: 10
-    },
     options: [{
       label: 'option1',
       value: '1'
@@ -124,10 +100,7 @@ export default [
     tagName: 'nested',
     fields: [[{
       tagName: 'label',
-      text: '嵌套',
-      col: {
-        md: 2
-      }
+      text: '嵌套'
     },
     {
       name: 'number11',
@@ -169,41 +142,26 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '用户名',
-    col: {
-      md: 2
-    }
+    text: '用户名'
   },
   {
     name: 'user',
     tagName: 'input',
     placeholder: '用户名',
-    col: {
-      md: 10
-    },
     icon: 'user'
   }],
   [{
     tagName: 'label',
-    text: '个人主页',
-    col: {
-      md: 2
-    }
+    text: '个人主页'
   },
   {
     name: 'site',
     tagName: 'input',
-    placeholder: '请输入个人主页地址',
-    col: {
-      md: 10
-    }
+    placeholder: '请输入个人主页地址'
   }],
   [{
     tagName: 'label',
-    text: '密码',
-    col: {
-      md: 2
-    }
+    text: '密码'
   },
   {
     name: 'password',
@@ -227,10 +185,7 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '级联',
-    col: {
-      md: 2
-    }
+    text: '级联'
   },
   {
     name: 'level1',
@@ -264,19 +219,13 @@ export default [
   }],
   [{
     tagName: 'label',
-    text: '表达式',
-    col: {
-      md: 2
-    }
+    text: '表达式'
   },
   {
     tagName: 'static',
     name: 'expression',
     expression: '2*number',
-    before: '2<span style="color:#0f0">*</span>number<b>=</b>',
-    col: {
-      md: 10
-    }
+    before: '2<span style="color:#0f0">*</span>number<b>=</b>'
   }],
   [{
     name: 'submit',
@@ -286,6 +235,10 @@ export default [
       'btn': true,
       'btn-primary': true,
       'btn-block': true
+    },
+    col: {
+      sm: 2,
+      'sm-offset': 2
     }
   }],
   [{

@@ -12,6 +12,7 @@
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
+          tagName: field.tagName,
           validation: $v.value[field.name]
           }"
         :key="field.name">

@@ -34,13 +34,19 @@
         type: String,
         default: ''
       },
+      tagName: {
+        type: String,
+        default () {
+          return ''
+        }
+      },
       col: {
         type: Object,
         default () {
           return {
-            md: 12,
-            sm: 12,
-            lg: 12
+            md: this.tagName === 'label' ? 2 : 10,
+            sm: this.tagName === 'label' ? 2 : 10,
+            lg: this.tagName === 'label' ? 2 : 10
           }
         }
       },
