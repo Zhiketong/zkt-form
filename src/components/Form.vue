@@ -12,6 +12,7 @@
           col: field.col,
           helpText: field.helpText,
           icon:field.icon,
+          tagName: field.tagName,
           validation: $v.value[field.name]
           }"
         :key="field.name">
@@ -119,7 +120,7 @@
         var sourceField = this.getField(trigger.source)
         var targetField = this.getField(trigger.target)
         sourceField.$on(trigger.event, (value) => {
-          targetField.setProp(tirgger.targetProp, sourceField[trigger.sourceProp])
+          targetField.setProp(trigger.targetProp, sourceField[trigger.sourceProp])
         })
       })
     }
