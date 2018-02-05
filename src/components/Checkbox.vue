@@ -6,7 +6,9 @@
           v-model="value[name]"
           :value="option.value"
           :name="name"
-          @change="$emit('change', $event.target.value)">
+          @change="$emit('change', $event.target.value)"
+          :true-value="trueValue"
+          :false-value="falseValue">
         <span>{{option.label}}</span>
       </label>
   </div>
@@ -24,7 +26,13 @@
       options: {
         type: Array
       },
-      value: {}
+      value: {},
+      trueValue: {
+        default: true
+      },
+      falseValue: {
+        default: false
+      }
     }
   }
 </script>

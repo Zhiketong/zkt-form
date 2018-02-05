@@ -70,7 +70,9 @@ export default [
     options: [{
       label: '是否同意？',
       value: '1'
-    }]
+    }],
+    trueValue: '1',
+    falseValue: '0'
   }],
   [{
     tagName: 'label',
