@@ -10,7 +10,7 @@ export default [
     required: true,
     icon: 'calendar',
     col: {
-      md: 5
+      sm: 5
     }
   },
   {
@@ -19,7 +19,7 @@ export default [
     value: 10,
     id: 'number',
     col: {
-      md: 5
+      sm: 5
     }
   }],
   [{
@@ -39,7 +39,7 @@ export default [
     tagName: 'checkbox',
     value: ['1'],
     col: {
-      md: 5
+      sm: 5
     },
     options: [{
       label: 'option1',
@@ -53,7 +53,7 @@ export default [
     name: 'truefalse',
     tagName: 'checkbox',
     col: {
-      md: 5
+      sm: 5
     },
     options: [{
       label: '是否同意？',
@@ -115,7 +115,7 @@ export default [
       group: 'nested',
       value: 10,
       col: {
-        md: 5
+        sm: 5
       },
       colStyle: {
         // paddingRight: '5px'
@@ -128,7 +128,7 @@ export default [
       group: 'nested',
       value: 10,
       col: {
-        md: 5
+        sm: 5
       },
       colStyle: {
         // paddingLeft: '5px'
@@ -175,7 +175,7 @@ export default [
     type: 'password',
     placeholder: '密码',
     col: {
-      md: 5
+      sm: 5
     },
     icon: 'ice-lolly'
   },
@@ -185,7 +185,7 @@ export default [
     type: 'password',
     placeholder: '确认密码',
     col: {
-      md: 5
+      sm: 5
     },
     icon: 'ice-lolly'
   }],
@@ -197,7 +197,7 @@ export default [
     name: 'level1',
     tagName: 'select',
     col: {
-      md: 2
+      sm: 2
     },
     options: [{
       label: '一级1',
@@ -212,7 +212,7 @@ export default [
     name: 'level2',
     tagName: 'select',
     col: {
-      md: 2
+      sm: 2
     },
     options: [{
       label: '二级1',
