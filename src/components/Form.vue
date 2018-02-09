@@ -125,5 +125,16 @@
       })
     }
   }
+
+  Form.register = function (name, component) {
+    if (name.name) {
+      component = name
+    }
+    let name = component.name
+    if (Form.components[name]) {
+      throw new Error('该组件已经被注册')
+    }
+    Form.components[name] = component
+  }
   export default Form
 </script>
