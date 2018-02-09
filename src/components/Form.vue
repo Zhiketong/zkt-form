@@ -130,7 +130,7 @@
     if (name.name) {
       component = name
     }
-    let name = component.name
+    name = component.name
     if (Form.components[name]) {
       throw new Error('该组件已经被注册')
     }
