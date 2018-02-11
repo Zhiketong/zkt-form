@@ -17,7 +17,11 @@ export default [
     name: 'number',
     tagName: 'number',
     value: 10,
+    beforeHtml: 'hello',
     id: 'number',
+    style: {
+      width: '50%'
+    },
     col: {
       sm: 5
     }

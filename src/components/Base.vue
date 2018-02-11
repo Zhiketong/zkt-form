@@ -56,3 +56,9 @@
     }
   }
 </script>
+
+<style>
+.form-control {
+  display: inline-block;
+}
+</style>

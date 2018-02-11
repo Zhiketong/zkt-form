@@ -16,6 +16,7 @@
           validation: $v.value[field.name]
           }"
         :key="field.name">
+        <span class="before-html" v-if="field.beforeHtml">{{field.beforeHtml}}</span>
         <component
           v-bind.sync="field"
           v-model.sync="field.tagName!='nested'?value:value[field.name]"
@@ -24,6 +25,7 @@
           @input.native="_onChange(field)"
           @change.native="_onChange(field)"
         />
+        <span class="after-html" v-if="field.afterHtml">{{field.afterHtml}}</span>
       </form-col>
     </form-group>
   </form>
@@ -136,5 +138,6 @@
     }
     Form.components[name] = component
   }
+  
   export default Form
 </script>
