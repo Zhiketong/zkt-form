@@ -5,7 +5,7 @@
   import Base from './Base.vue'
 
   export default {
-    name: 'FormStatic',
+    name: 'FormImage',
     extends: Base,
     props: {
       alt: {
