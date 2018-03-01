@@ -45,6 +45,7 @@
   import FormStatic from './Static.vue'
   import FormDivider from './Divider.vue'
   import FormImage from './Image.vue'
+  import FormButton from'./Button.vue'
 
   var Form = {
     name: 'FormNested',
@@ -61,7 +62,8 @@
       FormSelect,
       FormStatic,
       FormDivider,
-      FormImage
+      FormImage,
+      FormButton
     },
     props: {
       fields: {

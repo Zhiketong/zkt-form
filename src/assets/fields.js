@@ -247,7 +247,7 @@ export default [
   }],
   [{
     name: 'submit',
-    tagName: 'input',
+    tagName: 'button',
     type: 'submit',
     'class': {
       'btn': true,
