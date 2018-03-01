@@ -44,6 +44,7 @@
   import FormSelect from './Select.vue'
   import FormStatic from './Static.vue'
   import FormDivider from './Divider.vue'
+  import FormImage from './Image.vue'
 
   var Form = {
     name: 'FormNested',
@@ -59,7 +60,8 @@
       FormRadio,
       FormSelect,
       FormStatic,
-      FormDivider
+      FormDivider,
+      FormImage
     },
     props: {
       fields: {
@@ -138,6 +140,6 @@
     }
     Form.components[name] = component
   }
-  
+
   export default Form
 </script>

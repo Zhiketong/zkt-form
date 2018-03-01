@@ -106,6 +106,14 @@ export default [
   }],
   [{
     tagName: 'label',
+    text: '图片'
+  },
+  {
+    name: 'image',
+    tagName: 'image'
+  }],
+  [{
+    tagName: 'label',
     text: '嵌套'
   },
   {

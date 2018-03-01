@@ -19,5 +19,6 @@ export default {
   level2: '',
   hidden: 'hidden',
   expression: '2*number={{computedValue}}',
-  submit: '提交'
+  submit: '提交',
+  image: '/src/assets/logo.png'
 }
