@@ -37,10 +37,10 @@
     },
     methods: {
       setValue (value) {
-        this.$emit('input', value)
+        this.val = value
       },
       getValue () {
-        return this.value
+        return this.val
       },
       setProp (name, value) {
         this.$emit(`update:${name}`, value)
