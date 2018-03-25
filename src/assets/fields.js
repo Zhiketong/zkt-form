@@ -4,16 +4,6 @@ export default [
     text: '输入框'
   },
   {
-    name: 'input',
-    tagName: 'input',
-    value: 10,
-    required: true,
-    icon: 'calendar',
-    col: {
-      sm: 5
-    }
-  },
-  {
     name: 'number',
     tagName: 'number',
     value: 10,
@@ -112,49 +102,47 @@ export default [
     name: 'image',
     tagName: 'image'
   }],
-  [{
-    tagName: 'label',
-    text: '嵌套'
-  },
-  {
-    name: 'nested',
-    tagName: 'nested',
-    'class': 'well',
-    fields: [[{
-      name: 'number11',
-      tagName: 'input',
-      type: 'number',
-      group: 'nested',
-      value: 10,
-      col: {
-        sm: 5
-      },
-      colStyle: {
-        // paddingRight: '5px'
-      }
-    },
-    {
-      name: 'number22',
-      tagName: 'input',
-      type: 'number',
-      group: 'nested',
-      value: 10,
-      col: {
-        sm: 5
-      },
-      colStyle: {
-        // paddingLeft: '5px'
-      }
-    }]],
-    validation: {
-      number11: {
-        required: true
-      },
-      number22: {
-        required: true
-      }
-    }
-  }],
+  // [{
+  //   tagName: 'label',
+  //   text: '嵌套'
+  // },
+  // {
+  //   name: 'nested',
+  //   tagName: 'nested',
+  //   'class': 'well',
+  //   fields: [[{
+  //     name: 'number11',
+  //     tagName: 'input',
+  //     type: 'number',
+  //     group: 'nested',
+  //     col: {
+  //       sm: 5
+  //     },
+  //     colStyle: {
+  //       // paddingRight: '5px'
+  //     }
+  //   },
+  //   {
+  //     name: 'number22',
+  //     tagName: 'input',
+  //     type: 'number',
+  //     group: 'nested',
+  //     col: {
+  //       sm: 5
+  //     },
+  //     colStyle: {
+  //       // paddingLeft: '5px'
+  //     }
+  //   }]],
+  //   validation: {
+  //     number11: {
+  //       required: true
+  //     },
+  //     number22: {
+  //       required: true
+  //     }
+  //   }
+  // }],
   [{
     tagName: 'divider'
   }],

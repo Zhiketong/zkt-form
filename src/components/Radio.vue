@@ -3,7 +3,7 @@
     <label class="radio-inline" v-for="option in options" :key="option.value">
         <input
           type="radio"
-          v-model="value[name]"
+          v-model="val"
           :value="option.value"
           :name="name"
           @change="$emit('change', $event.target.value)">
@@ -25,19 +25,6 @@
         type: Array
       },
       value: {}
-    },
-    computed: {
-      val: {
-        get () {
-          return this.value
-        },
-        set (val) {
-          this.$emit('input', val)
-        }
-      }
-    },
-    data () {
-      return {}
     }
   }
 </script>

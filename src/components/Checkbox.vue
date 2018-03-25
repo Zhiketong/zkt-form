@@ -3,7 +3,7 @@
     <label class="checkbox-inline" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
-          v-model="value[name]"
+          v-model="value"
           :value="option.value"
           :name="name"
           @change="$emit('change', $event.target.value)"

@@ -1,10 +1,6 @@
 <script>
-  import {Parser} from 'expr-eval'
   export default {
     name: 'FormBase',
-    domProps: {
-      diabled: true
-    },
     props: {
       name: {
         type: String,
@@ -15,10 +11,8 @@
         default: ''
       },
       value: {
-        type: Object,
-        default () {
-          return {}
-        }
+        type: String,
+        default: ''
       },
       group: {
         type: String,
@@ -31,27 +25,25 @@
         }
       }
     },
+    computed: {
+      val: {
+        get () {
+          return this.value
+        },
+        set (val) {
+          this.$emit('input', val)
+        }
+      }
+    },
     methods: {
       setValue (value) {
-        this.value[this.name] = value
+        this.$emit('input', value)
       },
       getValue () {
-        return this.value[this.name]
+        return this.value
       },
       setProp (name, value) {
         this.$emit(`update:${name}`, value)
-      }
-    },
-    mounted () {
-      if (this.expression) {
-        this.$watch('value',
-        (nv) => {
-           this.value[this.name] = Parser.evaluate(this.expression, this.value)
-        },
-        {
-          deep: true,
-          immediate: true
-        })
       }
     }
   }

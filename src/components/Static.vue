@@ -1,8 +1,6 @@
 <template>
   <div class="form-control-static">
-    <span class="before" v-html="before"></span>
-    <span v-html="value[name]"></span>
-    <span class="after" v-html="after"></span>
+    <span v-html="val"></span>
   </div>
 </template>
 <script>
@@ -10,16 +8,6 @@
 
   export default {
     name: 'FormStatic',
-    extends: Base,
-    props: {
-      before: {
-        type: String,
-        default: ''
-      },
-      after: {
-        type: String,
-        default: ''
-      }
-    }
+    extends: Base
   }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <img :src="value[name]" alt="alt">
+  <img :src="val" alt="alt">
 </template>
 <script>
   import Base from './Base.vue'

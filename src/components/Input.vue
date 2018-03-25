@@ -1,6 +1,6 @@
 <template>
   <input
-    v-model.trim="value[name]"
+    v-model.trim="val"
     @change="$emit('change', $event.target.value)"
     class="form-control">
 </template>

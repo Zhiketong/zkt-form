@@ -19,7 +19,7 @@
         <span class="before-html" v-if="field.beforeHtml">{{field.beforeHtml}}</span>
         <component
           v-bind.sync="field"
-          v-model.sync="field.tagName!='nested'?value:value[field.name]"
+          v-model.sync="value[field.name]"
           :is="field['tagName']&&'form-'+field['tagName']"
           :ref="field.name&&'field'+field.name"
           @input.native="_onChange(field)"
