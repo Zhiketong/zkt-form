@@ -1,40 +1,21 @@
 <template>
-  <form class="form form-horizontal" @submit.prevent="_onSubmit">
-    <form-group
-    v-for="(row, index) in fields"
-    :key="index"
-    :ref="'group'+index"
-    >
-      <form-col
-        v-for="field in row"
-        v-bind="{
-          style: field.colStyle,
-          col: field.col,
-          helpText: field.helpText,
-          icon:field.icon,
-          tagName: field.tagName,
-          validation: $v.value[field.name]
-          }"
-        :key="field.name">
-        <span class="before-html" v-if="field.beforeHtml">{{field.beforeHtml}}</span>
-        <component
-          v-bind.sync="field"
-          v-model.sync="value[field.name]"
-          :is="field['tagName']&&'form-'+field['tagName']"
-          :ref="field.name&&'field'+field.name"
-          @input.native="_onChange(field)"
-          @change.native="_onChange(field)"
-        />
-        <span class="after-html" v-if="field.afterHtml">{{field.afterHtml}}</span>
-      </form-col>
-    </form-group>
-  </form>
+  <form-layout :fields="fields" @submit.prevent="_onSubmit">
+    <component
+      v-for="field in fields"
+      v-bind.sync="field"
+      v-model.sync="value[field.name]"
+      :slot="field.group||field.name"
+      :is="field['tagName']&&'form-'+field['tagName']"
+      :ref="field.name&&'field'+field.name"
+      @input.native="_onChange(field)"
+      @change.native="_onChange(field)"
+    />
+  </form-layout>
 </template>
 <script>
   import {validationMixin} from 'vuelidate'
   import * as utils from './utils.js'
-  import FormGroup from './Group.vue'
-  import FormCol from './Col.vue'
+  import FormLayout from './Layout.vue'
   import FormLabel from './Label.vue'
   import FormInput from './Input.vue'
   import FormNumber from './Number.vue'
@@ -51,8 +32,7 @@
     name: 'FormNested',
     mixins: [validationMixin],
     components: {
-      FormGroup,
-      FormCol,
+      FormLayout,
       FormLabel,
       FormInput,
       FormNumber,
@@ -122,13 +102,13 @@
       }
     },
     mounted () {
-      this.triggers.forEach((trigger) => {
-        var sourceField = this.getField(trigger.source)
-        var targetField = this.getField(trigger.target)
-        sourceField.$on(trigger.event, (value) => {
-          targetField.setProp(trigger.targetProp, sourceField[trigger.sourceProp])
-        })
-      })
+      // this.triggers.forEach((trigger) => {
+      //   var sourceField = this.getField(trigger.source)
+      //   var targetField = this.getField(trigger.target)
+      //   sourceField.$on(trigger.event, (value) => {
+      //     targetField.setProp(trigger.targetProp, sourceField[trigger.sourceProp])
+      //   })
+      // })
     }
   }
 

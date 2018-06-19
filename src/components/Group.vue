@@ -1,7 +1,7 @@
 <template>
   <div class="form-group" :class="{'has-error': hasError}">
+    <label v-if="label" :for="name">{{label}}</label>
     <slot></slot>
-    <div class="clearfix"></div>
     <p class="help-block" v-if="helpText">{{helpText}}</p>
   </div>
 </template>
@@ -16,6 +16,14 @@
       hasError: {
         type: Boolean,
         default: false
+      },
+      name: {
+        type: String,
+        default: ''
+      },
+      label: {
+        type: String,
+        default: ''
       }
     }
   }

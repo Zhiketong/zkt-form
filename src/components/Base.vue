@@ -52,5 +52,6 @@
 <style>
 .form-control {
   display: inline-block;
+  width: auto;
 }
 </style>
