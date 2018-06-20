@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <div class="col-md-6">
-        <h3>表单值</h3>
-        <pre>{{model}}</pre>
-        <h3>校验规则</h3>
-        <pre>{{validation}}</pre>
-        <h3>控件设置</h3>
-        <pre>{{fields}}</pre>
-        <h3>触发器</h3>
-        <pre>{{triggers}}</pre>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <Form
         class="form-horizontal"
         :fields="fields"
@@ -22,6 +12,25 @@
         <div class="alert alert-success" slot="header">Form Header</div>
         <div class="alert alert-warning" slot="footer">Form Footer</div>
       </Form>
+    </div>
+    <div class="col-md-6">
+        <h3>表单值</h3>
+        <pre>{{model}}</pre>
+
+    </div>
+    <div class="col-md-6">
+      <h3>校验规则</h3>
+      <pre>{{validation}}</pre>
+
+    </div>
+    <div class="col-md-6">
+      <h3>控件设置</h3>
+      <pre>{{fields}}</pre>
+
+    </div>
+    <div class="col-md-6">
+      <h3>触发器</h3>
+      <pre>{{triggers}}</pre>
     </div>
 
   </div>
