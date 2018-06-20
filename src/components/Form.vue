@@ -9,6 +9,7 @@
       :ref="field.name&&'field'+field.name"
       @input.native="_onChange(field)"
       @change.native="_onChange(field)"
+      class="field"
     />
   </form-layout>
 </template>

@@ -1,7 +1,5 @@
 <template>
-  <div class="form-control-static">
-    <span v-html="val"></span>
-  </div>
+  <span v-html="val"></span>
 </template>
 <script>
   import Base from './Base.vue'

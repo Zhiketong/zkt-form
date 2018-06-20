@@ -1,6 +1,6 @@
 <template>
-  <div class="radio-inline">
-    <label  v-for="option in options" :key="option.value">
+  <span>
+    <label class="radio-inline" v-for="option in options" :key="option.value">
         <input
           type="radio"
           v-model="val"
@@ -9,7 +9,7 @@
           @change="$emit('change', $event.target.value)">
         <span>{{option.label}}</span>
       </label>
-  </div>
+  </span>
 </template>
 <script>
   import Base from './Base.vue'

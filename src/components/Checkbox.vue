@@ -1,6 +1,6 @@
 <template>
-  <div class="checkbox-inline">
-    <label v-for="option in options" :key="option.value">
+  <span>
+    <label class="checkbox-inline" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
           v-model="value"
@@ -11,7 +11,7 @@
           :false-value="falseValue">
         <span>{{option.label}}</span>
       </label>
-  </div>
+  </span>
 </template>
 <script>
   import Base from './Base.vue'

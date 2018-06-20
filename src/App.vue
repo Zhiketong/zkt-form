@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-6">
       <Form
-        class="form-horizontal"
+        class=""
         :fields="fields"
         :validation="validation"
         :triggers="triggers"
