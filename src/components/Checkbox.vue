@@ -1,6 +1,6 @@
 <template>
-  <div class="checkbox-wrapper">
-    <label class="checkbox-inline" v-for="option in options" :key="option.value">
+  <div class="checkbox-inline">
+    <label v-for="option in options" :key="option.value">
         <input
           type="checkbox"
           v-model="value"

@@ -1,6 +1,6 @@
 <template>
-  <div class="radio-wrapper">
-    <label class="radio-inline" v-for="option in options" :key="option.value">
+  <div class="radio-inline">
+    <label  v-for="option in options" :key="option.value">
         <input
           type="radio"
           v-model="val"
@@ -29,7 +29,4 @@
   }
 </script>
 <style>
-.form-horizontal .radio-wrapper .radio-inline {
-  padding-top: 5px;
-}
 </style>
