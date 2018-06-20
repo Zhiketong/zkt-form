@@ -16,23 +16,19 @@
     <div class="col-md-6">
         <h3>表单值</h3>
         <pre>{{model}}</pre>
-
     </div>
     <div class="col-md-6">
       <h3>校验规则</h3>
       <pre>{{validation}}</pre>
-
     </div>
     <div class="col-md-6">
       <h3>控件设置</h3>
       <pre>{{fields}}</pre>
-
     </div>
     <div class="col-md-6">
       <h3>触发器</h3>
       <pre>{{triggers}}</pre>
     </div>
-
   </div>
 </template>
 

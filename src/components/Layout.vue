@@ -1,23 +1,20 @@
 <template lang="html">
   <form class="form">
-    <form-group
+    <div class="form-group"
     v-for="row in fields"
     v-if="!row.group"
     v-bind="row"
     :key="row.name"
     :ref="row.name">
       <slot :name="row.name"></slot>
-    </form-group>
+      <p class="help-block" v-if="row.helpText">{{row.helpText}}</p>
+    </div>
   </form>
 </template>
 
 <script>
-import FormGroup from './Group.vue'
 export default {
   name: 'FormLayout',
-  components: {
-    FormGroup
-  },
   props: {
     fields: {
       type: Array,
@@ -28,6 +25,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css">
-</style>

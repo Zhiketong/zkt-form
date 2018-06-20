@@ -7,6 +7,7 @@
       :slot="field.group||field.name"
       :is="field['tagName']&&'form-'+field['tagName']"
       :ref="field.name&&'field'+field.name"
+      :key="field.name"
       @input.native="_onChange(field)"
       @change.native="_onChange(field)"
       class="field"
@@ -28,7 +29,7 @@
   import FormImage from './Image.vue'
   import FormButton from'./Button.vue'
 
-  var Form = {
+  export default {
     name: 'FormNested',
     mixins: [validationMixin],
     components: {
@@ -110,17 +111,4 @@
       // })
     }
   }
-
-  Form.register = function (name, component) {
-    if (name.name) {
-      component = name
-    }
-    name = component.name
-    if (Form.components[name]) {
-      throw new Error('该组件已经被注册')
-    }
-    Form.components[name] = component
-  }
-
-  export default Form
 </script>
