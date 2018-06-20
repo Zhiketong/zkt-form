@@ -50,8 +50,8 @@
 </script>
 
 <style>
-.form-control {
+.field {
   display: inline-block;
-  width: auto;
+  margin-bottom: 10px;
 }
 </style>

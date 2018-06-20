@@ -17,7 +17,6 @@
   import {validationMixin} from 'vuelidate'
   import * as utils from './utils.js'
   import FormLayout from './Layout.vue'
-  import FormLabel from './Label.vue'
   import FormInput from './Input.vue'
   import FormNumber from './Number.vue'
   import FormTextarea from './Textarea.vue'
@@ -34,7 +33,6 @@
     mixins: [validationMixin],
     components: {
       FormLayout,
-      FormLabel,
       FormInput,
       FormNumber,
       FormTextarea,

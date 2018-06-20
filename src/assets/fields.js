@@ -85,11 +85,12 @@ export default [
   },
   {
     tagName: 'divider',
-    name: 'divider'
+    name: 'divider',
   },
   {
     name: 'submit',
     tagName: 'button',
-    type: 'submit'
+    type: 'submit',
+    label: ' '
   }
 ]

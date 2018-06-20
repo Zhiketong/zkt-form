@@ -1,8 +1,10 @@
 <template>
   <div class="form-group" :class="{'has-error': hasError}">
-    <label v-if="label" :for="name">{{label}}</label>
-    <slot></slot>
-    <p class="help-block" v-if="helpText">{{helpText}}</p>
+    <label v-if="label" :for="name" class="control-label col-sm-2">{{label}}</label>
+    <div class="col-sm-10">
+      <slot></slot>
+      <p class="help-block" v-if="helpText">{{helpText}}</p>
+    </div>
   </div>
 </template>
 <script>
