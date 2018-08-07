@@ -1,17 +1,21 @@
 <template>
-  <select
+  <div>
+    <slot name='label'></slot>
+    <select
     v-model="val"
     class="form-control"
     @change="$emit('change', $event.target.value)">
-    <option value="">请选择</option>
-    <option
-    v-for="option in options"
-    :value="option.value"
-    :key="option.value"
-    >
-      {{option.label}}
-    </option>
-  </select>
+      <option value="">请选择</option>
+      <option
+      v-for="option in options"
+      :value="option.value"
+      :key="option.value"
+      >
+        {{option.label}}
+      </option>
+    </select>
+    <slot ></slot>
+  </div>
 </template>
 <script>
   import Base from './Base.vue'

@@ -1,4 +1,6 @@
+
 <script>
+import {Parser} from 'expr-eval'
   export default {
     name: 'FormBase',
     props: {
@@ -14,13 +16,21 @@
         type: String,
         default: ''
       },
+      helpText:{
+        type: String,
+        default: ''
+      },
+      label: {
+        type: String,
+        default: ''
+      },
       group: {
         type: String,
         default: ''
       },
-      validation: {
+      model:{
         type: Object,
-        default () {
+        default (){
           return {}
         }
       }
@@ -33,6 +43,18 @@
         set (val) {
           this.$emit('input', val)
         }
+      }
+    },
+    mounted () {
+      if (this.expression) {
+        this.$watch('model',
+        (nv) => {
+           this.model[this.name] = Parser.evaluate(this.expression, this.model)
+        },
+        {
+          deep: true,
+          immediate: true
+        })
       }
     },
     methods: {

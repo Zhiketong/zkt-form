@@ -12,16 +12,17 @@ export default {
     maxLength: 16
   },
   user: {
-    // required: true,
+    required: true,
     email: true
   },
   site: {
+    required: true,
     url: true
   },
   password: {
     required: true
   },
-  repeatPasword: {
+  repeatPassword: {
     required: true,
     sameAs: 'password'
   },
