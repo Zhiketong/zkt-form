@@ -24,8 +24,7 @@ export default [
     },
     col: {
       sm: 5
-    },
-    hide: true
+    }
   }],
   [{
     tagName: 'label',
@@ -82,8 +81,8 @@ export default [
       label: 'option2',
       value: '2'
     }],
-    relyKey: 'select',
-    relyVal: '2'
+    dependKey: 'select',
+    dependVal: '2'
   }],
   [{
     tagName: 'label',
@@ -99,8 +98,8 @@ export default [
       label: 'option2',
       value: '2'
     }],
-    relyKey: 'radio',
-    relyVal: '1'
+    dependKey: 'radio',
+    dependVal: '1'
   }],
   [{
     name: 'static',

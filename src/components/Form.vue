@@ -1,8 +1,7 @@
 <template>
   <form class="form form-horizontal" @submit.prevent="_onSubmit">
     <form-group
-      v-if="!row[row.length-1]['hide']"
-      v-show="relyOn(row[row.length-1])"
+      v-show="depend(row[row.length-1])"
     v-for="(row, index) in fields"
     :key="index"
     :ref="'group'+index"
@@ -122,8 +121,8 @@
       _onSubmit () {
         this.validate()&&this.$emit('submit')
       },
-      relyOn (relyObj) {
-       return this.value[relyObj['relyKey']] === relyObj['relyVal']
+      depend (dependObj) {
+       return this.value[dependObj['dependKey']] === dependObj['dependVal']
       }
     },
     mounted () {
