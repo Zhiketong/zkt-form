@@ -1,5 +1,9 @@
 <template>
-  <img :src="val" alt="alt">
+  <div>
+    <slot name='label'></slot>
+    <img :src="val" alt="alt">
+  </div>
+ 
 </template>
 <script>
   import Base from './Base.vue'

@@ -1,5 +1,8 @@
 <template>
-  <button class="btn" :type="type">{{value}}</button>
+  <div>
+    <button class="btn btn-primary" :type="type">{{value}}</button>
+  </div>
+  
 </template>
 <script>
   import Base from './Base.vue'

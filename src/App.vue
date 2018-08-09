@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <Form
         class="form-horizontal"
         :fields="fields"
         :validation="validation"
         :triggers="triggers"
+        :model="model"
         ref="form"
         v-model="model"
         @submit="onSubmit">
-        <div class="alert alert-success" slot="header">Form Header</div>
-        <div class="alert alert-warning" slot="footer">Form Footer</div>
       </Form>
     </div>
     <div class="col-md-6">
@@ -57,6 +56,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this)
   }
 }
 </script>
