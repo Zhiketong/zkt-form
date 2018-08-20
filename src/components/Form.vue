@@ -1,6 +1,7 @@
 <template>
   <form class="form form-horizontal" @submit.prevent="_onSubmit">
     <form-group
+      v-show="depend(row[row.length-1])"
     v-for="(row, index) in fields"
     :key="index"
     :ref="'group'+index"
@@ -119,6 +120,9 @@
       },
       _onSubmit () {
         this.validate()&&this.$emit('submit')
+      },
+      depend (dependObj) {
+       return this.value[dependObj['dependKey']] === dependObj['dependVal']
       }
     },
     mounted () {

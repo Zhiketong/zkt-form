@@ -80,7 +80,9 @@ export default [
     }, {
       label: 'option2',
       value: '2'
-    }]
+    }],
+    dependKey: 'select',
+    dependVal: '2'
   }],
   [{
     tagName: 'label',
@@ -95,7 +97,9 @@ export default [
     }, {
       label: 'option2',
       value: '2'
-    }]
+    }],
+    dependKey: 'radio',
+    dependVal: '1'
   }],
   [{
     name: 'static',
