@@ -122,7 +122,11 @@
         this.validate()&&this.$emit('submit')
       },
       depend (dependObj) {
-       return this.value[dependObj['dependKey']] === dependObj['dependVal']
+        if (dependObj['dependVal'] && typeof(dependObj['dependVal']) === 'function'){
+          return dependObj['dependVal'](this.value)
+        }else{
+          return true
+        }
       }
     },
     mounted () {
