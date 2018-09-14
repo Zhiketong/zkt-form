@@ -1,31 +1,31 @@
 export default [
   {
     name: 'input',
-    tagName: 'input',
+    component: 'Input',
     value: '',
-    label: '输入框'
+    label: '输入框',
   },
   {
     name: 'number',
-    tagName: 'number',
+    component: 'number',
     value: 10,
     group: 'input'
   },
   {
     name: 'password',
-    tagName: 'input',
+    component: 'Input',
     type: 'password',
     placeholder: '密码',
     group: 'input'
   },
   {
     name: 'textarea',
-    tagName: 'textarea',
+    component: 'Textarea',
     label: '文本框'
   },
   {
     name: 'checkbox',
-    tagName: 'checkbox',
+    component: 'Checkbox',
     value: ['1'],
     options: [{
       label: 'option1',
@@ -38,8 +38,8 @@ export default [
   },
   {
     name: 'truefalse',
-    tagName: 'checkbox',
-    group: 'checkbox',
+    component: 'Checkbox',
+    // group: 'checkbox',
     options: [{
       label: '是否同意？',
       value: '1'
@@ -50,7 +50,7 @@ export default [
   },
   {
     name: 'radio',
-    tagName: 'radio',
+    component: 'radio',
     value: '1',
     options: [{
       label: 'option1',
@@ -63,7 +63,7 @@ export default [
   },
   {
     name: 'select',
-    tagName: 'select',
+    component: 'Select',
     options: [{
       label: 'option1',
       value: '1'
@@ -74,22 +74,23 @@ export default [
     label: '下拉'
   },
   {
+    component: 'divider',
+    name: 'divider'
+  },
+  {
     name: 'static',
-    tagName: 'static',
+    component: 'Static',
+    value: 'xxxxx',
     label: '静态'
   },
   {
     name: 'image',
-    tagName: 'image',
+    component: 'Img',
     label: '图片'
   },
   {
-    tagName: 'divider',
-    name: 'divider',
-  },
-  {
     name: 'submit',
-    tagName: 'button',
+    component: 'Button',
     type: 'submit',
     label: ' '
   }

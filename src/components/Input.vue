@@ -8,7 +8,7 @@
   import Base from './Base.vue'
 
   export default {
-    name: 'FormInput',
+    name: 'Input',
     extends: Base
   }
 </script>

@@ -4,13 +4,9 @@
       <Form
         class="form-horizontal"
         :fields="fields"
-        :validation="validation"
-        :triggers="triggers"
         ref="form"
         v-model="model"
         @submit="onSubmit">
-        <div class="alert alert-success" slot="header">Form Header</div>
-        <div class="alert alert-warning" slot="footer">Form Footer</div>
       </Form>
     </div>
     <div class="col-md-6">
@@ -33,7 +29,7 @@
 </template>
 
 <script>
-import Form from './components'
+import Form from './export'
 import fields from './assets/fields'
 import validation from './assets/validation'
 import model from './assets/model'
@@ -52,7 +48,7 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    onSubmit (e) {
       console.log('onSubmit')
     }
   },

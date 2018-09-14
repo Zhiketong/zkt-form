@@ -1,11 +1,11 @@
 <template>
-  <span v-html="val"></span>
+  <span v-html="val" class="form-control-static"></span>
 </template>
 <script>
   import Base from './Base.vue'
 
   export default {
-    name: 'FormStatic',
+    name: 'Static',
     extends: Base
   }
 </script>

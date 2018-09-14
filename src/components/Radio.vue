@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span class="radio">
     <label class="radio-inline" v-for="option in options" :key="option.value">
         <input
           type="radio"
@@ -14,7 +14,7 @@
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormRadio',
+    name: 'Radio',
     extends: Base,
     props: {
       name: {

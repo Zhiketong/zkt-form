@@ -4,7 +4,7 @@
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormDivider',
+    name: 'Divider',
     extends: Base
   }
 </script>

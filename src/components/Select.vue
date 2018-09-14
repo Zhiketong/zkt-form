@@ -16,7 +16,7 @@
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormSelect',
+    name: 'Select',
     extends: Base,
     props: {
       name: {

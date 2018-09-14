@@ -1,6 +1,7 @@
 <script>
   export default {
-    name: 'FormBase',
+    name: 'Base',
+    inheritAttrs: false,
     props: {
       name: {
         type: String,

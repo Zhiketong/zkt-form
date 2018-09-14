@@ -8,7 +8,7 @@
 <script>
   import Input from './Input.vue'
   export default {
-    name: 'FormNumber',
+    name: 'Number',
     extends: Input,
     props: {
       value: {

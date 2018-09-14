@@ -5,7 +5,7 @@
   import Base from './Base.vue'
 
   export default {
-    name: 'FormButton',
+    name: 'Button',
     extends: Base,
     props: {
       type: {

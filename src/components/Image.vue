@@ -1,11 +1,11 @@
 <template>
-  <img :src="val" alt="alt">
+  <img :src="val" :alt="alt">
 </template>
 <script>
   import Base from './Base.vue'
 
   export default {
-    name: 'FormImage',
+    name: 'Img',
     extends: Base,
     props: {
       alt: {

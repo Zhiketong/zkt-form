@@ -1,9 +1,9 @@
 <template>
-  <span>
+  <div class="checkbox">
     <label class="checkbox-inline" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
-          v-model="value"
+          v-model="val"
           :value="option.value"
           :name="name"
           @change="$emit('change', $event.target.value)"
@@ -11,12 +11,12 @@
           :false-value="falseValue">
         <span>{{option.label}}</span>
       </label>
-  </span>
+  </div>
 </template>
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormCheckbox',
+    name: 'Checkbox',
     extends: Base,
     props: {
       name: {
@@ -37,7 +37,4 @@
   }
 </script>
 <style scoped>
-.form-horizontal .checkbox-wrapper .checkbox-inline {
-  padding-top: 5px;
-}
 </style>
