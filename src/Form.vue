@@ -22,6 +22,9 @@
     components: {
       Layout
     },
+    provide () {
+      return this
+    },
     props: {
       fields: {
         type: Array,
