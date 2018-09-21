@@ -51,7 +51,7 @@
 </script>
 
 <style>
-.form-control {
+.form-filed {
   display: inline-block;
   margin-bottom: 10px;
 }

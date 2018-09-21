@@ -9,6 +9,7 @@
         :is="field['component']"
         :ref="field.name&&'field'+field.name"
         :key="field.name"
+        :class="'form-filed'"
       />
     </layout>
   </form>
