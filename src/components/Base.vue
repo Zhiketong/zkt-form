@@ -51,7 +51,7 @@
 </script>
 
 <style>
-.field {
+.form-control {
   display: inline-block;
   margin-bottom: 10px;
 }

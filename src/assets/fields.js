@@ -4,19 +4,22 @@ export default [
     component: 'Input',
     value: '',
     label: '输入框',
+    style: 'width: 33.33%'
   },
   {
     name: 'number',
     component: 'number',
     value: 10,
-    group: 'input'
+    group: 'input',
+    style: 'width: 33.33%'
   },
   {
     name: 'password',
     component: 'Input',
     type: 'password',
     placeholder: '密码',
-    group: 'input'
+    group: 'input',
+    style: 'width: 33.33%'
   },
   {
     name: 'textarea',
