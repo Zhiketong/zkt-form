@@ -1,5 +1,5 @@
 <template>
-  <div class="checkbox">
+  <div class="checkbox-wrapper">
     <label class="checkbox-inline" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
@@ -9,7 +9,7 @@
           @change="$emit('change', $event.target.value)"
           :true-value="trueValue"
           :false-value="falseValue">
-        <span>{{option.label}}</span>
+        <span>{{option.label}} </span>
       </label>
   </div>
 </template>
@@ -36,5 +36,3 @@
     }
   }
 </script>
-<style scoped>
-</style>
