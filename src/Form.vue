@@ -56,7 +56,12 @@
       }
     },
     methods: {
-
+      getValue () {
+        return this.value
+      },
+      setValue (value) {
+        this.$emit('input', value)
+      }
     }
   }
 </script>
