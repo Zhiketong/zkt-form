@@ -22,7 +22,6 @@ export default {
   inheritAttrs: false,
   filters: {
     hasError (v) {
-      console.log(v)
       return v && v.$error && 'has-error'
     }
   },
