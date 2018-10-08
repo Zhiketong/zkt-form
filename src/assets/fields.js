@@ -1,19 +1,43 @@
 export default [
   {
     name: 'input',
-    tagName: 'input',
+    component: 'Input',
     value: '',
     label: '输入框',
-    helpText:'请输入文本',
-    group:'input',
-    placeholder:'1111111'
+    style: {width: '33.33%'},
+    placeholder: '文本'
   },
   {
     name: 'number',
-    tagName: 'number',
+    component: 'Number',
     value: 10,
-    label: '数字',
-    group:'input'
+    group: 'input',
+    style: {width: '33.33%'},
+    placeholder: '数字'
+  },
+  {
+    name: 'url',
+    component: 'Input',
+    value: 'http://www.baidu.com',
+    group: 'input',
+    style: {width: '33.33%'},
+    placeholder: 'url'
+  },
+  {
+    name: 'password',
+    component: 'Input',
+    type: 'password',
+    placeholder: '密码',
+    label: '密码',
+    style: {width: '50%'}
+  },
+  {
+    name: 'repeatPassword',
+    component: 'Input',
+    type: 'password',
+    placeholder: '重复密码',
+    group: 'password',
+    style: {width: '50%'}
   },
   // {
   //   label: '密码',
@@ -25,12 +49,12 @@ export default [
   // },
   {
     name: 'textarea',
-    tagName: 'textarea',
+    component: 'Textarea',
     label: '文本框'
   },
   {
     name: 'checkbox',
-    tagName: 'checkbox',
+    component: 'Checkbox',
     value: ['1'],
     options: [{
       label: 'option1',
@@ -44,8 +68,8 @@ export default [
   },
   {
     name: 'truefalse',
-    tagName: 'checkbox',
-    group: 'checkbox',
+    component: 'Checkbox',
+    // group: 'checkbox',
     options: [{
       label: '是否同意？',
       value: '1'
@@ -53,11 +77,11 @@ export default [
     trueValue: '1',
     falseValue: '0',
     label: '布尔'
-    
+
   },
   {
     name: 'radio',
-    tagName: 'radio',
+    component: 'radio',
     value: '1',
     options: [{
       label: 'option1',
@@ -71,7 +95,7 @@ export default [
   {
     group:"checkbox",
     name: 'select',
-    tagName: 'select',
+    component: 'Select',
     options: [{
       label: 'option1',
       value: '1'
@@ -82,66 +106,28 @@ export default [
     label: '下拉'
   },
   {
+    component: 'divider',
+    name: 'divider',
+    label: ' '
+  },
+  {
     name: 'static',
-    tagName: 'static',
+    component: 'Static',
+    value: 'xxxxx',
     label: '静态'
   },
   {
     name: 'image',
-    tagName: 'image',
+    component: 'Img',
     label: '图片'
   },
   {
-    tagName: 'divider',
-    name: 'divider',
-  },
-
-
-
-  {
-    name:'user',
-    tagName:'input',
-    label:'用户名',
-    placeholder:'用户名为邮箱'
-
-  },
-  {
-    label: '密码',
-    name: 'password',
-    tagName: 'input',
-    type: 'password',
-    placeholder: '请填写密码',
-    group:"password"
-  },
-  {
-    name: 'repeatPassword',
-    tagName: 'input',
-    type: 'password',
-    placeholder: '确认密码',
-    group:"password"
-  },
-  {
-    label: '网址',
-    name: 'site',
-    tagName: 'input',
-    type: 'input',
-    placeholder: '请输入有效url',
-    
-  },
-  {
-    label: '表达式',
-    name:"expression",
-    tagName:'static',
-    expression: '2*number',
-    before:'2<span style="color:#0f0">*</span>number<b>=</b>'
-  },
-  {
     name: 'submit',
-    tagName: 'button',
+    component: 'Button',
     type: 'submit',
     label: ' '
   }
-  
+
 ]
   // user: '',
   // site: '',

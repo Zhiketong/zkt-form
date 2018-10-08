@@ -1,18 +1,14 @@
 <template>
-  <div>
-    <slot name='label'></slot>
-    <textarea
-      v-model="val"
-      @change="$emit('change', $event.target.value)"
-      class="form-control">
-    </textarea>
-    <slot></slot>
-  </div>
+  <textarea
+    v-model="val"
+    @change="$emit('change', $event.target.value)"
+    class="form-control">
+  </textarea>
 </template>
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormTextarea',
+    name: 'Textarea',
     extends: Base
   }
 </script>

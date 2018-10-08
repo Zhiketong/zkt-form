@@ -1,27 +1,22 @@
 <template>
-  <div>
-    <slot name='label'></slot>
-    <span>
-      <label class="checkbox-inline" v-for="option in options" :key="option.value">
-          <input
-            type="checkbox"
-            v-model="val"
-            :value="option.value"
-            :name="name"
-            @change="$emit('change', $event.target.value)"
-            :true-value="trueValue"
-            :false-value="falseValue">
-          <span>{{option.label}}</span>
-        </label>
-    </span>
-    <slot ></slot>
+  <div class="checkbox-wrapper">
+    <label class="checkbox-inline" v-for="option in options" :key="option.value">
+        <input
+          type="checkbox"
+          v-model="val"
+          :value="option.value"
+          :name="name"
+          @change="$emit('change', $event.target.value)"
+          :true-value="trueValue"
+          :false-value="falseValue">
+        <span>{{option.label}} </span>
+      </label>
   </div>
-  
 </template>
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormCheckbox',
+    name: 'Checkbox',
     extends: Base,
     props: {
       name: {
@@ -41,8 +36,9 @@
     }
   }
 </script>
-<style scoped>
-.form-horizontal .checkbox-wrapper .checkbox-inline {
-  padding-top: 5px;
-}
+
+<style>
+  .checkbox-wrapper {
+    width: 100%;
+  }
 </style>

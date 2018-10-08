@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <button class="btn btn-primary" :type="type">{{value}}</button>
-  </div>
-  
+  <button class="btn btn-info" :type="type">{{value}}</button>
 </template>
 <script>
   import Base from './Base.vue'
 
   export default {
-    name: 'FormButton',
+    name: 'Button',
     extends: Base,
     props: {
       type: {

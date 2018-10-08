@@ -43,11 +43,10 @@
     </form-layout>
     <slot name="footer"></slot>
   </div>
-  
+
 </template>
 <script>
   import {validationMixin} from 'vuelidate'
-  import * as utils from './utils.js'
   import FormLayout from './Layout.vue'
   import FormInput from './Input.vue'
   import FormNumber from './Number.vue'
@@ -149,7 +148,7 @@
       }
     },
     mounted () {
-      
+
       // this.triggers.forEach((trigger) => {
       //   var sourceField = this.getField(trigger.source)
       //   var targetField = this.getField(trigger.target)

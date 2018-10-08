@@ -3,27 +3,24 @@ export default {
     required: true // 必须设置为true
   },
   number: {
-    minValue: 10,
-    maxValue: 20
+    required: true,
+    decimal: true,
+    // minValue: 10,
+    // maxValue: 20
+  },
+  url: {
+    url: true
   },
   textarea: {
     requiredIf: 'user',
     minLength: 4,
     maxLength: 16
   },
-  user: {
-    required: true,
-    email: true
-  },
-  site: {
-    required: true,
-    url: true
-  },
   password: {
     required: true
   },
   repeatPassword: {
-    required: true,
+    requiredIf: 'password',
     sameAs: 'password'
   },
   checkbox: {

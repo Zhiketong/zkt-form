@@ -3,6 +3,7 @@
     <slot name='label'></slot>
     <select
     v-model="val"
+    v-bind="$props"
     class="form-control"
     @change="$emit('change', $event.target.value)">
       <option value="">请选择</option>
@@ -20,7 +21,7 @@
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormSelect',
+    name: 'Select',
     extends: Base,
     props: {
       name: {

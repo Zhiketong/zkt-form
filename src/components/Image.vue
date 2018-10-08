@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <slot name='label'></slot>
-    <img :src="val" alt="alt">
-  </div>
- 
+  <img :src="val" :alt="alt">
 </template>
 <script>
   import Base from './Base.vue'
 
   export default {
-    name: 'FormImage',
+    name: 'Img',
     extends: Base,
     props: {
       alt: {

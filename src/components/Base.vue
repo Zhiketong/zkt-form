@@ -2,17 +2,19 @@
 <script>
 import {Parser} from 'expr-eval'
   export default {
-    name: 'FormBase',
+    name: 'Base',
+    inheritAttrs: false,
     props: {
       name: {
         type: String,
         default: ''
       },
-      expression: {
+      value: {},
+      type: {
         type: String,
-        default: ''
+        default: 'text'
       },
-      value: {
+      placeholder: {
         type: String,
         default: ''
       },
@@ -27,12 +29,6 @@ import {Parser} from 'expr-eval'
       group: {
         type: String,
         default: ''
-      },
-      model:{
-        type: Object,
-        default (){
-          return {}
-        }
       }
     },
     computed: {
@@ -72,8 +68,7 @@ import {Parser} from 'expr-eval'
 </script>
 
 <style>
-.field {
+.form-filed {
   display: inline-block;
-  margin-bottom: 10px;
 }
 </style>

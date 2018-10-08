@@ -1,24 +1,20 @@
 <template>
-  <div>
-    <slot name='label'></slot>
-    <span>
-      <label class="radio-inline" v-for="option in options" :key="option.value">
-          <input
-            type="radio"
-            v-model="val"
-            :value="option.value"
-            :name="name"
-            @change="$emit('change', $event.target.value)">
-          <span>{{option.label}}</span>
-        </label>
-    </span>
-    <slot ></slot>
-  </div>
+  <span class="radio-wrapper">
+    <label class="radio-inline" v-for="option in options" :key="option.value">
+        <input
+          type="radio"
+          v-model="val"
+          :value="option.value"
+          :name="name"
+          @change="$emit('change', $event.target.value)">
+        <span>{{option.label}}</span>
+      </label>
+  </span>
 </template>
 <script>
   import Base from './Base.vue'
   export default {
-    name: 'FormRadio',
+    name: 'Radio',
     extends: Base,
     props: {
       name: {
@@ -31,4 +27,3 @@
     }
   }
 </script>
-

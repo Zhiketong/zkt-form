@@ -5,26 +5,18 @@
         class="form-horizontal"
         :fields="fields"
         :validation="validation"
-        :triggers="triggers"
-        :model="model"
         ref="form"
         v-model="model"
         @submit="onSubmit">
       </Form>
     </div>
     <div class="col-md-6">
-        <h3>表单值</h3>
-        <pre>{{model}}</pre>
-    </div>
-    <div class="col-md-6">
+      <h3>表单值</h3>
+      <pre>{{model}}</pre>
       <h3>校验规则</h3>
       <pre>{{validation}}</pre>
-    </div>
-    <div class="col-md-6">
       <h3>控件设置</h3>
       <pre>{{fields}}</pre>
-    </div>
-    <div class="col-md-6">
       <h3>触发器</h3>
       <pre>{{triggers}}</pre>
     </div>
@@ -32,7 +24,7 @@
 </template>
 
 <script>
-import Form from './components'
+import Form from './export'
 import fields from './assets/fields'
 import validation from './assets/validation'
 import model from './assets/model'
@@ -51,7 +43,7 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    onSubmit (e) {
       console.log('onSubmit')
     }
   },
