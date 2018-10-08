@@ -11,14 +11,16 @@
       </Form>
     </div>
     <div class="col-md-6">
-      <h3>表单值</h3>
-      <pre>{{model}}</pre>
-      <h3>校验规则</h3>
-      <pre>{{validation}}</pre>
-      <h3>控件设置</h3>
-      <pre>{{fields}}</pre>
-      <h3>触发器</h3>
-      <pre>{{triggers}}</pre>
+      <ul class="nav nav-tabs">
+        <li :class="{active: tab==1}"><a href="" @click.prevent="changeTab(1)">表单值</a></li>
+        <li :class="{active: tab==2}"><a href="" @click.prevent="changeTab(2)">校验规则</a></li>
+        <li :class="{active: tab==3}"><a href="" @click.prevent="changeTab(3)">控件设置</a></li>
+        <li :class="{active: tab==4}"><a href="" @click.prevent="changeTab(4)">触发器</a></li>
+      </ul>
+      <pre v-if="tab==1">{{model}}</pre>
+      <pre v-if="tab==2">{{validation}}</pre>
+      <pre v-if="tab==3">{{fields}}</pre>
+      <pre v-if="tab==4">{{triggers}}</pre>
     </div>
   </div>
 </template>
@@ -39,16 +41,17 @@ export default {
       model,
       fields,
       validation,
-      triggers
+      triggers,
+      tab: 1
     }
   },
   methods: {
     onSubmit (e) {
       console.log('onSubmit')
+    },
+    changeTab (i) {
+      this.tab = i
     }
-  },
-  mounted () {
-    console.log(this)
   }
 }
 </script>
