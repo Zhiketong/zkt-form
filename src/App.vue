@@ -17,7 +17,7 @@
         <li :class="{active: tab==3}"><a href="" @click.prevent="changeTab(3)">控件设置</a></li>
         <li :class="{active: tab==4}"><a href="" @click.prevent="changeTab(4)">触发器</a></li>
       </ul>
-      <textarea v-if="tab==1" class="form-control" rows="30">{{model}}</textarea>
+      <textarea v-if="tab==1" class="form-control" rows="30" v-model="model2">{{model}}</textarea>
       <textarea v-if="tab==2" class="form-control" rows="30">{{validation}}</textarea>
       <textarea v-if="tab==3" class="form-control" rows="30">{{fields}}</textarea>
       <textarea v-if="tab==4" class="form-control" rows="30">{{triggers}}</textarea>
@@ -43,6 +43,16 @@ export default {
       validation,
       triggers,
       tab: 1
+    }
+  },
+  computed: {
+    model2: {
+      get() {
+        return JSON.stringify(this.model, null, '    ')
+      },
+      set(str) {
+        this.model = JSON.parse(str)
+      }
     }
   },
   methods: {
