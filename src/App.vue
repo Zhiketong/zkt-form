@@ -18,9 +18,9 @@
         <li :class="{active: tab==4}"><a href="" @click.prevent="changeTab(4)">触发器</a></li>
       </ul>
       <textarea v-if="tab==1" class="form-control" rows="30" v-model="model2">{{model}}</textarea>
-      <textarea v-if="tab==2" class="form-control" rows="30">{{validation}}</textarea>
-      <textarea v-if="tab==3" class="form-control" rows="30">{{fields}}</textarea>
-      <textarea v-if="tab==4" class="form-control" rows="30">{{triggers}}</textarea>
+      <textarea v-if="tab==2" class="form-control" rows="30" v-model="validation2">{{validation}}</textarea>
+      <textarea v-if="tab==3" class="form-control" rows="30" v-model="fields2">{{fields}}</textarea>
+      <textarea v-if="tab==4" class="form-control" rows="30" v-model="triggers2">{{triggers}}</textarea>
     </div>
   </div>
 </template>
@@ -49,6 +49,30 @@ export default {
     model2: {
       get() {
         return JSON.stringify(this.model, null, '    ')
+      },
+      set(str) {
+        this.model = JSON.parse(str)
+      }
+    },
+    validation2: {
+      get() {
+        return JSON.stringify(this.validation, null, '    ')
+      },
+      set(str) {
+        this.model = JSON.parse(str)
+      }
+    },
+    fields2: {
+      get() {
+        return JSON.stringify(this.fields, null, '    ')
+      },
+      set(str) {
+        this.model = JSON.parse(str)
+      }
+    },
+    triggers2: {
+      get() {
+        return JSON.stringify(this.triggers, null, '    ')
       },
       set(str) {
         this.model = JSON.parse(str)
