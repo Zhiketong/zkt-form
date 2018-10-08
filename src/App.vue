@@ -17,10 +17,10 @@
         <li :class="{active: tab==3}"><a href="" @click.prevent="changeTab(3)">控件设置</a></li>
         <li :class="{active: tab==4}"><a href="" @click.prevent="changeTab(4)">触发器</a></li>
       </ul>
-      <pre v-if="tab==1">{{model}}</pre>
-      <pre v-if="tab==2">{{validation}}</pre>
-      <pre v-if="tab==3">{{fields}}</pre>
-      <pre v-if="tab==4">{{triggers}}</pre>
+      <textarea v-if="tab==1" class="form-control" rows="30">{{model}}</textarea>
+      <textarea v-if="tab==2" class="form-control" rows="30">{{validation}}</textarea>
+      <textarea v-if="tab==3" class="form-control" rows="30">{{fields}}</textarea>
+      <textarea v-if="tab==4" class="form-control" rows="30">{{triggers}}</textarea>
     </div>
   </div>
 </template>
