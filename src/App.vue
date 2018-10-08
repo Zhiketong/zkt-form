@@ -4,6 +4,7 @@
       <Form
         class="form-horizontal"
         :fields="fields"
+        :validation="validation"
         ref="form"
         v-model="model"
         @submit="onSubmit">

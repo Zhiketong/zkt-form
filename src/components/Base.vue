@@ -7,23 +7,18 @@
         type: String,
         default: ''
       },
-      expression: {
+      value: {},
+      type: {
         type: String,
-        default: ''
+        default: 'text'
       },
-      value: {
+      placeholder: {
         type: String,
         default: ''
       },
       group: {
         type: String,
         default: ''
-      },
-      validation: {
-        type: Object,
-        default () {
-          return {}
-        }
       }
     },
     computed: {
@@ -53,6 +48,5 @@
 <style>
 .form-filed {
   display: inline-block;
-  margin-bottom: 10px;
 }
 </style>

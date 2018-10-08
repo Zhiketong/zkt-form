@@ -4,22 +4,40 @@ export default [
     component: 'Input',
     value: '',
     label: '输入框',
-    style: 'width: 33.33%'
+    style: {width: '33.33%'},
+    placeholder: '文本'
   },
   {
     name: 'number',
-    component: 'number',
+    component: 'Number',
     value: 10,
     group: 'input',
-    style: 'width: 33.33%'
+    style: {width: '33.33%'},
+    placeholder: '数字'
+  },
+  {
+    name: 'url',
+    component: 'Input',
+    value: 'http://www.baidu.com',
+    group: 'input',
+    style: {width: '33.33%'},
+    placeholder: 'url'
   },
   {
     name: 'password',
     component: 'Input',
     type: 'password',
     placeholder: '密码',
-    group: 'input',
-    style: 'width: 33.33%'
+    label: '密码',
+    style: {width: '50%'}
+  },
+  {
+    name: 'repeatPassword',
+    component: 'Input',
+    type: 'password',
+    placeholder: '重复密码',
+    group: 'password',
+    style: {width: '50%'}
   },
   {
     name: 'textarea',
@@ -78,7 +96,8 @@ export default [
   },
   {
     component: 'divider',
-    name: 'divider'
+    name: 'divider',
+    label: ' '
   },
   {
     name: 'static',

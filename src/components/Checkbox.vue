@@ -36,3 +36,9 @@
     }
   }
 </script>
+
+<style>
+  .checkbox-wrapper {
+    width: 100%;
+  }
+</style>
