@@ -11,7 +11,7 @@
       </Form>
     </div>
     <div class="col-md-6">
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs" style="margin-bottom: 15px">
         <li :class="{active: tab==1}"><a href="" @click.prevent="changeTab(1)">表单值</a></li>
         <li :class="{active: tab==2}"><a href="" @click.prevent="changeTab(2)">校验规则</a></li>
         <li :class="{active: tab==3}"><a href="" @click.prevent="changeTab(3)">控件设置</a></li>
