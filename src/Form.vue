@@ -98,7 +98,15 @@
       }
     },
     mounted () {
+      this.triggers && this.triggers.forEach((trigger) => {
+        var sourceField = this.getField(trigger.source)
+        var targetField = this.getField(trigger.target)
+        sourceField && sourceField.$on(trigger.event, (value) => {
+          targetField && targetField.setProp(trigger.targetProp, sourceField[trigger.sourceProp])
+        })
+      })
     }
+
   }
 
   function transformValidation (validation) {
