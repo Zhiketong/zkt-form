@@ -12,22 +12,13 @@
     extends: Input,
     props: {
       value: {
+        type: Number,
         default: 0
       },
       type: {
         type: String,
         default: 'number'
       }
-    },
-    methods:{
-      min(e){
-          this.val--
-          this.$emit('change',this.val)
-      },
-      plus(){
-          this.val++
-          this.$emit('change', this.val)
-      },
     }
   }
 </script>
