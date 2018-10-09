@@ -3,6 +3,6 @@ export default [{
   target: 'password',
   sourceProp: 'value',
   targetProp: 'show', // 必填
-  event: 'input',
+  event: 'change',
   immediate: true
 }]

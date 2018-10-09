@@ -65,7 +65,7 @@ export default [
       value: '2'
     }],
     label: '多选',
-    group:'checkbox'
+    // group:'checkbox'
   },
   {
     name: 'truefalse',
@@ -94,7 +94,7 @@ export default [
     label: '单选'
   },
   {
-    group:"checkbox",
+    // group:"checkbox",
     name: 'select',
     component: 'Select',
     options: [{

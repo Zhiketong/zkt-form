@@ -5,8 +5,8 @@ export default {
   number: {
     required: true,
     decimal: true,
-    // minValue: 10,
-    // maxValue: 20
+    minValue: 10,
+    maxValue: 20
   },
   url: {
     url: true

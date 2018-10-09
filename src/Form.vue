@@ -100,7 +100,6 @@
       }
     },
     mounted () {
-      this.getField('password').$emit('update:show', false)
       var that = this
       that.triggers && that.triggers.forEach((trigger) => {
         var sourceField = that.getField(trigger.source)
