@@ -1,6 +1,4 @@
-
 <script>
-import {Parser} from 'expr-eval'
   export default {
     name: 'Base',
     inheritAttrs: false,
@@ -18,14 +16,6 @@ import {Parser} from 'expr-eval'
         type: String,
         default: ''
       },
-      helpText:{
-        type: String,
-        default: ''
-      },
-      label: {
-        type: String,
-        default: ''
-      },
       group: {
         type: String,
         default: ''
@@ -39,18 +29,6 @@ import {Parser} from 'expr-eval'
         set (val) {
           this.$emit('input', val)
         }
-      }
-    },
-    mounted () {
-      if (this.expression) {
-        this.$watch('model',
-        (nv) => {
-           this.model[this.name] = Parser.evaluate(this.expression, this.model)
-        },
-        {
-          deep: true,
-          immediate: true
-        })
       }
     },
     methods: {
