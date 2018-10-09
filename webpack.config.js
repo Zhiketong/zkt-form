@@ -85,7 +85,7 @@ if (process.env.NODE_ENV === 'package') {
   module.exports.devtool = '#source-map'
   module.exports.entry = './src/export.js'
   module.exports.output.filename = 'form.js'
-  module.exports.output.path = path: path.resolve(__dirname, './dist')
+  module.exports.output.path = path.resolve(__dirname, './dist')
   module.exports.plugins = (module.exports.plugins || []).concat([
     new BundleAnalyzerPlugin()
   ])
