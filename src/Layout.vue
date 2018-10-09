@@ -2,7 +2,8 @@
   <div class="form-layout">
     <div class="form-group"
       v-for="row in fields"
-      v-if="!row.group&&row.show!==false"
+      v-if="!row.group"
+      v-show="row.show||!row.hasOwnProperty('show')"
       :key="row.name"
       :ref="row.name"
       :class="validation[row.name]|hasError"

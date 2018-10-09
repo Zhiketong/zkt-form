@@ -1,8 +1,8 @@
 export default [{
-  source: 'input',
-  target: 'url',
+  source: 'url',
+  target: 'password',
   sourceProp: 'value',
-  targetProp: 'value', // 必填
+  targetProp: 'show', // 必填
   event: 'input',
   immediate: true
 }]

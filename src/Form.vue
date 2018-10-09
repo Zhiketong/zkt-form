@@ -5,7 +5,7 @@
         v-for="field in fields"
         v-bind.sync="field"
         v-model.sync="value[field.name]"
-        v-if="field.show!==false"
+        v-show="field.show||!field.hasOwnProperty('show')"
         :slot="field.group||field.name"
         :is="field['component']"
         :ref="field.name"
@@ -100,6 +100,7 @@
       }
     },
     mounted () {
+      this.getField('password').$emit('update:show', false)
       var that = this
       that.triggers && that.triggers.forEach((trigger) => {
         var sourceField = that.getField(trigger.source)
@@ -108,7 +109,7 @@
           return
         }
         sourceField.$on(trigger.event, (value) => {
-          var val = sourceField[trigger.sourceProp] || value
+          var val = trigger.sourceProp == 'value' ? value :sourceField[trigger.sourceProp]
           if (trigger.targetProp !== 'value') {
             targetField.$emit(`update:${trigger.targetProp}`, val)
           } else {

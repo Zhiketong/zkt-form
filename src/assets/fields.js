@@ -29,7 +29,8 @@ export default [
     type: 'password',
     placeholder: '密码',
     label: '密码',
-    style: {width: '50%'}
+    style: {width: '50%'},
+    show: false
   },
   {
     name: 'repeatPassword',

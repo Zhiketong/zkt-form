@@ -21,7 +21,6 @@
         default: ''
       },
       show: {
-        type: Boolean,
         default: true
       }
     },
