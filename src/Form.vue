@@ -5,6 +5,7 @@
         v-for="field in fields"
         v-bind.sync="field"
         v-model.sync="value[field.name]"
+        v-if="field.show!==false"
         :slot="field.group||field.name"
         :is="field['component']"
         :ref="field.name"
@@ -15,6 +16,7 @@
         v-for="field in fields"
         :validation="$v.value[field.name]"
         :slot="field.group||field.name"
+        :key="field.name+'msg'"
         :style="{width: (field.style&&field.style.width)?field.style.width:'100%'}"
       />
     </layout>
@@ -98,12 +100,24 @@
       }
     },
     mounted () {
-      this.triggers && this.triggers.forEach((trigger) => {
-        var sourceField = this.getField(trigger.source)
-        var targetField = this.getField(trigger.target)
-        sourceField && sourceField.$on(trigger.event, (value) => {
-          targetField && targetField.setProp(trigger.targetProp, sourceField[trigger.sourceProp])
+      var that = this
+      that.triggers && that.triggers.forEach((trigger) => {
+        var sourceField = that.getField(trigger.source)
+        var targetField = that.getField(trigger.target)
+        if (!sourceField || !targetField) {
+          return
+        }
+        sourceField.$on(trigger.event, (value) => {
+          var val = sourceField[trigger.sourceProp] || value
+          if (trigger.targetProp !== 'value') {
+            targetField.$emit(`update:${trigger.targetProp}`, val)
+          } else {
+            targetField.$emit(`input`, value)
+          }
         })
+        if (trigger.immediate) {
+          sourceField.$emit(trigger.event, sourceField[trigger.sourceProp])
+        }
       })
     }
 

@@ -1,7 +1,8 @@
 export default [{
-  source: 'level1',
-  target: 'level2',
-  sourceProp: 'children',
-  targetProp: 'options', // 必填
-  event: 'change'
+  source: 'input',
+  target: 'url',
+  sourceProp: 'value',
+  targetProp: 'value', // 必填
+  event: 'input',
+  immediate: true
 }]

@@ -5,6 +5,7 @@
         class="form-horizontal"
         :fields="fields"
         :validation="validation"
+        :triggers="triggers"
         ref="form"
         v-model="model"
         @submit="onSubmit">

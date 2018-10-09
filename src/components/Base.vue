@@ -19,6 +19,10 @@
       group: {
         type: String,
         default: ''
+      },
+      show: {
+        type: Boolean,
+        default: true
       }
     },
     computed: {
@@ -37,9 +41,6 @@
       },
       getValue () {
         return this.val
-      },
-      setProp (name, value) {
-        this.$emit(`update:${name}`, value)
       }
     }
   }
