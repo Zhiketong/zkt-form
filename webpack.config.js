@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/main.js',
@@ -37,7 +38,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|ttf|woff|woff2|eot)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: 'assets/[name].[ext]?[hash]'
         }
       }
     ]
@@ -61,7 +62,6 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  module.exports.entry = './src/export.js'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -78,5 +78,15 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
+  ])
+}
+
+if (process.env.NODE_ENV === 'package') {
+  module.exports.devtool = '#source-map'
+  module.exports.entry = './src/export.js'
+  module.exports.output.filename = 'form.js'
+  module.exports.output.path = path: path.resolve(__dirname, './dist')
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new BundleAnalyzerPlugin()
   ])
 }
