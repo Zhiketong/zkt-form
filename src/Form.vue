@@ -7,7 +7,7 @@
         v-model.sync="value[field.name]"
         :slot="field.group||field.name"
         :is="field['component']"
-        :ref="field.name&&'field'+field.name"
+        :ref="field.name"
         :class="'form-filed'"
         :key="field.name"
       />
@@ -15,7 +15,6 @@
         v-for="field in fields"
         :validation="$v.value[field.name]"
         :slot="field.group||field.name"
-        :key="field.name+'msg'"
         :style="{width: (field.style&&field.style.width)?field.style.width:'100%'}"
       />
     </layout>
@@ -87,9 +86,11 @@
       setValue (value) {
         this.$emit('input', value)
       },
+      getField (name) {
+        return this.$refs[name][0]
+      },
       validate () {
         this.$v.$touch()
-        console.log(this.$v)
         return !this.$v.$error
       },
       _onSubmit (e) {
