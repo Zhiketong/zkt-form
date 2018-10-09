@@ -4,7 +4,7 @@
       <component
         v-for="field in fields"
         v-bind.sync="field"
-        v-model.sync="value[field.name]"
+        v-model.sync="value[field.name]||field.value"
         v-show="field.show||!field.hasOwnProperty('show')"
         :slot="field.group||field.name"
         :is="field['component']"
