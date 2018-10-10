@@ -8,7 +8,7 @@
         :triggers="triggers"
         ref="form"
         v-model="model"
-        @submit="onSubmit">
+        @submit.prevent="onSubmit">
       </Form>
     </div>
     <div class="col-md-6">
@@ -87,12 +87,6 @@ export default {
     changeTab (i) {
       this.tab = i
     }
-  },
-  mounted () {
-    var form = this.$refs.form
-    var nested = form.$refs.nested[0]
-    console.log(nested)
-    nested.validate()
   }
 }
 </script>

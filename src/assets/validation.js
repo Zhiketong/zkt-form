@@ -12,7 +12,6 @@ export default {
     url: true
   },
   textarea: {
-    requiredIf: 'user',
     minLength: 4,
     maxLength: 16
   },

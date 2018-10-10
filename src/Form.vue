@@ -1,5 +1,5 @@
 <template>
-  <layout :fields="fields" :validation="$v.value" v-on="$listeners">
+  <layout :fields="fields" :validation="$v.value" @submit.prevent="validate()&&$emit('submit')">
     <component
       v-for="field in fields"
       v-bind.sync="field"
@@ -92,9 +92,6 @@
       validate () {
         this.$v.$touch()
         return !this.$v.$error
-      },
-      _onSubmit (e) {
-        this.validate() && this.$emit('submit')
       }
     },
     beforeMount () {

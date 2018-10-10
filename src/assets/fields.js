@@ -114,7 +114,7 @@ export default [
   {
     name: 'static',
     component: 'Static',
-    value: 'xxxxx',
+    value: '(*@ο@*) 哇～，这里可以输入一些自定义的<b>HTML</b>',
     label: '静态'
   },
   {
