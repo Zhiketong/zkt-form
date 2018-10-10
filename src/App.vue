@@ -87,6 +87,12 @@ export default {
     changeTab (i) {
       this.tab = i
     }
+  },
+  mounted () {
+    var form = this.$refs.form
+    var nested = form.$refs.nested[0]
+    console.log(nested)
+    nested.validate()
   }
 }
 </script>

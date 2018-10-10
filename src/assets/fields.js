@@ -139,7 +139,12 @@ export default [
         group: 'nested1',
         style: 'width: 50%'
       },
-    ]
+    ],
+    validation: {
+      nested2: {
+        required: true
+      }
+    }
   },
   {
     name: 'submit',

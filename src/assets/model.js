@@ -1,6 +1,7 @@
 export default {
   input: 'input type text',
   number: 11,
+  url: '',
   textarea: 'hello \n textarea',
   checkbox: ['1'],
   truefalse: '1',
@@ -12,10 +13,9 @@ export default {
     nested2: 'nested2'
   },
   password: '',
-  repeatPasword: '',
+  repeatPassword: '',
   level1: '',
   level2: '',
-  hidden: 'hidden',
   submit: '提交',
   image: '/src/assets/logo.png'
 }
