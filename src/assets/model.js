@@ -8,17 +8,14 @@ export default {
   select: '2',
   'static': '(*@ο@*) 哇～，这里可以输入一些自定义的<b>HTML</b>',
   nested: {
-    number11: 22,
-    number22: 33
+    nested1: 22,
+    nested2: 'nested2'
   },
-  user: '',
-  site: '',
   password: '',
   repeatPasword: '',
   level1: '',
   level2: '',
   hidden: 'hidden',
-  expression: '2*number={{computedValue}}',
   submit: '提交',
   image: '/src/assets/logo.png'
 }

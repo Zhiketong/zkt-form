@@ -123,20 +123,28 @@ export default [
     label: '图片'
   },
   {
+    name: 'nested',
+    component: 'Form',
+    label: ' ',
+    fields: [
+      {
+        name: 'nested1',
+        component: 'Number',
+        label: '嵌套',
+        style: 'width: 50%'
+      },
+      {
+        name: 'nested2',
+        component: 'Input',
+        group: 'nested1',
+        style: 'width: 50%'
+      },
+    ]
+  },
+  {
     name: 'submit',
     component: 'Button',
     type: 'submit',
     label: ' '
   }
-
 ]
-  // user: '',
-  // site: '',
-  // password: '',
-  // repeatPasword: '',
-  // level1: '',
-  // level2: '',
-  // hidden: 'hidden',
-  // expression: '2*number={{computedValue}}',
-  // submit: '提交',
-  // image: '/src/assets/logo.png'
