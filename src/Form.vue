@@ -24,7 +24,7 @@
   import Layout from './Layout.vue'
   import ErrorMessage from './Message.vue'
   import {validationMixin} from 'vuelidate'
-  import * as validators from 'vuelidate/lib/validators'
+  import {transformValidation, validators} from './validators'
 
   var components = {}
   var req = require.context('./components', true)
@@ -125,22 +125,5 @@
       })
     }
 
-  }
-
-  function transformValidation (validation) {
-    var obj = {}
-    for (let name in validation) {
-      let validator = validation[name]
-      obj[name] = {}
-      for (let k in validator) {
-        if (typeof validator[k] === 'object') {
-          validation[name] = transformValidation(validation[name])
-          break
-        }
-        if (!validators[k]) continue
-        obj[name][k] = validator[k] === true ? validators[k] : validators[k](validator[k])
-      }
-    }
-    return obj
   }
 </script>

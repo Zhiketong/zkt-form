@@ -1,6 +1,7 @@
 export default {
   input: {
-    required: true // 必须设置为true
+    // required: true, // 必须设置为true
+    regex: /\d{4}-\d{7}/
   },
   number: {
     required: true,

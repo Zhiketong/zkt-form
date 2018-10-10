@@ -18,6 +18,7 @@
       <p class="help-block" v-if="validation.minValue===false">该字段不能小于{{validation.$params['minValue']['min']}}</p>
       <p class="help-block" v-if="validation.maxValue===false">该字段不能大于{{validation.$params['maxValue']['max']}}</p>
       <p class="help-block" v-if="validation.sameAs===false">该字段必须和{{validation.$params['sameAs']['eq']}}相等</p>
+      <p class="help-block" v-if="validation.regex===false">该字段格式错误</p>
     </template>
   </div>
 </template>
