@@ -1,26 +1,24 @@
 <template>
-  <form class="form" @submit.prevent="_onSubmit">
-    <layout :fields="fields" :validation="$v.value">
-      <component
-        v-for="field in fields"
-        v-bind.sync="field"
-        v-model.sync="value[field.name]"
-        v-show="field.show||!field.hasOwnProperty('show')"
-        :slot="field.group||field.name"
-        :is="field['component']"
-        :ref="field.name"
-        :class="'form-filed'"
-        :key="field.name"
-      />
-      <error-message
-        v-for="field in fields"
-        :validation="$v.value[field.name]"
-        :slot="field.group||field.name"
-        :key="field.name+'msg'"
-        :style="{width: (field.style&&field.style.width)?field.style.width:'100%'}"
-      />
-    </layout>
-  </form>
+  <layout :fields="fields" :validation="$v.value" v-on="$listeners">
+    <component
+      v-for="field in fields"
+      v-bind.sync="field"
+      v-model.sync="value[field.name]"
+      v-show="field.show||!field.hasOwnProperty('show')"
+      :slot="field.group||field.name"
+      :is="field['component']"
+      :ref="field.name"
+      :class="'form-filed'"
+      :key="field.name"
+    />
+    <error-message
+      v-for="field in fields"
+      :validation="$v.value[field.name]"
+      :slot="field.group||field.name"
+      :key="field.name+'msg'"
+      :style="{width: (field.style&&field.style.width)?field.style.width:'100%'}"
+    />
+  </layout>
 </template>
 <script>
   import Layout from './Layout.vue'

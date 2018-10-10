@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="form-layout">
+  <form class="form" v-on="$listeners">
     <div class="form-group"
       v-for="row in fields"
       v-if="!row.group"
@@ -14,7 +14,7 @@
         <p class="help-block" v-if="row.helpText">{{row.helpText}}</p>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
