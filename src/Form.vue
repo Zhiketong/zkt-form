@@ -4,7 +4,7 @@
       <component
         v-for="field in fields"
         v-bind.sync="field"
-        v-model.sync="value[field.name]||field.value"
+        v-model.sync="value[field.name]"
         v-show="field.show||!field.hasOwnProperty('show')"
         :slot="field.group||field.name"
         :is="field['component']"
@@ -97,6 +97,15 @@
       },
       _onSubmit (e) {
         this.validate() && this.$emit('submit')
+      }
+    },
+    beforeMount () {
+      if (this.fields && this.value) {
+        this.fields.forEach((item) => {
+          if (!this.value.hasOwnProperty(item.name)) {
+            this.value[item.name] = item.value
+          }
+        })
       }
     },
     mounted () {
