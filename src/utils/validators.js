@@ -29,7 +29,7 @@ function transformValidation (validation) {
       let fn = validators[k]
       if (!fn) continue
       if (val === true) {
-        obj[name][k] = val
+        obj[name][k] = fn
       } else if (typeOf(val) === 'array') {
         obj[name][k] = fn.apply(this, val)
       } else {
@@ -37,6 +37,7 @@ function transformValidation (validation) {
       }
     }
   }
+  console.log(obj)
   return obj
 }
 

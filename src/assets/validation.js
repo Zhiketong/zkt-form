@@ -7,6 +7,7 @@ export default {
     between: [10, 20]
   },
   url: {
+    required: true,
     url: true
   },
   textarea: {
