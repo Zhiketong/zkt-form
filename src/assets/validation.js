@@ -4,8 +4,6 @@ export default {
     regex: /\d{4}-\d{7}/
   },
   number: {
-    required: true,
-    decimal: true,
     minValue: 10,
     maxValue: 20
   },

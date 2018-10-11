@@ -1,30 +1,26 @@
 <template>
-  <layout :fields="fields" :validation="$v.value" @submit.prevent="validate()&&$emit('submit')">
-    <component
+  <layout :fields="fields" @submit.prevent="validate()&&$emit('submit')">
+    <column
       v-for="field in fields"
-      v-bind.sync="field"
-      v-model.sync="value[field.name]"
-      v-show="field.show||!field.hasOwnProperty('show')"
-      :slot="field.group||field.name"
-      :is="field['component']"
-      :ref="field.name"
-      :class="'form-filed'"
-      :key="field.name"
-    />
-    <error-message
-      v-for="field in fields"
+      :column="field.column"
       :validation="$v.value[field.name]"
       :slot="field.group||field.name"
-      :key="field.name+'msg'"
-      :style="{width: (field.style&&field.style.width)?field.style.width:'100%'}"
-    />
+      :key="field.name"
+    >
+      <component
+        v-bind.sync="field"
+        v-model.sync="value[field.name]"
+        :is="field['component']"
+        :ref="field.name"
+      />
+    </column>
   </layout>
 </template>
 <script>
-  import Layout from './Layout.vue'
-  import ErrorMessage from './Message.vue'
+  import Layout from './layout/Layout.vue'
+  import Column from './layout/Column.vue'
   import {validationMixin} from 'vuelidate'
-  import {transformValidation, validators} from './validators'
+  import {transformValidation} from './utils/validators'
 
   var components = {}
   var req = require.context('./components', true)
@@ -38,7 +34,7 @@
     mixins: [validationMixin],
     components: {
       Layout,
-      ErrorMessage,
+      Column,
       ...components
     },
     provide () {

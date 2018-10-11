@@ -44,9 +44,3 @@
     }
   }
 </script>
-
-<style>
-.form-filed {
-  display: inline-block;
-}
-</style>

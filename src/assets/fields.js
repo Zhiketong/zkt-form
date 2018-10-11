@@ -4,7 +4,7 @@ export default [
     component: 'Input',
     value: '',
     label: '输入框',
-    style: {width: '33.33%'},
+    column: 'col-sm-4',
     placeholder: '文本'
   },
   {
@@ -12,15 +12,15 @@ export default [
     component: 'Number',
     value: 10,
     group: 'input',
-    style: {width: '33.33%'},
+    column: 'col-sm-4',
     placeholder: '数字'
   },
   {
     name: 'url',
     component: 'Input',
+    column: 'col-sm-4',
     value: 'http://www.baidu.com',
     group: 'input',
-    style: {width: '33.33%'},
     placeholder: 'url'
   },
   {
@@ -40,18 +40,11 @@ export default [
     group: 'password',
     style: {width: '50%'}
   },
-  // {
-  //   label: '密码',
-  //   name: 'password',
-  //   tagName: 'input',
-  //   type: 'password',
-  //   placeholder: '密码',
-  //   group: 'input'
-  // },
   {
     name: 'textarea',
     component: 'Textarea',
-    label: '文本框'
+    label: '文本框',
+    class: 'col-sm-2'
   },
   {
     name: 'checkbox',
