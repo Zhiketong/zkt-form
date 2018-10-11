@@ -37,7 +37,6 @@ function transformValidation (validation) {
       }
     }
   }
-  console.log(obj)
   return obj
 }
 
