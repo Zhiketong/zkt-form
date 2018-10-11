@@ -87,7 +87,12 @@
       },
       validate () {
         this.$v.$touch()
-        return !this.$v.$error
+        var subError = Object.values(this.$refs).find((item) => {
+          var item = item[0]
+          return item.validate && !item.validate()
+        })
+
+        return !this.$v.$error && !subError
       }
     },
     beforeMount () {
