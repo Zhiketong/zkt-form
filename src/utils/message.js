@@ -16,7 +16,8 @@ const messages = {
   minValue: '该字段不能小于${min}',
   maxValue: '该字段不能大于${max}',
   sameAs: '该字段必须和${sameAs}相等',
-  regex: '该字段格式错误'
+  regex: '该字段格式错误',
+  between: '改字段值必须介于${min}到${max}之间'
 }
 
 // message filter
@@ -25,7 +26,7 @@ function message (validation) {
   for(let k in validation) {
     if (k.indexOf('$') == -1 && !validation[k]) {
       message = messages[k] || ''
-      message = message.replace(/\$\{(.*)\}/, function (m, s) {
+      message = message.replace(/\$\{(.*?)\}/g, function (m, s) {
         return validation.$params[k][s]
       })
       break

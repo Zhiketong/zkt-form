@@ -1,5 +1,5 @@
 export default {
-  input: 'input type text',
+  input: '010-2222222',
   number: 11,
   url: '',
   textarea: 'hello \n textarea',

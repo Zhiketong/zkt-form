@@ -8,7 +8,7 @@
         :triggers="triggers"
         ref="form"
         v-model="model"
-        @submit.prevent="onSubmit">
+        @submit="onSubmit">
       </Form>
     </div>
     <div class="col-md-6">

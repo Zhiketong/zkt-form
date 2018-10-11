@@ -21,13 +21,20 @@ function transformValidation (validation) {
     let validator = validation[name]
     obj[name] = {}
     for (let k in validator) {
-      if (typeOf(validator[k]) === 'object') {
+      var val = validator[k]
+      if (typeOf(val) === 'object') {
         validation[name] = transformValidation(validation[name])
         break
       }
-
-      if (!validators[k]) continue
-      obj[name][k] = validator[k] === true ? validators[k] : validators[k](validator[k])
+      let fn = validators[k]
+      if (!fn) continue
+      if (val === true) {
+        obj[name][k] = val
+      } else if (typeOf(val) === 'array') {
+        obj[name][k] = fn.apply(this, val)
+      } else {
+        obj[name][k] = fn.apply(this, [val])
+      }
     }
   }
   return obj

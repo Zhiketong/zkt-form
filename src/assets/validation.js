@@ -1,11 +1,10 @@
 export default {
   input: {
     // required: true, // 必须设置为true
-    regex: /\d{4}-\d{7}/
+    regex: /\d{3}-\d{7}/
   },
   number: {
-    minValue: 10,
-    maxValue: 20
+    between: [10, 20]
   },
   url: {
     url: true
