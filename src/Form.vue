@@ -114,6 +114,9 @@
         }
         sourceField.$on(trigger.event, (value) => {
           var val = trigger.sourceProp == 'value' ? value :sourceField[trigger.sourceProp]
+          if (trigger.when && val !== trigger.when) {
+            return
+          }
           if (trigger.targetProp !== 'value') {
             targetField.$emit(`update:${trigger.targetProp}`, val)
           } else {
