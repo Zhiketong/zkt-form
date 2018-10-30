@@ -19,9 +19,6 @@
       group: {
         type: String,
         default: ''
-      },
-      show: {
-        default: true
       }
     },
     computed: {

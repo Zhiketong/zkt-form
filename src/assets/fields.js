@@ -13,7 +13,10 @@ export default [
     value: 10,
     group: 'input',
     column: 'col-sm-4',
-    placeholder: '数字'
+    placeholder: '数字',
+    show (value) {
+      return value.input === '010-2222222'
+    }
   },
   {
     name: 'url',
