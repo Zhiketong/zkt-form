@@ -86,7 +86,7 @@ if (process.env.NODE_ENV === 'package') {
   module.exports.entry = './src/export.js'
   module.exports.output.filename = 'form.js'
   module.exports.output.path = path.resolve(__dirname, './lib')
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new BundleAnalyzerPlugin()
-  ])
+  // module.exports.plugins = (module.exports.plugins || []).concat([
+  //   new BundleAnalyzerPlugin()
+  // ])
 }
