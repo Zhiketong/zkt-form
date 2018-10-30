@@ -3,7 +3,7 @@
     <column
       v-for="field in fields"
       :column="field.column"
-      :show="field.show"
+      :visible="field.visible"
       :value="value"
       :validation="$v.value[field.name]"
       :slot="field.group||field.name"

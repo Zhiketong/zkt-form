@@ -14,7 +14,7 @@ export default [
     group: 'input',
     column: 'col-sm-4',
     placeholder: '数字',
-    show (value) {
+    visible (value) {
       return value.input === '010-2222222'
     }
   },
@@ -33,7 +33,7 @@ export default [
     placeholder: '密码',
     label: '密码',
     style: {width: '50%'},
-    show: false
+    visible: false
   },
   {
     name: 'repeatPassword',
