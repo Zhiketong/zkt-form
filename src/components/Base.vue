@@ -44,3 +44,8 @@
     }
   }
 </script>
+<style>
+  .form-field {
+    display: inline-block;
+  }
+</style>

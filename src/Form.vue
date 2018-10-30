@@ -12,6 +12,7 @@
         v-model.sync="value[field.name]"
         :is="field['component']"
         :ref="field.name"
+        class="form-field"
       />
     </column>
   </layout>
