@@ -9,6 +9,7 @@
       :slot="field.group||field.name"
       :key="field.name"
     >
+    <span v-if="field.beforeText">{{field.beforeText}}</span>
       <component
         v-bind.sync="field"
         v-model.sync="value[field.name]"
@@ -16,6 +17,7 @@
         :ref="field.name"
         class="form-field"
       />
+      <span v-if="field.afterText">{{field.afterText}}</span>
     </column>
   </layout>
 </template>

@@ -110,8 +110,10 @@ export default [
   {
     name: 'static',
     component: 'Static',
-    value: '(*@ο@*) 哇～，这里可以输入一些自定义的<b>HTML</b>',
-    label: '静态'
+    value: '自定义的<b>HTML</b>',
+    label: '静态',
+    beforeText: 'before text',
+    afterText: 'after text'
   },
   {
     name: 'image',
