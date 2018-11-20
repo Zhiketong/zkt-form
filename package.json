@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run package"
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run package",
+    "preversion": "git pull",
+    "postversion": "git push && git push --tags && npm run build && npm publish"
   },
   "dependencies": {},
   "browserslist": [
