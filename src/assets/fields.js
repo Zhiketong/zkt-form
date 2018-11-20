@@ -61,11 +61,13 @@ export default [
       value: '2'
     }],
     label: '多选',
+    optionKeyName: 'label',
+    optionValueName: 'value'
     // group:'checkbox'
   },
   {
     name: 'truefalse',
-    component: 'Checkbox',
+    component: 'Boolean',
     // group: 'checkbox',
     options: [{
       label: '是否同意？',

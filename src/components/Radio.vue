@@ -4,10 +4,10 @@
         <input
           type="radio"
           v-model="val"
-          :value="option.value"
+          :value="option[optionValueName]"
           :name="name"
           @change="$emit('change', $event.target.value)">
-        <span>{{option.label}}</span>
+        <span>{{option[optionKeyName]}}</span>
       </label>
   </span>
 </template>

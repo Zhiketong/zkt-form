@@ -12,6 +12,14 @@
         type: String,
         default: 'text'
       },
+      optionKeyName: {
+        type: String,
+        default: 'label'
+      },
+      optionValueName: {
+        type: String,
+        default: 'value'
+      },
       placeholder: {
         type: String,
         default: ''

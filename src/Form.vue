@@ -40,7 +40,8 @@
     components: {
       Layout,
       Column,
-      ...components
+      ...components,
+      Boolean: components['Checkbox']
     },
     provide () {
       return this

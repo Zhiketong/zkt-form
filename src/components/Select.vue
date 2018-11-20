@@ -7,8 +7,8 @@
     <option value="">请选择</option>
     <option
     v-for="option in options"
-    :value="option.value"
-    :key="option.value"
+    :value="option[optionValueName]"
+    :key="option[optionKeyName]"
     >
       {{option.label}}
     </option>

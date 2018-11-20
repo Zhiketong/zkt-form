@@ -4,12 +4,12 @@
         <input
           type="checkbox"
           v-model="val"
-          :value="option.value"
+          :value="option[optionValueName]"
           :name="name"
           @change="$emit('change', $event.target.value)"
           :true-value="trueValue"
           :false-value="falseValue">
-        <span>{{option.label}} </span>
+        <span>{{option[optionKeyName]}} </span>
       </label>
   </div>
 </template>
