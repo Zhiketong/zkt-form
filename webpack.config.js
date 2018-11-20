@@ -3,11 +3,14 @@ var webpack = require('webpack')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    build: './src/main.js',
+    form: './src/export.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: 'dist/',
-    filename: 'build.js',
+    filename: '[name].js',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -79,14 +82,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-}
-
-if (process.env.NODE_ENV === 'package') {
-  module.exports.devtool = '#source-map'
-  module.exports.entry = './src/export.js'
-  module.exports.output.filename = 'form.js'
-  module.exports.output.path = path.resolve(__dirname, './lib')
-  // module.exports.plugins = (module.exports.plugins || []).concat([
-  //   new BundleAnalyzerPlugin()
-  // ])
 }
