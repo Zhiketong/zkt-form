@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-info" :type="type">{{value}}</button>
+  <button class="btn btn-info" :type="type" @click="$emit('click', $event)">{{value}}</button>
 </template>
 <script>
   import Base from './Base.vue'
