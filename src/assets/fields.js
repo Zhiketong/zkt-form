@@ -96,13 +96,15 @@ export default [
     name: 'select',
     component: 'Select',
     options: [{
-      label: 'option1',
+      label1: 'option1',
       value: '1'
     }, {
-      label: 'option2',
+      label1: 'option2',
       value: '2'
     }],
-    label: '下拉'
+    label: '下拉',
+    optionKeyName: 'label1',
+    optionValueName: 'value'
   },
   {
     component: 'divider',

@@ -8,9 +8,9 @@
     <option
     v-for="option in options"
     :value="option[optionValueName]"
-    :key="option[optionKeyName]"
+    :key="option[optionKeyname]"
     >
-      {{option.label}}
+      {{option[optionKeyName]}}
     </option>
   </select>
 </template>
