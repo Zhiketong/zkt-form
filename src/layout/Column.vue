@@ -50,7 +50,8 @@ export default {
 
 <style lang="css">
 .form-column {
-  padding-left: 5px;
-  padding-right: 5px;
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 </style>

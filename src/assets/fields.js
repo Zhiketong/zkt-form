@@ -4,7 +4,7 @@ export default [
     component: 'Input',
     value: '',
     label: '输入框',
-    column: 'col-sm-4',
+    column: 'a',
     placeholder: '文本'
   },
   {
