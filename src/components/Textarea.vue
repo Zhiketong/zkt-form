@@ -1,5 +1,6 @@
 <template>
   <textarea
+    v-bind="$props"
     v-model="val"
     @change="$emit('change', $event.target.value)"
     class="form-control">

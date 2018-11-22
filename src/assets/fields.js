@@ -152,6 +152,7 @@ export default [
     name: 'submit',
     component: 'Button',
     type: 'submit',
-    label: ' '
+    label: ' ',
+    disabled: false
   }
 ]

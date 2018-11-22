@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-info" :type="type" @click="$emit('click', $event)">{{value}}</button>
+  <button v-bind="$props" class="btn btn-info" :type="type" @click="$emit('click', $event)">{{value}}</button>
 </template>
 <script>
   import Base from './Base.vue'
@@ -11,7 +11,24 @@
       type: {
         type: String,
         default: 'button'
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      waitingTime: {
+        type: Number,
+        default: 3000
       }
+    },
+    mounted () {
+      if (this.type !== 'submit') return
+      this.$on('click',  () => {
+        this.$emit('update:disabled', true)
+        setTimeout(() => {
+          this.$emit('update:disabled', false)
+        }, this.waitingTime)
+      })
     }
   }
 </script>
