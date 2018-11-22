@@ -11,7 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run package",
     "preversion": "git pull",
-    "postversion": "git push && git push --tags && npm run build && npm publish"
+    "postversion": "npm run build && git commit -am 'build' && npm publish && git push && git push --tags "
   },
   "dependencies": {},
   "browserslist": [
