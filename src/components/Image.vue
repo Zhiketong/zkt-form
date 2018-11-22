@@ -1,5 +1,5 @@
 <template>
-  <img :src="val" :alt="alt">
+  <img v-bind="$props" :src="val">
 </template>
 <script>
   import Base from './Base.vue'
@@ -7,6 +7,7 @@
   export default {
     name: 'Img',
     extends: Base,
+    inheritAttrs: true,
     props: {
       alt: {
         type: String,

@@ -123,7 +123,8 @@ export default [
   {
     name: 'image',
     component: 'Img',
-    label: '图片'
+    label: '图片',
+    width: '50px'
   },
   {
     name: 'nested',
