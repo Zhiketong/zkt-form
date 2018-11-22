@@ -109,7 +109,8 @@ export default [
   {
     component: 'divider',
     name: 'divider',
-    label: ' '
+    label: ' ',
+    title: 'hello'
   },
   {
     name: 'static',
