@@ -13,6 +13,7 @@
       <component
         v-bind.sync="field"
         v-model.sync="value[field.name]"
+        v-on="$listeners"
         :is="field['component']"
         :ref="field.name"
         class="form-field"
