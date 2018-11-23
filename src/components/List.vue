@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="form-control-list well">
-    <div class="form-control-list-item" v-for="(v,index) in value" :key="index" @click="select(index)">
+    <div class="form-control-list-item" :class="{active: index==current}" v-for="(v,index) in value" :key="index" @click="select(index)">
       <Form  :value.sync="v" :fields="fields" :validation="validation"></Form>
     </div>
     <div>

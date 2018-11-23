@@ -159,13 +159,13 @@ export default [
         name: 'nested1',
         component: 'Input',
         label: '嵌套',
-        style: 'width: 50%'
+        column: 'col-sm-6'
       },
       {
         name: 'nested2',
         component: 'Input',
         group: 'nested1',
-        style: 'width: 50%'
+        column: 'col-sm-6'
       },
     ],
   },
