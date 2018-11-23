@@ -12,6 +12,11 @@ export default {
     nested1: 22,
     nested2: 'nested2'
   },
+  list: [
+    {
+      nested1: '1'
+    }
+  ],
   password: '',
   repeatPassword: '',
   level1: '',

@@ -151,6 +151,25 @@ export default [
     }
   },
   {
+    name: 'list',
+    label: '列表 ',
+    component: 'List',
+    fields: [
+      {
+        name: 'nested1',
+        component: 'Input',
+        label: '嵌套',
+        style: 'width: 50%'
+      },
+      {
+        name: 'nested2',
+        component: 'Input',
+        group: 'nested1',
+        style: 'width: 50%'
+      },
+    ],
+  },
+  {
     name: 'submit',
     component: 'Button',
     type: 'submit',
