@@ -102,15 +102,6 @@
         return !this.$v.$error && !subError
       }
     },
-    beforeMount () {
-      if (this.fields && this.value) {
-        this.fields.forEach((item) => {
-          if (!this.value.hasOwnProperty(item.name)) {
-            this.value[item.name] = item.value
-          }
-        })
-      }
-    },
     mounted () {
       var that = this
       that.triggers && that.triggers.forEach((trigger) => {
