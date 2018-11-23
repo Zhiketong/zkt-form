@@ -110,7 +110,11 @@
         if (!sourceField || !targetField) {
           return
         }
-        sourceField.$on(trigger.event, (value) => {
+        sourceField.$on(trigger.event, action)
+        if (trigger.immediate) {
+          action(sourceField[trigger.sourceProp])
+        }
+        function action (value){
           var val = trigger.sourceProp == 'value' ? value :sourceField[trigger.sourceProp]
           if (trigger.when && val !== trigger.when) {
             return
@@ -120,12 +124,8 @@
           } else {
             targetField.$emit(`input`, value)
           }
-        })
-        if (trigger.immediate) {
-          sourceField.$emit(trigger.event, sourceField[trigger.sourceProp])
         }
       })
     }
-
   }
 </script>
