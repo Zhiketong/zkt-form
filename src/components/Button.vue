@@ -3,7 +3,7 @@
   class="btn btn-info"
   :type="type"
   v-on="$listeners">
-  {{value}}
+  {{val}}
 </button>
 </template>
 <script>
