@@ -22,7 +22,7 @@ export default [
     name: 'url',
     component: 'Input',
     column: 'col-sm-4',
-    value: 'http://www.baidu.com',
+    value: '',
     group: 'input',
     placeholder: 'url'
   },

@@ -1,5 +1,10 @@
 <template>
-  <button v-bind="$props" class="btn btn-info" :type="type" @click="$emit('click', $event)">{{value}}</button>
+  <button
+  class="btn btn-info"
+  :type="type"
+  v-on="$listeners">
+  {{value}}
+</button>
 </template>
 <script>
   import Base from './Base.vue'

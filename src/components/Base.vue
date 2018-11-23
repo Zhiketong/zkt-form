@@ -37,6 +37,14 @@
         set (val) {
           this.$emit('input', val)
         }
+      },
+      listeners () {
+        var vm = this
+        return Object.assign({}, this.$listeners, {
+          input (e) {
+            vm.$emit('input', e.target.value)
+          }
+        })
       }
     },
     methods: {

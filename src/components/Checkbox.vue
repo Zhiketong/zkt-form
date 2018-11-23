@@ -4,6 +4,7 @@
         <input
           type="checkbox"
           v-model="val"
+          v-on="listeners"
           :value="option[optionValueName]"
           :name="name"
           @change="$emit('change', $event.target.value)"

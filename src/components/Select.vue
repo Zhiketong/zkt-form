@@ -1,7 +1,7 @@
 <template>
   <select
     v-model="val"
-    v-bind="$props"
+    v-on="listeners"
     class="form-control"
     @change="$emit('change', $event.target.value)">
     <option value="">请选择</option>

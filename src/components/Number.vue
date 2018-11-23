@@ -1,7 +1,7 @@
 <template>
   <input
     v-model.number="val"
-    v-bind="$props"
+    v-on="listeners"
     @change="$emit('change', $event.target.value)"
     class="form-control">
 </template>

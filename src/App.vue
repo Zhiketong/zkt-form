@@ -8,6 +8,7 @@
         :triggers="triggers"
         ref="form"
         v-model="model"
+        @click="onClick"
         @submit="onSubmit">
       </Form>
     </div>
@@ -83,6 +84,9 @@ export default {
   methods: {
     onSubmit (e) {
       console.log('onSubmit')
+    },
+    onClick (e) {
+      console.log('onClick', e)
     },
     changeTab (i) {
       this.tab = i

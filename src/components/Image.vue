@@ -1,5 +1,5 @@
 <template>
-  <img v-bind="$props" :src="val">
+  <img v-bind="$props" :src="val" v-on="listeners">
 </template>
 <script>
   import Base from './Base.vue'

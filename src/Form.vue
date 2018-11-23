@@ -13,9 +13,10 @@
       <component
         v-bind.sync="field"
         v-model.sync="value[field.name]"
-        v-on="$listeners"
+        v-on="listeners"
         :is="field['component']"
         :ref="field.name"
+        @change="$v.value[field.name].$touch()"
         class="form-field"
       />
       <span class="form-control-static" v-if="field.afterText" v-html="field.afterText"></span>
@@ -75,6 +76,14 @@
       name: {
         type: String,
         default: ''
+      }
+    },
+    computed: {
+      listeners () {
+        var vm = this
+        return Object.assign({}, this.$listeners, {
+          input (e) {}
+        })
       }
     },
     validations () {

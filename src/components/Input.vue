@@ -2,7 +2,7 @@
   <input
     v-model.trim="val"
     v-bind="$props"
-    @change="$emit('change', $event.target.value)"
+    v-on="listeners"
     class="form-control">
 </template>
 <script>

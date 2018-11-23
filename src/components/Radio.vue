@@ -1,5 +1,5 @@
 <template>
-  <span class="radio-wrapper">
+  <span class="radio-wrapper" v-on="listeners">
     <label class="radio-inline" v-for="option in options" :key="option.value">
         <input
           type="radio"
