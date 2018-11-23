@@ -1,6 +1,6 @@
 <template lang="html">
   <form class="form" v-on="$listeners">
-    <div class="form-group"
+    <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
       v-show="row.show||!row.hasOwnProperty('show')"
