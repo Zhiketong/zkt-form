@@ -1,7 +1,7 @@
 <script>
   export default {
     name: 'Base',
-    inheritAttrs: false,
+    inheritAttrs: true,
     props: {
       name: {
         type: String,
