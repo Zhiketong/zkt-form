@@ -9,7 +9,7 @@
       :slot="field.group||field.name"
       :key="field.name"
     >
-    <span class="form-control-static" v-if="field.beforeText" v-html="field.beforeText"></span>
+    <span class="form-control-static form-control-beforetext" v-if="field.beforeText" v-html="field.beforeText"></span>
       <component
         v-bind.sync="field"
         v-model.sync="value[field.name]"
@@ -18,7 +18,7 @@
         @change="$v.value[field.name]&&$v.value[field.name].$touch()"
         class="form-field"
       />
-      <span class="form-control-static" v-if="field.afterText" v-html="field.afterText"></span>
+      <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
     </column>
   </layout>
 </template>
@@ -129,3 +129,12 @@
     }
   }
 </script>
+
+<style media="screen">
+  .form-control-beforetext {
+    padding-right: 2px;
+  }
+  .form-control-aftertext {
+    padding-left: 2px;
+  }
+</style>
