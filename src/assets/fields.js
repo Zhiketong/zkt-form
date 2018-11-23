@@ -115,7 +115,7 @@ export default [
   {
     name: 'static',
     component: 'Static',
-    value: '自定义的<b>HTML</b>',
+    innerHTML: '自定义的<b style="color:red">HTML</b>',
     label: '静态',
     beforeText: 'before text',
     afterText: 'after text'

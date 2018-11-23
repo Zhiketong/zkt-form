@@ -1,10 +1,16 @@
 <template>
-  <span v-html="val" v-on="listeners" class="form-control-static"></span>
+  <span v-html="innerHTML" v-on="listeners" class="form-control-static"></span>
 </template>
 <script>
   import Base from './Base.vue'
   export default {
     name: 'Static',
-    extends: Base
+    extends: Base,
+    props: {
+      innerHTML: {
+        type: String,
+        default: ''
+      }
+    }
   }
 </script>
