@@ -15,7 +15,7 @@
         v-model.sync="value[field.name]"
         :is="field['component']"
         :ref="field.name"
-        @change="$v.value[field.name].$touch()"
+        @change="$v.value[field.name]&&$v.value[field.name].$touch()"
         class="form-field"
       />
       <span class="form-control-static" v-if="field.afterText" v-html="field.afterText"></span>
