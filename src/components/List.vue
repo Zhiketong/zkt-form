@@ -61,6 +61,9 @@ export default {
 </script>
 
 <style lang="css">
+.form-control-list {
+  width: 100%;
+}
 .form-control-list-item:hover,
 .form-control-list-item.active {
   box-shadow: 0px 0px 2px #888;
