@@ -89,7 +89,10 @@ export default [
       label: 'option2',
       value: '2'
     }],
-    label: '单选'
+    label: '单选',
+    visible (data) {
+      return data.truefalse == "1"
+    }
   },
   {
     // group:"checkbox",

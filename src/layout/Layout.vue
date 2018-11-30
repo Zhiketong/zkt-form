@@ -3,7 +3,7 @@
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
-      v-show="row.show||!row.hasOwnProperty('show')"
+      v-show="getVisible(row)"
       :key="row.name"
       :ref="row.name"
     >
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import typeOf from '../utils/typeOf'
 export default {
   name: 'Layout',
   inheritAttrs: false,
@@ -25,6 +26,18 @@ export default {
       default () {
         return []
       }
+    },
+    value: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
+  methods: {
+    getVisible (row) {
+      if (!row.hasOwnProperty('visible')) return true
+      return typeOf(row.visible) == 'function' ? row.visible(this.value) : row.visible
     }
   }
 }

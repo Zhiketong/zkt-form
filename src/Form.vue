@@ -1,5 +1,5 @@
 <template>
-  <layout :fields="fields" @submit.prevent="validate()&&$emit('submit')">
+  <layout :fields="fields" :value="value" @submit.prevent="validate()&&$emit('submit')">
     <column
       v-for="field in fields"
       :column="field.column"
