@@ -10,8 +10,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run package",
-    "preversion": "git pull",
-    "postversion": "npm run build && git commit -am 'build' && npm publish && git push && git push --tags "
+    "preversion": "git pull && npm run build ",
+    "postversion": "git commit -am 'build' && npm publish && git push && git push --tags "
   },
   "dependencies": {},
   "browserslist": [
