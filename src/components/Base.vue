@@ -42,7 +42,7 @@
         var vm = this
         return Object.assign({}, this.$listeners, {
           input (e) {
-            vm.$emit('input', e.target.value)
+            // vm.$emit('input', e.target.value)
           }
         })
       }
