@@ -9,6 +9,7 @@
         ref="form"
         v-model="model"
         @click="onClick"
+        @form-group-click="formGroupClick"
         @submit="onSubmit">
       </Form>
     </div>
@@ -82,6 +83,9 @@ export default {
     }
   },
   methods: {
+    formGroupClick (obj) {
+      console.log(obj, 'formGroupClick')
+    },
     onSubmit (e) {
       console.log('onSubmit')
     },

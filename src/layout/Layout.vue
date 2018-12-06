@@ -4,6 +4,7 @@
       v-for="row in fields"
       v-if="!row.group"
       v-show="getVisible(row)"
+      @click="clickEventFn(row, $event)"
       :key="row.name"
       :ref="row.name"
     >
@@ -35,6 +36,10 @@ export default {
     }
   },
   methods: {
+    clickEventFn (data, ev) {
+      // console.log(data, ev, '999')
+      this.$emit('form-group-click-fn', {data: data, ev: ev})
+    },
     getVisible (row) {
       if (!row.hasOwnProperty('visible')) return true
       return typeOf(row.visible) == 'function' ? row.visible(this.value) : row.visible
