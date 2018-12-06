@@ -102,7 +102,7 @@
         return this.$refs[name][0]
       },
       getGroup (name) {
-        return this.$refs.layout.$refs[name][0]
+        return this.$refs.layout.getGroup(name)
       },
       validate () {
         this.$v.$touch()

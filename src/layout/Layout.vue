@@ -43,6 +43,9 @@ export default {
     getVisible (row) {
       if (!row.hasOwnProperty('visible')) return true
       return typeOf(row.visible) == 'function' ? row.visible(this.value) : row.visible
+    },
+    getGroup (name) {
+      return this.$refs[name] && this.$refs[name][0]
     }
   }
 }
