@@ -1,5 +1,5 @@
 <template>
-  <layout :fields="fields" :value="value" @submit.prevent="validate()&&$emit('submit')">
+  <layout :fields="fields" :value="value" @form-group-click-fn="formGroupClickFn" @submit.prevent="validate()&&$emit('submit')">
     <column
       v-for="field in fields"
       :column="field.column"
@@ -83,6 +83,9 @@
       }
     },
     methods: {
+      formGroupClickFn (obj) {
+        this.$emit('form-group-click', obj)
+      },
       getValue () {
         return this.value
       },
