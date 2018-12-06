@@ -4,7 +4,7 @@
       v-for="row in fields"
       v-if="!row.group"
       v-show="getVisible(row)"
-      @click="clickEventFn(row, $event)"
+      @click="clickEventFn($event, row)"
       :key="row.name"
       :ref="row.name"
     >
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    clickEventFn (data, ev) {
+    clickEventFn (ev, data) {
       // console.log(data, ev, '999')
       this.$emit('form-group-click-fn', {data: data, ev: ev})
     },
