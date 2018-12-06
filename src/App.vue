@@ -85,6 +85,7 @@ export default {
   methods: {
     formGroupClick (obj) {
       console.log(obj, 'formGroupClick')
+      console.log(this.$refs.form.getGroup(obj.data.name))
     },
     onSubmit (e) {
       console.log('onSubmit')

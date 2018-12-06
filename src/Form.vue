@@ -1,5 +1,11 @@
 <template>
-  <layout :fields="fields" :value="value" @form-group-click-fn="formGroupClickFn" @submit.prevent="validate()&&$emit('submit')">
+  <layout
+  :fields="fields"
+  :value="value"
+  @form-group-click-fn="formGroupClickFn"
+  @submit.prevent="validate()&&$emit('submit')"
+  ref="layout"
+  >
     <column
       v-for="field in fields"
       :column="field.column"
@@ -94,6 +100,9 @@
       },
       getField (name) {
         return this.$refs[name][0]
+      },
+      getGroup (name) {
+        return this.$refs.layout.$refs[name][0]
       },
       validate () {
         this.$v.$touch()
