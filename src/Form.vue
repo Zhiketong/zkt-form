@@ -99,7 +99,7 @@
         this.$emit('input', value)
       },
       getField (name) {
-        return this.$refs[name][0]
+        return this.$refs[name] && this.$refs[name][0]
       },
       getGroup (name) {
         return this.$refs.layout.getGroup(name)
