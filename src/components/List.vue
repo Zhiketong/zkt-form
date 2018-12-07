@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     add () {
-      if (this.value) this.value = []
+      if (!this.value) this.value = []
       this.value.push({})
     },
     select (index) {
