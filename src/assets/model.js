@@ -22,5 +22,5 @@ export default {
   level1: '',
   level2: '',
   submit: '提交',
-  image: '/src/assets/logo.png'
+  // image: '/src/assets/logo.png'
 }

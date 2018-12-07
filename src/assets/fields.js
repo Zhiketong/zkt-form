@@ -127,7 +127,8 @@ export default [
     name: 'image',
     component: 'Img',
     label: '图片',
-    width: '50px'
+    style: 'width: 50px',
+    value: '/src/assets/logo.png'
   },
   {
     name: 'nested',

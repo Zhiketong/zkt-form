@@ -18,7 +18,7 @@
     <span class="form-control-static form-control-beforetext" v-if="field.beforeText" v-html="field.beforeText"></span>
       <component
         v-bind.sync="field"
-        v-model.sync="value[field.name]"
+        v-model.sync="field.value||value[field.name]"
         :is="field['component']"
         :ref="field.name"
         @change="$v.value[field.name]&&$v.value[field.name].$touch()"
