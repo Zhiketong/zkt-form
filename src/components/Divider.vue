@@ -1,6 +1,6 @@
 <template>
   <div class="form-divider" v-on="listeners">
-    <div class="badge">{{title}}</div>
+    <div class="badge">{{val||title}}</div>
     <hr>
   </div>
 </template>

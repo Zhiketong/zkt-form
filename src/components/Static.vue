@@ -1,5 +1,5 @@
 <template>
-  <span v-html="innerHTML" v-on="listeners" class="form-control-static"></span>
+  <span v-html="val||innerHTML" v-on="listeners" class="form-control-static"></span>
 </template>
 <script>
   import Base from './Base.vue'
