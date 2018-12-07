@@ -144,9 +144,11 @@
 
 <style media="screen">
   .form-control-beforetext {
+    display: inline-block;
     padding-right: 2px;
   }
   .form-control-aftertext {
+    display: inline-block;
     padding-left: 2px;
   }
 </style>
