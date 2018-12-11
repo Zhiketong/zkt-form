@@ -2,7 +2,7 @@
   <layout
   :fields="fields"
   :value="value"
-  @form-group-click-fn="formGroupClickFn"
+  :field.sync="field"
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
@@ -83,6 +83,11 @@
         default: ''
       }
     },
+    data () {
+      return {
+        field: {}
+      }
+    },
     validations () {
       return {
         value: transformValidation(this.validation)
@@ -102,7 +107,12 @@
         return this.$refs[name] && this.$refs[name][0]
       },
       addField (field = {}) {
-        this.fields.push(field)
+        if (this.field.component == 'Form' || this.field.component == 'List') {
+          this.field.fields.push(field)
+        } else {
+          this.fields.push(field)
+        }
+        this.field = field
       },
       getGroup (name) {
         return this.$refs.layout.getGroup(name)
@@ -118,29 +128,6 @@
       }
     },
     mounted () {
-      var that = this
-      that.triggers && that.triggers.forEach((trigger) => {
-        var sourceField = that.getField(trigger.source)
-        var targetField = that.getField(trigger.target)
-        if (!sourceField || !targetField) {
-          return
-        }
-        sourceField.$on(trigger.event, action)
-        if (trigger.immediate) {
-          action(sourceField[trigger.sourceProp])
-        }
-        function action (value){
-          var val = trigger.sourceProp == 'value' ? value :sourceField[trigger.sourceProp]
-          if (trigger.when && val !== trigger.when) {
-            return
-          }
-          if (trigger.targetProp !== 'value') {
-            targetField.$emit(`update:${trigger.targetProp}`, val)
-          } else {
-            targetField.$emit(`input`, value)
-          }
-        }
-      })
     }
   }
 </script>

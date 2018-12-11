@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="col-md-12">
+      <button type="button" name="button" class="btn btn-default" @click="add">添加</button>
+    </div>
     <div class="col-md-6">
       <Form
         class="form-horizontal"
@@ -9,7 +12,6 @@
         ref="form"
         v-model="model"
         @click="onClick"
-        @form-group-click="formGroupClick"
         @submit="onSubmit">
       </Form>
     </div>
@@ -18,12 +20,10 @@
         <li :class="{active: tab==1}"><a href="" @click.prevent="changeTab(1)">表单值</a></li>
         <li :class="{active: tab==2}"><a href="" @click.prevent="changeTab(2)">校验规则</a></li>
         <li :class="{active: tab==3}"><a href="" @click.prevent="changeTab(3)">控件设置</a></li>
-        <li :class="{active: tab==4}"><a href="" @click.prevent="changeTab(4)">触发器</a></li>
       </ul>
       <textarea v-if="tab==1" class="form-control" rows="30" v-model="model2">{{model}}</textarea>
       <textarea v-if="tab==2" class="form-control" rows="30" v-model="validation2">{{validation}}</textarea>
       <textarea v-if="tab==3" class="form-control" rows="30" v-model="fields2">{{fields}}</textarea>
-      <textarea v-if="tab==4" class="form-control" rows="30" v-model="triggers2">{{triggers}}</textarea>
     </div>
   </div>
 </template>
@@ -72,20 +72,15 @@ export default {
       set(str) {
         this.model = JSON.parse(str)
       }
-    },
-    triggers2: {
-      get() {
-        return JSON.stringify(this.triggers, null, '    ')
-      },
-      set(str) {
-        this.model = JSON.parse(str)
-      }
     }
   },
   methods: {
-    formGroupClick (obj) {
-      console.log(obj, 'formGroupClick')
-      console.log(this.$refs.form.getGroup(obj.data.name))
+    add () {
+      this.$refs.form.addField({
+        label: 'label',
+        name: 'label',
+        component: 'Input'
+      })
     },
     onSubmit (e) {
       console.log('onSubmit')
@@ -101,5 +96,7 @@ export default {
 </script>
 
 <style>
-@import "~bootstrap/dist/css/bootstrap.css";
+.form-group.active {
+  background-color: rgba(200, 200, 200, 0.8);
+}
 </style>

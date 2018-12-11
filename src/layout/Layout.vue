@@ -7,6 +7,7 @@
       @click="clickEventFn($event, row)"
       :key="row.name"
       :ref="row.name"
+      :class="{active: row.name==field.name||field.group}"
     >
       <label v-if="row.label" class="control-label col-sm-2">{{row.label}}</label>
       <div class="col-sm-10 row">
@@ -33,12 +34,19 @@ export default {
       default () {
         return {}
       }
+    },
+    field: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
   },
   methods: {
     clickEventFn (ev, data) {
       // console.log(data, ev, '999')
-      this.$emit('form-group-click-fn', {data: data, ev: ev})
+      // this.$emit('form-group-click-fn', {data: data, ev: ev})
+      this.$emit('update:field', data)
     },
     getVisible (row) {
       if (!row.hasOwnProperty('visible')) return true
