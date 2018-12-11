@@ -101,6 +101,9 @@
       getField (name) {
         return this.$refs[name] && this.$refs[name][0]
       },
+      addField (field = {}) {
+        this.fields.push(field)
+      },
       getGroup (name) {
         return this.$refs.layout.getGroup(name)
       },
