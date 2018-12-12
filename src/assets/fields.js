@@ -13,10 +13,7 @@ export default [
     value: 10,
     group: 'input',
     column: 'col-sm-4',
-    placeholder: '数字',
-    visible (value) {
-      return value.input === '010-2222222'
-    }
+    placeholder: '数字'
   },
   {
     name: 'url',
@@ -32,8 +29,7 @@ export default [
     type: 'password',
     placeholder: '密码',
     label: '密码',
-    style: {width: '50%'},
-    visible: false
+    style: {width: '50%'}
   },
   {
     name: 'repeatPassword',
@@ -47,7 +43,9 @@ export default [
     name: 'textarea',
     component: 'Textarea',
     label: '文本框',
-    class: 'col-sm-2'
+    class: 'col-sm-2',
+    dependOnName: 'number',
+    dependOnValue: 11
   },
   {
     name: 'checkbox',
@@ -76,7 +74,6 @@ export default [
     trueValue: '1',
     falseValue: '0',
     label: '布尔'
-
   },
   {
     name: 'radio',
@@ -89,10 +86,7 @@ export default [
       label: 'option2',
       value: '2'
     }],
-    label: '单选',
-    visible (data) {
-      return data.truefalse == "1"
-    }
+    label: '单选'
   },
   {
     // group:"checkbox",
@@ -171,7 +165,7 @@ export default [
         group: 'nested1',
         column: 'col-sm-6'
       },
-    ],
+    ]
   },
   {
     name: 'submit',
