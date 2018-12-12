@@ -22,6 +22,7 @@
         :is="field['component']"
         :ref="field.name"
         @change="$v.value[field.name]&&$v.value[field.name].$touch()"
+        @active="setCurrent"
         class="form-field"
       />
       <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
@@ -85,7 +86,13 @@
     },
     data () {
       return {
-        field: {}
+        field: {},
+        current: {}
+      }
+    },
+    watch: {
+      field (nv, ov) {
+        this.$emit('active', nv)
       }
     },
     validations () {
@@ -94,9 +101,6 @@
       }
     },
     methods: {
-      formGroupClickFn (obj) {
-        this.$emit('form-group-click', obj)
-      },
       getValue () {
         return this.value
       },
@@ -109,10 +113,25 @@
       addField (field = {}) {
         if (this.field.component == 'Form' || this.field.component == 'List') {
           this.field.fields.push(field)
+          this.current = field
         } else {
           this.fields.push(field)
+          this.field = field
         }
-        this.field = field
+      },
+      removeField () {
+        if (this.current.name) {
+          let index = this.field.fields.indexOf(this.current)
+          index > -1 && this.field.fields.splice(index, 1)
+          this.current = {}
+        } else {
+          let index = this.fields.indexOf(this.field)
+          index > -1 && this.fields.splice(index, 1)
+          this.field = {}
+        }
+      },
+      setCurrent (field) {
+        this.current = field
       },
       getGroup (name) {
         return this.$refs.layout.getGroup(name)

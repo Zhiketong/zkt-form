@@ -4,7 +4,7 @@
       v-for="row in fields"
       v-if="!row.group"
       v-show="getVisible(row)"
-      @click="clickEventFn($event, row)"
+      @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"
       :class="{active: row.name==field.name||field.group}"
@@ -22,6 +22,7 @@ import typeOf from '../utils/typeOf'
 export default {
   name: 'Layout',
   inheritAttrs: false,
+  inject: ['current'],
   props: {
     fields: {
       type: Array,
@@ -43,11 +44,6 @@ export default {
     }
   },
   methods: {
-    clickEventFn (ev, data) {
-      // console.log(data, ev, '999')
-      // this.$emit('form-group-click-fn', {data: data, ev: ev})
-      this.$emit('update:field', data)
-    },
     getVisible (row) {
       if (!row.hasOwnProperty('visible')) return true
       return typeOf(row.visible) == 'function' ? row.visible(this.value) : row.visible

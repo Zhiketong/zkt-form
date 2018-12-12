@@ -2,6 +2,7 @@
   <div id="app">
     <div class="col-md-12">
       <button type="button" name="button" class="btn btn-default" @click="add">添加</button>
+      <button type="button" name="button" class="btn btn-default" @click="remove">删除</button>
     </div>
     <div class="col-md-6">
       <Form
@@ -81,6 +82,9 @@ export default {
         name: 'label',
         component: 'Input'
       })
+    },
+    remove () {
+      this.$refs.form.removeField()
     },
     onSubmit (e) {
       console.log('onSubmit')
