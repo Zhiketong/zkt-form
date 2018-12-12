@@ -5,10 +5,10 @@
     </div>
     <div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-primary btn-block" @click="add"><i class="glyphicon glyphicon-plus"></i></button>
+        <button type="button" class="btn btn-primary btn-block btn-sm" @click="add"><i class="glyphicon glyphicon-plus"></i></button>
       </div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-danger btn-block" @click="remove" :disabled="current==-1"><i class="glyphicon glyphicon-trash"></i></button>
+        <button type="button" class="btn btn-danger btn-block btn-sm" @click="remove" :disabled="current==-1"><i class="glyphicon glyphicon-trash"></i></button>
       </div>
     </div>
   </div>
