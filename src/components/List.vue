@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="form-control-list well">
     <div class="form-control-list-item" :class="{active: index==current}" v-for="(v,index) in value" :key="index" @click="select(index)">
-      <Form  :value.sync="v" :fields="fields" :validation="validation"></Form>
+      <Form  :value.sync="v" :fields="fields" :validation="validation" @active="active"></Form>
     </div>
     <div>
       <div class="col-sm-6">
@@ -55,6 +55,9 @@ export default {
         this.value.splice(this.current, 1)
         this.current = -1
       }
+    },
+    active (field) {
+      this.$emit('active', field)
     }
   }
 }

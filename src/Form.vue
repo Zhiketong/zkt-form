@@ -6,6 +6,7 @@
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
+  {{current}}
     <column
       v-for="field in fields"
       :column="field.column"
@@ -113,7 +114,7 @@
       addField (field = {}) {
         if (this.field.component == 'Form' || this.field.component == 'List') {
           this.field.fields.push(field)
-          this.current = field
+          // this.current = field
         } else {
           this.fields.push(field)
           this.field = field
