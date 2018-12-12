@@ -111,9 +111,12 @@
         return this.$refs[name] && this.$refs[name][0]
       },
       addField (field = {}) {
-        if (this.field.component == 'Form' || this.field.component == 'List') {
+        if (this.field.component == 'Form') {
           this.field.fields.push(field)
-          // this.current = field
+          this.$set(this.value, field.name, {})
+        } else if (this.field.component == 'List') {
+          this.field.fields.push(field)
+          this.$set(this.value, field.name, [])
         } else {
           this.fields.push(field)
           this.field = field
