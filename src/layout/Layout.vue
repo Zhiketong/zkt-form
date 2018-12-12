@@ -4,7 +4,7 @@
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
-      v-show="getVisible(row)"
+      v-hide="value[row.dependOnName]!==row.dependOnValue"
       @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"
@@ -24,6 +24,11 @@ export default {
   name: 'Layout',
   inheritAttrs: false,
   inject: ['current'],
+  directives: {
+    hide (el, binding, vnode) {
+      el.style.display = binding.value ? 'none' : ''
+    }
+  },
   props: {
     fields: {
       type: Array,
@@ -45,11 +50,6 @@ export default {
     }
   },
   methods: {
-    getVisible (row) {
-      if (!row.hasOwnProperty('dependOnName')) return true
-      return row.dependOnValue === this.value[row.dependOnName]
-      // return typeOf(row.visible) == 'function' ? row.visible(this.value) : row.visible
-    },
     getGroup (name) {
       return this.$refs[name] && this.$refs[name][0]
     }
