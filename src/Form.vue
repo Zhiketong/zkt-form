@@ -6,7 +6,6 @@
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
-  {{current}}
     <column
       v-for="field in fields"
       :column="field.column"
