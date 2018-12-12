@@ -132,6 +132,7 @@
       },
       setCurrent (field) {
         this.current = field
+        this.$emit('active', field)
       },
       getGroup (name) {
         return this.$refs.layout.getGroup(name)
