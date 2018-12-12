@@ -47,7 +47,9 @@ export default [
     name: 'textarea',
     component: 'Textarea',
     label: '文本框',
-    class: 'col-sm-2'
+    class: 'col-sm-2',
+    dependOnName: 'number',
+    dependOnValue: 11
   },
   {
     name: 'checkbox',
