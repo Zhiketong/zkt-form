@@ -13,7 +13,10 @@ export default [
     value: 10,
     group: 'input',
     column: 'col-sm-4',
-    placeholder: '数字'
+    placeholder: '数字',
+    visible (value) {
+      return value.input === '010-2222222'
+    }
   },
   {
     name: 'url',
@@ -29,7 +32,8 @@ export default [
     type: 'password',
     placeholder: '密码',
     label: '密码',
-    style: {width: '50%'}
+    style: {width: '50%'},
+    visible: false
   },
   {
     name: 'repeatPassword',
@@ -74,6 +78,7 @@ export default [
     trueValue: '1',
     falseValue: '0',
     label: '布尔'
+
   },
   {
     name: 'radio',
@@ -86,7 +91,10 @@ export default [
       label: 'option2',
       value: '2'
     }],
-    label: '单选'
+    label: '单选',
+    visible (data) {
+      return data.truefalse == "1"
+    }
   },
   {
     // group:"checkbox",
@@ -165,7 +173,7 @@ export default [
         group: 'nested1',
         column: 'col-sm-6'
       },
-    ]
+    ],
   },
   {
     name: 'submit',
