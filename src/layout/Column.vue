@@ -1,8 +1,5 @@
 <template lang="html">
-  <div
-    :class="['form-column', column, validation.$error&&'has-error']"
-    v-show="getVisible"
-  >
+  <div  :class="['form-column', column, validation.$error&&'has-error']"  >
     <slot></slot>
     <p class="help-block" v-if="validation.$error">
       {{validation|message}}
@@ -38,11 +35,6 @@ export default {
       default () {
         return {}
       }
-    }
-  },
-  computed: {
-    getVisible () {
-      return 'function' === typeOf(this.visible) ? this.visible(this.value) : this.visible
     }
   }
 }
