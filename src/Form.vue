@@ -2,7 +2,7 @@
   <layout
   :fields="fields"
   :value="value"
-  :field.sync="field"
+  :field.sync="context"
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
@@ -86,12 +86,13 @@
     },
     data () {
       return {
-        field: {},
+        context: {},
         current: {}
       }
     },
     watch: {
-      field (nv, ov) {
+      context (nv, ov) {
+        this.current = {}
         this.$emit('active', nv)
       }
     },
@@ -111,26 +112,26 @@
         return this.$refs[name] && this.$refs[name][0]
       },
       addField (field = {}) {
-        if (this.field.component == 'Form') {
-          this.field.fields.push(field)
+        if (this.context.component == 'Form') {
+          this.context.fields.push(field)
           this.$set(this.value, field.name, {})
-        } else if (this.field.component == 'List') {
-          this.field.fields.push(field)
+        } else if (this.context.component == 'List') {
+          this.context.fields.push(field)
           this.$set(this.value, field.name, [])
         } else {
           this.fields.push(field)
-          this.field = field
+          this.context = field
         }
       },
       removeField () {
         if (this.current.name) {
-          let index = this.field.fields.indexOf(this.current)
-          index > -1 && this.field.fields.splice(index, 1)
+          let index = this.context.fields.indexOf(this.current)
+          index > -1 && this.context.fields.splice(index, 1)
           this.current = {}
         } else {
-          let index = this.fields.indexOf(this.field)
+          let index = this.fields.indexOf(this.context)
           index > -1 && this.fields.splice(index, 1)
-          this.field = {}
+          this.context = {}
         }
       },
       setCurrent (field) {
