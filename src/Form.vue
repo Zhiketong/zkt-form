@@ -149,11 +149,10 @@
       },
       validate () {
         this.$v.$touch()
-        var subError = Object.values(this.$refs).find((item) => {
-          var item = item[0]
+        var subError = Object.values(this.$refs).find((item, index) => {
+          var item = item.length ? item[0] : item
           return item.validate && !item.validate()
         })
-
         return !this.$v.$error && !subError
       }
     },
