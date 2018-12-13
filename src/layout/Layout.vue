@@ -4,7 +4,7 @@
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
-      v-hide="value[row.dependOnName]!==row.dependOnValue"
+      v-hide="value[row.hideByName]!==row.hideByValue"
       @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"

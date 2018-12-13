@@ -13,10 +13,7 @@ export default [
     value: 10,
     group: 'input',
     column: 'col-sm-4',
-    placeholder: '数字',
-    visible (value) {
-      return value.input === '010-2222222'
-    }
+    placeholder: '数字'
   },
   {
     name: 'url',
@@ -48,8 +45,8 @@ export default [
     component: 'Textarea',
     label: '文本框',
     class: 'col-sm-2',
-    dependOnName: 'number',
-    dependOnValue: 11
+    hideByName: 'number',
+    hideByValue: 11
   },
   {
     name: 'checkbox',
@@ -123,7 +120,10 @@ export default [
     innerHTML: '自定义的<b style="color:red">HTML</b>',
     label: '静态',
     beforeText: 'before text',
-    afterText: 'after text'
+    afterText: 'after text',
+    style: {
+      width: '200px'
+    }
   },
   {
     name: 'image',

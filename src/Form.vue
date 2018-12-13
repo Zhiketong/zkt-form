@@ -8,6 +8,7 @@
   >
     <column
       v-for="field in fields"
+      v-hide="value[field.hideByName]!==field.hideByValue"
       :column="field.column"
       :visible="field.visible"
       :value="value"
@@ -50,6 +51,11 @@
       Column,
       ...components,
       Boolean: components['Checkbox']
+    },
+    directives: {
+      hide (el, binding, vnode) {
+        el.style.display = binding.value ? 'none' : ''
+      }
     },
     provide () {
       return this
@@ -158,11 +164,11 @@
 
 <style media="screen">
   .form-control-beforetext {
-    display: inline-block;
+    display: inline;
     padding-right: 2px;
   }
   .form-control-aftertext {
-    display: inline-block;
+    display: inline;
     padding-left: 2px;
   }
 </style>
