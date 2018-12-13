@@ -29,7 +29,7 @@ export default [
     type: 'password',
     placeholder: '密码',
     label: '密码',
-    style: {width: '50%'},
+    column: 'col-sm-6',
     visible: false
   },
   {
@@ -38,15 +38,15 @@ export default [
     type: 'password',
     placeholder: '重复密码',
     group: 'password',
-    style: {width: '50%'}
+    column: 'col-sm-6',
+    dependOnName: 'password',
+    dependOnFalseValue: ''
   },
   {
     name: 'textarea',
     component: 'Textarea',
     label: '文本框',
-    class: 'col-sm-2',
-    hideByName: 'number',
-    hideByValue: 11
+    class: 'col-sm-2'
   },
   {
     name: 'checkbox',

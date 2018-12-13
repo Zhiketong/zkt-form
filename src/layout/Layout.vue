@@ -4,7 +4,7 @@
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
-      v-hide="value[row.hideByName]!==row.hideByValue"
+      v-show="!row.dependOnName||value[row.dependOnName]===row.dependOnValue||value[row.dependOnName]!==row.dependOnFalseValue"
       @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"
@@ -24,11 +24,6 @@ export default {
   name: 'Layout',
   inheritAttrs: false,
   inject: ['current'],
-  directives: {
-    hide (el, binding, vnode) {
-      el.style.display = binding.value ? 'none' : ''
-    }
-  },
   props: {
     fields: {
       type: Array,

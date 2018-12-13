@@ -8,7 +8,7 @@
   >
     <column
       v-for="field in fields"
-      v-hide="value[field.hideByName]!==field.hideByValue"
+      v-show="!field.dependOnName||value[field.dependOnName]===field.dependOnValue||value[field.dependOnName]!==field.dependOnFalseValue"
       :column="field.column"
       :visible="field.visible"
       :value="value"

@@ -4,7 +4,7 @@
       <button type="button" name="button" class="btn btn-default" @click="add">添加</button>
       <button type="button" name="button" class="btn btn-default" @click="remove">删除</button>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
       <Form
         class="form-horizontal"
         :fields="fields"
@@ -16,7 +16,7 @@
         @submit="onSubmit">
       </Form>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <ul class="nav nav-tabs" style="margin-bottom: 15px">
         <li :class="{active: tab==1}"><a href="" @click.prevent="changeTab(1)">表单值</a></li>
         <li :class="{active: tab==2}"><a href="" @click.prevent="changeTab(2)">校验规则</a></li>
