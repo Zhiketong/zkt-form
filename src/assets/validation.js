@@ -15,7 +15,10 @@ export default {
   },
   textarea: {
     minLength: 4,
-    maxLength: 16
+    maxLength: 16,
+    remote () {
+      return Promise.reject(new Error('-----'))
+    }
   },
   password: {
     required: true

@@ -14,7 +14,12 @@ function transformValidation (validation) {
         break
       }
       let fn = validators[k]
-      if (!fn) continue
+      if (!fn) {
+        if (typeOf(val) === 'function') {
+          obj[name][k] = val
+        }
+        continue
+      }
       if (val === true) {
         obj[name][k] = fn
       } else if (typeOf(val) === 'array') {

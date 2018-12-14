@@ -12,6 +12,7 @@
       :column="field.column"
       :visible="field.visible"
       :value="value"
+      :field="field"
       :validation="$v.value[field.name]"
       :slot="field.group||field.name"
       :key="field.name"

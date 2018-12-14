@@ -54,7 +54,8 @@ export default [
     name: 'textarea',
     component: 'Textarea',
     label: '文本框',
-    class: 'col-sm-2'
+    class: 'col-sm-2',
+    message: '自定义错误消息'
   },
   {
     name: 'checkbox',

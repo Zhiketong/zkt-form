@@ -2,7 +2,7 @@
   <div  :class="['form-column', column, validation.$error&&'has-error']"  >
     <slot></slot>
     <p class="help-block" v-if="validation.$error">
-      {{validation|message}}
+      {{validation|message(field)}}
     </p>
   </div>
 </template>
@@ -20,6 +20,12 @@ export default {
   props: {
     column: {
       default: 'col-sm-12'
+    },
+    field: {
+      type: Object,
+      default () {
+        return {}
+      }
     },
     visible: {
       default: true

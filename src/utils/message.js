@@ -18,15 +18,16 @@ const messages = {
   sameAs: '该字段必须和${sameAs}相等',
   regex: '该字段格式错误',
   between: '该字段值必须介于${min}到${max}之间',
-  compare: '该字段值必须${operator}${compare}字段值'
+  compare: '该字段值必须${operator}${compare}字段值',
+  remote: ''
 }
 
 // message filter
-function message (validation) {
+function message (validation, field) {
   var message = ''
   for(let k in validation) {
     if (k.indexOf('$') == -1 && !validation[k]) {
-      message = messages[k] || ''
+      message = field.message || messages[k] || ''
       message = message.replace(/\$\{(.*?)\}/g, function (m, s) {
         return validation.$params[k][s]
       })
