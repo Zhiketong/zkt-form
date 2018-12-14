@@ -6,6 +6,9 @@ export default {
   number: {
     between: [10, 20]
   },
+  number2: {
+    compare: ['number', '>']
+  },
   url: {
     required: true,
     url: true

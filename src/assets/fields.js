@@ -12,7 +12,15 @@ export default [
     component: 'Number',
     value: 10,
     group: 'input',
-    column: 'col-sm-4',
+    column: 'col-sm-2',
+    placeholder: '数字'
+  },
+  {
+    name: 'number2',
+    component: 'Number',
+    value: 10,
+    group: 'input',
+    column: 'col-sm-2',
     placeholder: '数字'
   },
   {

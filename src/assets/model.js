@@ -1,6 +1,7 @@
 export default {
   input: '010-2222222',
   number: 12,
+  number2: 10,
   url: '',
   textarea: 'hello \n textarea',
   checkbox: ['1'],

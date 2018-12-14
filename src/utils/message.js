@@ -17,7 +17,8 @@ const messages = {
   maxValue: '该字段不能大于${max}',
   sameAs: '该字段必须和${sameAs}相等',
   regex: '该字段格式错误',
-  between: '改字段值必须介于${min}到${max}之间'
+  between: '该字段值必须介于${min}到${max}之间',
+  compare: '该字段值必须${operator}${compare}字段值'
 }
 
 // message filter

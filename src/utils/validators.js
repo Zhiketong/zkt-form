@@ -31,6 +31,34 @@ validators.regex = function (regex) {
   return common.regex('regex', regex)
 }
 
+validators.compare = function (prop, operator) {
+  var that = this
+  return common.withParams({
+    type: 'compare',
+    compare: prop,
+    operator: operator
+  }, function (value, parentVm) {
+    var result = common.ref(prop, that, parentVm)
+    switch (operator) {
+      case '>':
+        return value > result
+        break
+      case '<':
+        return value < result
+        break
+      case '<=':
+        return value <= result
+        break
+        case '>=':
+          return value >= result
+          break
+      default:
+        console.warn('未知的操作符')
+        return false
+    }
+  })
+}
+
 export {
   validators,
   common,
