@@ -31,7 +31,7 @@ validators.regex = function (regex) {
   return common.regex('regex', regex)
 }
 
-validators.compare = function (prop, operator) {
+validators.compare = function (operator, prop) {
   var that = this
   return common.withParams({
     type: 'compare',
