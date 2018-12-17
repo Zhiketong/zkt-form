@@ -4,7 +4,7 @@
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
-      v-show="!row.dependOnName||value[row.dependOnName]===row.dependOnValue||value[row.dependOnName]!==row.dependOnFalseValue"
+      v-show="_visible(row)"
       @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"
@@ -47,6 +47,13 @@ export default {
   methods: {
     getGroup (name) {
       return this.$refs[name] && this.$refs[name][0]
+    },
+    _visible (field) {
+      if (typeOf(field.visible) === 'function') {
+        return field.visible(this.value, field)
+      }
+      if (!field.dependOnName) return true
+      return this.value[field.dependOnName]===field.dependOnValue||this.value[field.dependOnName]!==field.dependOnFalseValue
     }
   }
 }

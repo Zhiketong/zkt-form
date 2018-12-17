@@ -1,5 +1,5 @@
 <template lang="html">
-  <div  :class="['form-column', column, validation.$error&&'has-error']"  >
+  <div  :class="['form-column', column, validation.$error&&'has-error']"  v-show="_visible(field)">
     <slot></slot>
     <p class="help-block" v-if="validation.$error">
       {{validation|message(field)}}
@@ -27,9 +27,6 @@ export default {
         return {}
       }
     },
-    visible: {
-      default: true
-    },
     value: {
       type: Object,
       default () {
@@ -41,6 +38,15 @@ export default {
       default () {
         return {}
       }
+    }
+  },
+  methods: {
+    _visible (field) {
+      if (typeOf(field.visible) === 'function') {
+        return field.visible(this.value, field)
+      }
+      if (!field.dependOnName) return true
+      return this.value[field.dependOnName]===field.dependOnValue||this.value[field.dependOnName]!==field.dependOnFalseValue
     }
   }
 }

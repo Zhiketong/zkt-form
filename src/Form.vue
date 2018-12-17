@@ -8,9 +8,7 @@
   >
     <column
       v-for="field in fields"
-      v-show="!field.dependOnName||value[field.dependOnName]===field.dependOnValue||value[field.dependOnName]!==field.dependOnFalseValue"
       :column="field.column"
-      :visible="field.visible"
       :value="value"
       :field="field"
       :validation="$v.value[field.name]"
