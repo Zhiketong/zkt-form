@@ -27,7 +27,7 @@ function message (validation, field) {
   var message = ''
   for(let k in validation) {
     if (k.indexOf('$') == -1 && !validation[k]) {
-      message = field.message || messages[k] || ''
+      message = messages[k] || field.message || ''
       message = message.replace(/\$\{(.*?)\}/g, function (m, s) {
         return validation.$params[k][s]
       })
