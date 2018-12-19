@@ -155,7 +155,12 @@
         return !this.$v.$error && !subError
       }
     },
-    mounted () {
+    created () {
+      this.fields.forEach((item) => {
+        if (item.hasOwnProperty('value') && !this.value.hasOwnProperty(item.name)) {
+          this.value[item.name] = item.value
+        }
+      })
     }
   }
 </script>
