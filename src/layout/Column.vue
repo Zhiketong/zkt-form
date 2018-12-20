@@ -1,6 +1,8 @@
 <template lang="html">
   <div  :class="['form-column', column, validation.$error&&'has-error']"  v-show="_visible(field)">
+    <span class="form-control-static form-control-beforetext" v-if="field.beforeText" v-html="field.beforeText"></span>
     <slot></slot>
+    <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
     <p class="help-block" v-if="validation.$error">
       {{validation|message(field)}}
     </p>

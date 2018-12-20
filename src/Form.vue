@@ -16,7 +16,6 @@
       :slot="field.group||field.name"
       :key="field.name"
     >
-    <span class="form-control-static form-control-beforetext" v-if="field.beforeText" v-html="field.beforeText"></span>
       <component
         v-bind.sync="field"
         v-model.sync="value[field.name]"
@@ -26,7 +25,6 @@
         @active="setCurrent"
         class="form-field"
       />
-      <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
     </column>
   </layout>
 </template>
