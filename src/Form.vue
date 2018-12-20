@@ -3,6 +3,7 @@
   :fields="fields"
   :value="value"
   :field.sync="context"
+  :validation="validation"
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
