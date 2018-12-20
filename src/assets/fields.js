@@ -83,8 +83,8 @@ export default [
     }],
     trueValue: '1',
     falseValue: '0',
-    label: '布尔'
-
+    label: '布尔',
+    helpText: '勾选后将影响单选'
   },
   {
     name: 'radio',
