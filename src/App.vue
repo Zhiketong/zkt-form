@@ -10,6 +10,7 @@
         :fields="fields"
         :validation="validation"
         :triggers="triggers"
+        :options="options"
         ref="form"
         v-model="model"
         @click="onClick"
@@ -46,7 +47,10 @@ export default {
       fields,
       validation,
       triggers,
-      tab: 1
+      tab: 1,
+      options: {
+        labelColumn: 3
+      }
     }
   },
   computed: {

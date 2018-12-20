@@ -4,6 +4,7 @@
   :value="value"
   :field.sync="context"
   :validation="validation"
+  :label-column="options.labelColumn"
   @submit.prevent="validate()&&$emit('submit')"
   ref="layout"
   >
@@ -86,6 +87,12 @@
       name: {
         type: String,
         default: ''
+      },
+      options: {
+        type: Object,
+        default () {
+          return {}
+        }
       }
     },
     data () {

@@ -10,11 +10,11 @@
       :ref="row.name"
       :class="{active: row.name==field.name||field.group}"
     >
-      <label v-if="row.label" class="control-label col-sm-2">
+      <label v-if="row.label" class="control-label" :class="'col-sm-'+labelColumn">
         {{row.label}}
         <span class="text-warning" v-if="validation[row.name]&&validation[row.name].required">*</span>
       </label>
-      <div class="col-sm-10 row">
+      <div class="row" :class="'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
       </div>
     </div>
@@ -52,6 +52,10 @@ export default {
         return {}
       }
     },
+    labelColumn: {
+      type: Number,
+      default: 2
+    }
   },
   methods: {
     getGroup (name) {
