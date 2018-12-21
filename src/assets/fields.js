@@ -46,9 +46,7 @@ export default [
     type: 'password',
     placeholder: '重复密码',
     group: 'password',
-    column: 'col-sm-6',
-    dependOnName: 'password',
-    dependOnFalseValue: ''
+    column: 'col-sm-6'
   },
   {
     name: 'textarea',
@@ -98,9 +96,8 @@ export default [
       value: '2'
     }],
     label: '单选',
-    visible (data) {
-      return data.truefalse == "1"
-    }
+    dependOnName: 'truefalse',
+    dependOnValue: '1'
   },
   {
     // group:"checkbox",

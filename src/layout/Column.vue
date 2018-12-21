@@ -49,7 +49,7 @@ export default {
         return field.visible(this.value, field)
       }
       if (!field.dependOnName) return true
-      return this.value[field.dependOnName]===field.dependOnValue||this.value[field.dependOnName]!==field.dependOnFalseValue
+      return this.value[field.dependOnName]===field.dependOnValue
     }
   }
 }
