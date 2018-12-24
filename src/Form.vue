@@ -172,12 +172,4 @@
 </script>
 
 <style media="screen">
-  .form-control-beforetext {
-    display: inline;
-    padding-right: 2px;
-  }
-  .form-control-aftertext {
-    display: inline;
-    padding-left: 2px;
-  }
 </style>
