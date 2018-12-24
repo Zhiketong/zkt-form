@@ -12,7 +12,7 @@
     >
       <label  class="control-label" :class="'col-sm-'+labelColumn">
         {{row.label}}
-        <span class="text-warning" v-if="row.label&&validation[row.name]&&validation[row.name].required">*</span>
+        <span class="text-required" v-if="row.label&&validation[row.name]&&validation[row.name].required">*</span>
       </label>
       <div class="row" :class="'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
@@ -71,3 +71,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.text-required {
+  color: red;
+}
+</style>
+
