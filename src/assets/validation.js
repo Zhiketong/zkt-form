@@ -7,7 +7,7 @@ export default {
     between: [10, 20]
   },
   number2: {
-    compare: ['>', 'number']
+    compare: ['>', 'number', 'number']
   },
   url: {
     required: true,
