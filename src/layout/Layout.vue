@@ -71,3 +71,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.text-warning {
+  color: red;
+}
+</style>
+

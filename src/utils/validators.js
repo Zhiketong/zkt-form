@@ -32,18 +32,39 @@ function transformValidation (validation) {
   return obj
 }
 
+function operatorTranslate (operator) {
+  switch (operator) {
+    case '>':
+      return '大于'
+      break
+    case '>=':
+      return '大于等于'
+      break
+    case '<':
+      return '小于'
+      break
+    case '<=':
+      return '小于等于'
+      break
+    default:
+      console.warn('未知的操作符')
+      return false
+  }
+}
+
 validators.regex = function (regex) {
   return common.regex('regex', regex)
 }
 
-validators.compare = function (operator, prop) {
+validators.compare = function (operator, prop, label) {
   var that = this
   return common.withParams({
     type: 'compare',
-    compare: prop,
-    operator: operator
+    compare: label,
+    operator: operatorTranslate(operator)
   }, function (value, parentVm) {
-    var result = common.ref(prop, that, parentVm)
+    var value = Number(value)
+    var result = Number(common.ref(prop, that, parentVm))
     switch (operator) {
       case '>':
         return value > result
