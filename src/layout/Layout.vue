@@ -10,7 +10,7 @@
       :ref="row.name"
       :class="{active: row.name==field.name||field.group}"
     >
-      <label  class="control-label" :class="'col-sm-'+labelColumn">
+      <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn">
         {{row.label}}
         <span class="text-required" v-if="row.label&&validation[row.name]&&validation[row.name].required">*</span>
       </label>
@@ -76,5 +76,7 @@ export default {
 .text-required {
   color: red;
 }
+.zkt-control-label {
+  font-weight: normal;
+}
 </style>
-
