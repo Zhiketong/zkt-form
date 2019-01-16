@@ -1,6 +1,5 @@
 <template lang="html">
-  <form class="form" v-on="$listeners">
-    <slot></slot>
+  <div class="form-layout">
     <div class="form-group clearfix"
       v-for="row in fields"
       v-if="!row.group"
@@ -18,7 +17,7 @@
           <slot :name="row.name"></slot>
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script>

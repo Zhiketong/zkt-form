@@ -1,33 +1,35 @@
 <template>
-  <layout
-  :fields="fields"
-  :value="value"
-  :field.sync="context"
-  :validation="validation"
-  :label-column="options.labelColumn"
-  @submit.prevent="validate()&&$emit('submit')"
-  ref="layout"
-  >
-    <column
-      v-for="field in fields"
-      :column="field.column"
-      :value="value"
-      :field="field"
-      :validation="$v.value[field.name]"
-      :slot="field.group||field.name"
-      :key="field.name"
+  <form  class="form zkt-form" @submit.prevent="$emit('submit')">
+    <layout
+    :fields="fields"
+    :value="value"
+    :field.sync="context"
+    :validation="validation"
+    :label-column="options.labelColumn"
+    @submit.prevent="validate()&&$emit('submit')"
+    ref="layout"
     >
-      <component
-        v-bind.sync="field"
-        v-model.sync="value[field.name]"
-        :is="field['component']"
-        :ref="field.name"
-        @change="$emit('change', value[field.name])&&$v.value[field.name]&&$v.value[field.name].$touch()"
-        @active="setCurrent"
-        class="form-field"
-      />
-    </column>
-  </layout>
+      <column
+        v-for="field in fields"
+        :column="field.column"
+        :value="value"
+        :field="field"
+        :validation="$v.value[field.name]"
+        :slot="field.group||field.name"
+        :key="field.name"
+      >
+        <component
+          v-bind.sync="field"
+          v-model.sync="value[field.name]"
+          :is="field['component']"
+          :ref="field.name"
+          @change="$emit('change', value[field.name])&&$v.value[field.name]&&$v.value[field.name].$touch()"
+          @active="setCurrent"
+          class="form-field"
+        />
+      </column>
+    </layout>
+  </form>
 </template>
 <script>
   import Layout from './layout/Layout.vue'
