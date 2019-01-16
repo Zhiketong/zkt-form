@@ -5,7 +5,8 @@
           type="radio"
           v-model="val"
           :value="option[optionValueName]"
-          :name="name">
+          :name="name"
+          :disabled="disabled">
         <span>{{option[optionKeyName]}}</span>
       </label>
   </span>
@@ -23,6 +24,9 @@
       options: {
         type: Array
       },
+      disabled: {
+        default: false
+      }
     }
   }
 </script>

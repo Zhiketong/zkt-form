@@ -8,7 +8,8 @@
           :value="option[optionValueName]"
           :name="name"
           :true-value="trueValue"
-          :false-value="falseValue">
+          :false-value="falseValue"
+          :disabled="disabled">
         <span>{{option[optionKeyName]}} </span>
       </label>
   </div>
@@ -31,6 +32,9 @@
         default: true
       },
       falseValue: {
+        default: false
+      },
+      disabled: {
         default: false
       }
     }
