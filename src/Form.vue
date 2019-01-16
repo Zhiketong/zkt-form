@@ -22,7 +22,7 @@
         v-model.sync="value[field.name]"
         :is="field['component']"
         :ref="field.name"
-        @change="$emit('change', value[field.name])&&$v.value[field.name]&&$v.value[field.name].$touch()"
+        @change="_onChange(field)"
         @active="setCurrent"
         class="form-field"
       />
@@ -159,6 +159,10 @@
           return item.validate && !item.validate()
         })
         return !this.$v.$error && !subError
+      },
+      _onChange (field) {
+        this.$emit('change', field.name, this.value[field.name])
+        this.$v.value[field.name] && this.$v.value[field.name].$touch()
       }
     },
     created () {

@@ -97,8 +97,8 @@ export default {
     onClick (e) {
       console.log('onClick', e)
     },
-    onChange () {
-      console.log(arguments)
+    onChange (key, value) {
+      console.log(key, value)
     },
     changeTab (i) {
       this.tab = i
