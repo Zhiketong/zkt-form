@@ -2,7 +2,6 @@
   <textarea
     v-model="val"
     v-on="listeners"
-    @change="$emit('change', $event.target.value)"
     class="form-control">
   </textarea>
 </template>

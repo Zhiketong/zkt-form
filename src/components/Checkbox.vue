@@ -7,7 +7,6 @@
           v-on="listeners"
           :value="option[optionValueName]"
           :name="name"
-          @change="$emit('change', $event.target.value)"
           :true-value="trueValue"
           :false-value="falseValue">
         <span>{{option[optionKeyName]}} </span>

@@ -22,7 +22,7 @@
         v-model.sync="value[field.name]"
         :is="field['component']"
         :ref="field.name"
-        @change="$v.value[field.name]&&$v.value[field.name].$touch()"
+        @change="$emit('change', value[field.name])&&$v.value[field.name]&&$v.value[field.name].$touch()"
         @active="setCurrent"
         class="form-field"
       />

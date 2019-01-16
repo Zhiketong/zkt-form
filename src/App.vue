@@ -13,6 +13,7 @@
         :options="options"
         ref="form"
         v-model="model"
+        @change="onChange"
         @click="onClick"
         @submit="onSubmit">
       </Form>
@@ -95,6 +96,9 @@ export default {
     },
     onClick (e) {
       console.log('onClick', e)
+    },
+    onChange () {
+      console.log(arguments)
     },
     changeTab (i) {
       this.tab = i

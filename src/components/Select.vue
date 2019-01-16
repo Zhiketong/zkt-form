@@ -2,8 +2,7 @@
   <select
     v-model="val"
     v-on="listeners"
-    class="form-control"
-    @change="$emit('change', $event.target.value)">
+    class="form-control">
     <option value="">请选择</option>
     <option
     v-for="option in options"

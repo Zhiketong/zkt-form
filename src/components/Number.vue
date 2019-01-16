@@ -3,7 +3,6 @@
     v-model.number="val"
     v-on="listeners"
     type="number"
-    @change="$emit('change', $event.target.value)"
     class="form-control">
 </template>
 <script>

@@ -5,8 +5,7 @@
           type="radio"
           v-model="val"
           :value="option[optionValueName]"
-          :name="name"
-          @change="$emit('change', $event.target.value)">
+          :name="name">
         <span>{{option[optionKeyName]}}</span>
       </label>
   </span>
