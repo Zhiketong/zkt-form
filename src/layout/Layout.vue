@@ -13,7 +13,7 @@
         {{row.label}}
         <span class="text-required" v-if="validation[row.name]&&validation[row.name].required">*</span>
       </label>
-      <div class="row" :class="'col-sm-'+(12-labelColumn)">
+      <div class="row" :class="row.label&&'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
       </div>
     </div>
