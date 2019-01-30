@@ -9,9 +9,9 @@
       :ref="row.name"
       :class="{active: row.name==field.name||field.group}"
     >
-      <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn">
+      <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn" v-if="row.label">
         {{row.label}}
-        <span class="text-required" v-if="row.label&&validation[row.name]&&validation[row.name].required">*</span>
+        <span class="text-required" v-if="validation[row.name]&&validation[row.name].required">*</span>
       </label>
       <div class="row" :class="'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
