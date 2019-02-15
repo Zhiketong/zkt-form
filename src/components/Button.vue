@@ -1,6 +1,6 @@
 <template>
   <button
-  class="btn btn-info"
+  class="btn btn-default"
   :type="type"
   v-on="$listeners">
   {{val}}
