@@ -29,5 +29,8 @@ export default {
   },
   checkbox: {
     required: true
+  },
+  select: {
+    requiredIf: 'truefalse'
   }
 }

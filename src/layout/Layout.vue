@@ -11,7 +11,9 @@
     >
       <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn" v-if="row.label">
         {{row.label}}
-        <span class="text-required" v-if="validation[row.name]&&validation[row.name].required">*</span>
+        <span class="text-required" v-if="validation[row.name]">
+          <span v-if="_showRequired(validation,row, value)">*</span>
+        </span>
       </label>
       <div class="row" :class="row.label&&'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
@@ -66,6 +68,17 @@ export default {
       }
       if (!field.dependOnName) return true
       return this.value[field.dependOnName]===field.dependOnValue
+    },
+    _showRequired (validation, row, value) {
+      var requiredIf = validation[row.name].requiredIf
+      if (validation[row.name].required) return true
+      if (typeOf(requiredIf) == 'function') {
+        return requiredIf(row)
+      }
+      if (typeOf(requiredIf) == 'string') {
+        return !!value[requiredIf]
+      }
+      return false
     }
   }
 }

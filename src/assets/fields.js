@@ -77,10 +77,10 @@ export default [
     // group: 'checkbox',
     options: [{
       label: '是否同意？',
-      value: '1'
+      value: 1
     }],
-    trueValue: '1',
-    falseValue: '0',
+    trueValue: 1,
+    falseValue: 0,
     label: '布尔',
     helpText: '勾选后将影响单选'
   },
