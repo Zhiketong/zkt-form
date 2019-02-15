@@ -73,7 +73,7 @@ export default {
       var requiredIf = validation[row.name].requiredIf
       if (validation[row.name].required) return true
       if (typeOf(requiredIf) == 'function') {
-        return requiredIf(row)
+        return requiredIf(value)
       }
       if (typeOf(requiredIf) == 'string') {
         return !!value[requiredIf]
