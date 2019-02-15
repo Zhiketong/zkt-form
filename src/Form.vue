@@ -1,12 +1,11 @@
 <template>
-  <form  class="form zkt-form" @submit.prevent="$emit('submit')">
+  <form  class="form zkt-form" @submit.prevent="validate()&&$emit('submit')">
     <layout
     :fields="fields"
     :value="value"
     :field.sync="context"
     :validation="validation"
     :label-column="options.labelColumn"
-    @submit.prevent="validate()&&$emit('submit')"
     ref="layout"
     >
       <column
