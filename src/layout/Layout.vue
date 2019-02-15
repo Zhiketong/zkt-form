@@ -7,7 +7,7 @@
       @click="$emit('update:field', row)"
       :key="row.name"
       :ref="row.name"
-      :class="{active: row.name==field.name||field.group}"
+      :class="[row.name==field.name&&'active', 'form-group-'+row.name]"
     >
       <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn" v-if="row.label">
         {{row.label}}
