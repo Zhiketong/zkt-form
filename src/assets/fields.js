@@ -180,6 +180,11 @@ export default [
         column: 'col-sm-6'
       },
     ],
+    validation: {
+      nested2: {
+        required: true
+      }
+    }
   },
   {
     name: 'submit',

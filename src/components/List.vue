@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="form-control-list well">
     <div class="form-control-list-item" :class="{active: index==current}" v-for="(v,index) in value" :key="index" @click="select(index)">
-      <Form  :value.sync="v" :fields="fields" :validation="validation" @active="active"></Form>
+      <Form  :value.sync="v" :fields="fields" :validation="validation" @active="active" ref="forms"></Form>
     </div>
     <div>
       <div class="col-sm-6">
@@ -61,6 +61,11 @@ export default {
     },
     active (field) {
       this.$emit('active', field)
+    },
+    validate () {
+      return this.$refs.forms.find((item) => {
+        return item.validate()
+      })
     }
   }
 }
