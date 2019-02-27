@@ -2,6 +2,10 @@
   <div  :class="['form-column', column, validation.$error&&'has-error']"  v-show="_visible(field)">
     <span class="form-control-static form-control-beforetext" v-if="field.beforeText" v-html="field.beforeText"></span>
     <slot></slot>
+    <span
+      class="glyphicon  form-control-feedback"
+      v-if="field.icon" :class="field.icon"
+      :style="{left:field.style.width,marginLeft:'-34px'}"></span>
     <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
     <p class="help-text" v-if="field.helpText">{{field.helpText}}</p>
     <p class="help-block" v-if="validation.$error">

@@ -38,7 +38,12 @@ export default [
     placeholder: '密码',
     label: '密码',
     column: 'col-sm-6',
-    visible: false
+    visible: false,
+    afterText: '*',
+    style: {
+      width: '100px'
+    },
+    icon: 'glyphicon-calendar'
   },
   {
     name: 'repeatPassword',
