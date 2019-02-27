@@ -17,7 +17,7 @@ export default {
     minLength: 4,
     maxLength: 16,
     remote () {
-      return Promise.reject(new Error('-----'))
+      return Promise.resolve('123')
     }
   },
   password: {
