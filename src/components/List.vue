@@ -63,7 +63,7 @@ export default {
       this.$emit('active', field)
     },
     validate () {
-      return this.$refs.forms.find((item) => {
+      return this.$refs.forms.every((item) => {
         return item.validate()
       })
     }
