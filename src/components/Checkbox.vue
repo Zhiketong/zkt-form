@@ -45,4 +45,7 @@
   .checkbox-wrapper {
     width: 100%;
   }
+  .checkbox-inline {
+    margin-right: 20px;
+  }
 </style>

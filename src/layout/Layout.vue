@@ -15,7 +15,7 @@
           <span v-if="_showRequired(validation,row, value)">*</span>
         </span>
       </label>
-      <div class="row" :class="row.label&&'col-sm-'+(12-labelColumn)">
+      <div class="row zkt-control-row" :class="row.label&&'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
       </div>
     </div>
@@ -89,6 +89,10 @@ export default {
   color: red;
 }
 .zkt-control-label {
+  color: #777;
   font-weight: normal;
+}
+.zkt-control-row {
+  color: #333;
 }
 </style>

@@ -64,9 +64,13 @@ export default {
 .form-control-beforetext {
   display: inline-block;
   padding-right: 2px;
+  color: #999;
+  font-size: 12px;
 }
 .form-control-aftertext {
   display: inline-block;
   padding-left: 2px;
+  color: #999;
+  font-size: 12px;
 }
 </style>
