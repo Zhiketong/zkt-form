@@ -30,3 +30,10 @@
     }
   }
 </script>
+
+<style>
+.radio-inline {
+  margin-right: 20px;
+}
+</style>
+
