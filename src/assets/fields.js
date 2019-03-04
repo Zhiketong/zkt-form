@@ -105,14 +105,6 @@ export default [
     dependOnValue: '1'
   },
   {
-    name: 'range',
-    component: 'range',
-    label: '值域',
-    max: '100',
-    min: '1',
-    step: '1'
-  },
-  {
     // group:"checkbox",
     name: 'select',
     component: 'Select',

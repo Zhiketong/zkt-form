@@ -8,7 +8,6 @@ export default {
   truefalse: '1',
   radio: '1',
   select: '2',
-  range: '10',
   // 'static': '(*@ο@*) 哇～，这里可以输入一些自定义的<b>HTML</b>',
   nested: {
     nested1: 22,
