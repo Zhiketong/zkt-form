@@ -10,10 +10,10 @@
       :class="[row.name==field.name&&'active', 'form-group-'+row.name]"
     >
       <label  class="control-label zkt-control-label" :class="'col-sm-'+labelColumn" v-if="row.label">
-        {{row.label}}
         <span class="text-required" v-if="validation[row.name]">
           <span v-if="_showRequired(validation,row, value)">*</span>
         </span>
+        {{row.label}}
       </label>
       <div class="row zkt-control-row" :class="row.label&&'col-sm-'+(12-labelColumn)">
           <slot :name="row.name"></slot>
