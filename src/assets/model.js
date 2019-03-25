@@ -23,5 +23,6 @@ export default {
   level1: '',
   level2: '',
   submit: '提交',
+  range: 10
   // image: '/src/assets/logo.png'
 }

@@ -120,6 +120,14 @@ export default [
     optionValueName: 'value'
   },
   {
+    name: 'range',
+    component: 'Range',
+    label: '值域',
+    max: 100,
+    min: 0,
+    step: 1
+  },
+  {
     component: 'divider',
     name: 'divider',
     label: '',
