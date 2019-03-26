@@ -120,6 +120,21 @@ export default [
     optionValueName: 'value'
   },
   {
+    name: 'range',
+    component: 'Range',
+    label: '值域',
+    max: 100,
+    min: 0,
+    step: 1
+  },
+  {
+    name: 'switch',
+    component: 'SlideSwitch',
+    label: '开关',
+    trueValue: 1,
+    falseValue: 0
+  },
+  {
     component: 'divider',
     name: 'divider',
     label: '',
