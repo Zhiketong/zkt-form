@@ -128,6 +128,13 @@ export default [
     step: 1
   },
   {
+    name: 'switch',
+    component: 'SlideSwitch',
+    label: '开关',
+    trueValue: 1,
+    falseValue: 0
+  },
+  {
     component: 'divider',
     name: 'divider',
     label: '',
