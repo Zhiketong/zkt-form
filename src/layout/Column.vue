@@ -7,7 +7,7 @@
       v-if="field.icon" :class="field.icon"
       :style="{left:field.style&&field.style.width,marginLeft:'-34px'}"></span>
     <span class="form-control-static form-control-aftertext" v-if="field.afterText" v-html="field.afterText"></span>
-    <p class="help-text" v-if="field.helpText">{{field.helpText}}</p>
+    <p class="help-text" v-if="field.helpText" v-html="field.helpText">{{field.helpText}}</p>
     <p class="help-block" v-if="validation.$error">
       {{validation|message(field)}}
     </p>
