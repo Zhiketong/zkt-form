@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox-wrapper">
-    <label class="checkbox-inline" v-for="option in options" :key="option.value">
+    <label class="checkbox-inline" :class="(disabled || option.disabled) ? 'checkbox-disabled' : ''" v-for="option in options" :key="option.value">
         <input
           type="checkbox"
           v-model="val"
@@ -9,7 +9,7 @@
           :name="name"
           :true-value="trueValue"
           :false-value="falseValue"
-          :disabled="disabled">
+          :disabled="disabled || option.disabled">
         <span>{{option[optionKeyName]}} </span>
       </label>
   </div>
@@ -47,5 +47,8 @@
   }
   .checkbox-inline {
     margin-right: 20px;
+  }
+  .checkbox-disabled{
+    color:#aaa;
   }
 </style>
