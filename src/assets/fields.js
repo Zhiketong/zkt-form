@@ -207,6 +207,11 @@ export default [
     }
   },
   {
+    name: 'custom',
+    component: 'Custom',
+    label: '自定义'
+  },
+  {
     name: 'submit',
     component: 'Button',
     type: 'submit',

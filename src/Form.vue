@@ -95,6 +95,12 @@
         default () {
           return {}
         }
+      },
+      components: {
+        type: Object,
+        default () {
+          return {}
+        }
       }
     },
     data () {
@@ -168,6 +174,7 @@
       }
     },
     created () {
+      Object.assign(this.$options.components, this.components)
       this.fields.forEach((item) => {
         if (item.hasOwnProperty('value') && !this.value.hasOwnProperty(item.name)) {
           this.value[item.name] = item.value

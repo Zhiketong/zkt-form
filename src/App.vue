@@ -11,6 +11,7 @@
         :validation="validation"
         :triggers="triggers"
         :options="options"
+        :components="components"
         ref="form"
         v-model="model"
         @change="onChange"
@@ -51,6 +52,11 @@ export default {
       tab: 1,
       options: {
         labelColumn: 3
+      },
+      components: {
+        Custom: {
+          template: '<div>custom</div>'
+        }
       }
     }
   },
