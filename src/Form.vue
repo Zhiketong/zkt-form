@@ -23,6 +23,7 @@
           :is="field['component']"
           :ref="field.name"
           @change="_onChange(field)"
+          @click="$emit('click', field.name, value[field.name])"
           @active="setCurrent"
           class="form-field"
         />

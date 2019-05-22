@@ -94,8 +94,8 @@ export default {
     onSubmit (e) {
       console.log('onSubmit')
     },
-    onClick (e) {
-      console.log('onClick', e)
+    onClick (name, value) {
+      console.log('onClick', name, value)
     },
     onChange (key, value) {
       console.log(key, value)
