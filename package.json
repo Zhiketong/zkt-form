@@ -1,7 +1,7 @@
 {
   "name": "zkt-form2",
   "description": "a schema based form generator",
-  "version": "2.25.3",
+  "version": "2.26.0",
   "author": "MillerRen <ren12345@126.com>",
   "license": "MIT",
   "private": false,
@@ -36,7 +36,7 @@
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-dev-server": "^2.9.1"
   },
-  "publishConfig" : {
-    "registry" : "http://npm.yin126.com:8081/repository/npm_dev/"
+  "publishConfig": {
+    "registry": "http://npm.yin126.com:8081/repository/npm_dev/"
   }
 }
