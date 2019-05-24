@@ -23,6 +23,7 @@
           :is="field['component']"
           :ref="field.name"
           @change="_onChange(field)"
+          @click="$emit('click', field.name, value[field.name])"
           @active="setCurrent"
           class="form-field"
         />
@@ -90,6 +91,12 @@
         default: ''
       },
       options: {
+        type: Object,
+        default () {
+          return {}
+        }
+      },
+      components: {
         type: Object,
         default () {
           return {}
@@ -167,6 +174,7 @@
       }
     },
     created () {
+      Object.assign(this.$options.components, this.components)
       this.fields.forEach((item) => {
         if (item.hasOwnProperty('value') && !this.value.hasOwnProperty(item.name)) {
           this.value[item.name] = item.value
