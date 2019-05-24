@@ -1,12 +1,12 @@
 <template>
   <span class="radio-wrapper" v-on="listeners">
-    <label class="radio-inline" v-for="option in options" :key="option.value">
+    <label class="radio-inline" :class="(disabled || option.disabled) ? 'radio-disabled' : ''" v-for="option in options" :key="option.value">
         <input
           type="radio"
           v-model="val"
           :value="option[optionValueName]"
           :name="name"
-          :disabled="disabled">
+          :disabled="disabled || option.disabled">
         <span>{{option[optionKeyName]}}</span>
       </label>
   </span>
@@ -34,6 +34,9 @@
 <style>
 .radio-inline {
   margin-right: 20px;
+}
+.radio-disabled{
+  color:#aaa;
 }
 </style>
 

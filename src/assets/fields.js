@@ -212,5 +212,11 @@ export default [
     type: 'submit',
     label: ' ',
     disabled: false
+  },
+  {
+    name: 'tag',
+    component: 'Tag',
+    label: '添加标签',
+    disabled: false
   }
 ]
