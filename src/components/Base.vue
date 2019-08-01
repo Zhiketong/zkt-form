@@ -20,10 +20,6 @@
         type: String,
         default: 'value'
       },
-      placeholder: {
-        type: String,
-        default: ''
-      },
       group: {
         type: String,
         default: ''
