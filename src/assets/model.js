@@ -24,6 +24,7 @@ export default {
   level2: '',
   submit: '提交',
   range: 10,
-  switch: 1
+  switch: 1,
+  inputNumber : 1
   // image: '/src/assets/logo.png'
 }

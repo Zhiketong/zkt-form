@@ -136,10 +136,21 @@ export default [
     falseValue: 0
   },
   {
+    name: 'inputNumber',
+    label: '数字输入框',
+    component: 'InputNumber',
+    disabled: false,
+    placeholder: "请输入...",
+    min: 0,
+    max: 100,
+    step: 1,
+    size:'',
+  },
+  {
     component: 'divider',
     name: 'divider',
     label: '',
-    title: 'hello'
+    title: 'hello',
   },
   {
     name: 'static',
