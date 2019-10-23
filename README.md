@@ -1,4 +1,4 @@
-# 表单引擎
+# 直客通-表单引擎 zkt-form
 
 > 用于后台表单的快速生成,本项目为表单引擎的基本包，其他有依赖的富组件请根据业务采用扩展方式实现
 
@@ -13,11 +13,26 @@
 1. 支持校验和自定义校验规则
 1. 支持多列布局
 
+## 版本
+- 2.27.2
+- 负责人： 任明磊
+
 ## 使用方法
 
 ### 调用form
 ```html
-<Form v-model="model" :fields="fields" :validation="validation" ref="form" @submit="onSubmit" />
+<Form
+  class="form-horizontal"
+  :fields="fields"
+  :validation="validation"
+  :options="options"
+  :components="components"
+  ref="form"
+  v-model="model"
+  @change="onChange"
+  @click="onClick"
+  @submit="onSubmit">
+</Form>
 ```
 ### 获取单个字段
 ```javascript
@@ -63,3 +78,20 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Props
+参数 | 说明 | 类型 | 可选值 | 默认值
+---|---|---|---|---
+fields | 表单内容项 | array | - | -
+validation | 表单校验对象 | object | - | -
+options | 表单域label宽度 | object | - | -
+components | 表单扩展组件对象 | object | - | -
+
+## 常见问题
+
+## 遗留问题
+
+## 更新记录
+
+## 实例参考
+
