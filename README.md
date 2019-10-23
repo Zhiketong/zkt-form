@@ -22,15 +22,12 @@
 ### 调用form
 ```html
 <Form
-  class="form-horizontal"
   :fields="fields"
   :validation="validation"
   :options="options"
   :components="components"
   ref="form"
   v-model="model"
-  @change="onChange"
-  @click="onClick"
   @submit="onSubmit">
 </Form>
 ```
