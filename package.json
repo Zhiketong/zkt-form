@@ -7,7 +7,7 @@
   "private": false,
   "main": "./dist/form.js",
   "scripts": {
-    "deploy": "gh-pages -a -d dist --remote origin -b master -r git@git.yin126.com:Web/ebooking-dist.git -e components/$npm_package_name",
+    "deploy": "gh-pages -a -d dist --remote origin -b master -r git@git.yin126.net:Web/ebooking-dist.git -e components/$npm_package_name",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run package",
