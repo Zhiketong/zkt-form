@@ -29,7 +29,11 @@ export default [
     column: 'col-sm-4',
     value: '',
     group: 'input',
-    placeholder: 'url'
+    placeholder: 'url',
+    options: [
+      'https://www.baidu.com',
+      'https://www.google.com'
+    ]
   },
   {
     name: 'password',
