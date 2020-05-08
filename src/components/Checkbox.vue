@@ -55,9 +55,12 @@
       },
       deSelectAll () {
         let set = new Set(this.val)
-        this.val = this.options.map((option) => {
-          let value = option[this.optionValueName]
-          return !set.has(value) && value
+        this.val = this.options
+        .map((option) => {
+          return option[this.optionValueName]
+        })
+        .filter((option) => {
+          return !set.has(option)
         })
       }
     }
