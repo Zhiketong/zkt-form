@@ -74,8 +74,8 @@ export default [
     }],
     label: '多选',
     optionKeyName: 'label',
-    optionValueName: 'value'
-    // group:'checkbox'
+    optionValueName: 'value',
+    checkAll: true
   },
   {
     name: 'truefalse',
