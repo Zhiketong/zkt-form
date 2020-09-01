@@ -1,5 +1,5 @@
 <template>
-  <form  class="form zkt-form" @submit.prevent="validate()&&$emit('submit')">
+  <form  class="form zkt-form" @submit.prevent="validate()&&$emit('submit', value)">
     <layout
     :fields="fields"
     :value="value"
@@ -18,8 +18,8 @@
         :key="field.name"
       >
         <component
-          v-bind.sync="field"
-          v-model.sync="value[field.name]"
+          v-bind="field"
+          v-model="value[field.name]"
           :is="field['component']"
           :ref="field.name"
           @change="_onChange(field)"
