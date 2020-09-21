@@ -1,7 +1,7 @@
 {
   "name": "zkt-form",
   "description": "a schema based form generator",
-  "version": "2.27.11",
+  "version": "2.28.0",
   "author": "MillerRen <ren12345@126.com>",
   "license": "MIT",
   "private": false,
