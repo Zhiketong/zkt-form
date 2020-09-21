@@ -124,7 +124,7 @@
     },
     validations () {
       return {
-        value: transformValidation(Object.assign({}, validators, this.validators))
+        value: transformValidation(this.validation, Object.assign({}, validators, this.validators))
       }
     },
     methods: {
@@ -190,6 +190,3 @@
     }
   }
 </script>
-
-<style media="screen">
-</style>
