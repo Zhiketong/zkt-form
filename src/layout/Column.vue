@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import message from '../utils/message'
+import message from '../validation/message'
 import typeOf from '../utils/typeOf'
 
 export default {

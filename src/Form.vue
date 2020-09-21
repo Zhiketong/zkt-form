@@ -35,7 +35,8 @@
   import Layout from './layout/Layout.vue'
   import Column from './layout/Column.vue'
   import {validationMixin} from 'vuelidate'
-  import {transformValidation} from './utils/validators'
+  import transformValidation from './validation/transformValidation'
+  import validators from './validation/validators'
 
   var components = {}
   var req = require.context('./components', true)
@@ -80,6 +81,12 @@
           return {}
         }
       },
+      validators: {
+        type: Object,
+        default () {
+          return {}
+        }
+      },
       triggers: {
         type: Array,
         default () {
@@ -117,7 +124,7 @@
     },
     validations () {
       return {
-        value: transformValidation(this.validation)
+        value: transformValidation(Object.assign({}, validators, this.validators))
       }
     },
     methods: {
