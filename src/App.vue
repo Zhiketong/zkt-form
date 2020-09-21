@@ -8,6 +8,7 @@
       <Form
         class="form-horizontal"
         :fields="fields"
+        :validators="validators"
         :validation="validation"
         :triggers="triggers"
         :options="options"
@@ -35,6 +36,7 @@
 <script>
 import Form from './export'
 import fields from './assets/fields'
+import validators from './assets/validators'
 import validation from './assets/validation'
 import model from './assets/model'
 import triggers from'./assets/triggers'
@@ -49,6 +51,7 @@ export default {
       fields,
       validation,
       triggers,
+      validators,
       tab: 1,
       options: {
         labelColumn: 3

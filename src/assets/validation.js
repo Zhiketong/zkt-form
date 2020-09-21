@@ -14,8 +14,8 @@ export default {
     url: true
   },
   textarea: {
-    minLength: 4,
-    maxLength: 16,
+    // minLength: 4,
+    // maxLength: 16,
     remote () {
       return Promise.resolve('123')
     }
